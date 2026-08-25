@@ -1,0 +1,6 @@
+.venv/
+.git/
+__pycache__/
+*.pyc
+run.sh
+walkthrough.html
