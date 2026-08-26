@@ -55,12 +55,48 @@ class AgentRecord:
     handler: Callable
 
 
+COLLECTION_AGENTS = "agent_registry"
+
+
 class AgentRegistry:
-    def __init__(self):
+    """Publish / discover / version. Backed by Firestore when a project is
+    configured, so the catalog outlives any single process and is inspectable
+    in the console — a registry that rebuilds itself on start is a lookup
+    table, not a repository."""
+
+    def __init__(self, project: str | None = None, persist: bool | None = None):
         self._by_capability: dict[str, AgentRecord] = {}
+        self.project = project or os.environ.get("GOOGLE_CLOUD_PROJECT", "")
+        if persist is None:
+            persist = bool(self.project) and os.environ.get("EZ_REGISTRY") != "local"
+        self.persist = persist
+        self._db = None
+
+    def _client(self):
+        if self._db is None:
+            from google.cloud import firestore
+            self._db = firestore.Client(project=self.project)
+        return self._db
 
     def publish(self, rec: AgentRecord) -> None:
         self._by_capability[rec.capability] = rec
+        if not self.persist:
+            return
+        try:
+            from domains import current
+            self._client().collection(COLLECTION_AGENTS).document(rec.capability).set({
+                "name": rec.name,
+                "capability": rec.capability,
+                "version": rec.version,
+                "service_account": rec.service_account,
+                "tool_scope": list(rec.tool_scope),
+                "domain": current().key,
+                "published_at": __import__("datetime").datetime.now(
+                    __import__("datetime").timezone.utc).isoformat(),
+            })
+        except Exception as e:
+            print(f"  registry: firestore unavailable ({str(e)[:60]}) — in-memory only")
+            self.persist = False
 
     def discover(self, capability: str) -> AgentRecord:
         if capability not in self._by_capability:
@@ -73,6 +109,17 @@ class AgentRegistry:
              "service_account": r.service_account, "tool_scope": r.tool_scope}
             for r in self._by_capability.values()
         ]
+
+    def published(self) -> list[dict]:
+        """Read the catalog back from Firestore — what another team would see
+        when discovering agents across departments."""
+        if not self.persist:
+            return self.catalog()
+        try:
+            return [d.to_dict() for d in
+                    self._client().collection(COLLECTION_AGENTS).stream()]
+        except Exception:
+            return self.catalog()
 
 
 # ==========================================================================
@@ -602,6 +649,8 @@ def main():
                     help="parallel cases; 8 is a good default for the full run")
     ap.add_argument("--simulate-evidence", action="store_true",
                     help="append later-arriving evidence before sweeping")
+    ap.add_argument("--registry", action="store_true",
+                    help="print the published agent catalog and exit")
     ap.add_argument("--sweep", action="store_true",
                     help="re-examine deferred cases instead of running new ones")
     ap.add_argument("--inject", help="hallucination|phantom_key|loop|verify_fail|overconfident")
@@ -640,6 +689,16 @@ def main():
     from sweeper import DeferredStore
     store = DeferredStore(use_firestore=False)
     gw.store = store
+
+    if args.registry:
+        print("\npublished agent catalog (Firestore):")
+        for a in reg.published():
+            scope = ", ".join(a.get("tool_scope") or []) or "NONE"
+            print(f"  {a.get('name',''):20} v{a.get('version','?'):8} "
+                  f"{a.get('capability',''):14} domain={a.get('domain','-'):12}")
+            print(f"    identity: {a.get('service_account','')}")
+            print(f"    scope:    {scope}")
+        return
 
     if args.sweep:
         from sweeper import sweep, simulate_arriving_evidence

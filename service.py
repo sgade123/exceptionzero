@@ -209,6 +209,12 @@ $('#go').onclick=async()=>{
 </script></body></html>"""
 
 
+@app.get("/registry")
+def registry_catalog():
+    """The published agent catalog — what another department discovers."""
+    return {"agents": registry().published()}
+
+
 @app.get("/", response_class=HTMLResponse)
 def index():
     return PAGE
