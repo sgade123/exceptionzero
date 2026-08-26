@@ -15,7 +15,7 @@ ARMOR_TEMPLATE="ez-armor"
 gcloud config set project "$PROJECT" >/dev/null
 
 echo "== runtime permissions =="
-for role in roles/modelarmor.user roles/bigquery.dataViewer roles/cloudtrace.agent; do
+for role in roles/modelarmor.user roles/bigquery.dataViewer roles/cloudtrace.agent roles/datastore.user; do
   gcloud projects add-iam-policy-binding "$PROJECT" \
     --member="serviceAccount:${RUNTIME_SA}" --role="$role" \
     --condition=None >/dev/null 2>&1 && echo "  + $role" || echo "  (already) $role"

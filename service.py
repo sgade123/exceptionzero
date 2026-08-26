@@ -209,6 +209,40 @@ $('#go').onclick=async()=>{
 </script></body></html>"""
 
 
+@app.post("/sweep")
+async def sweep_endpoint(request: Request):
+    """Cloud Scheduler target. Re-examines deferred cases and re-opens the
+    ones whose blocker has cleared.
+
+    Nothing here is request-response: a case parked today may close in three
+    weeks, when a later payment carries the reference the first one lacked.
+    The sweeper adds no authority — a re-opened case goes back through the
+    same agents, the same citation guard, and the same deterministic gate.
+    """
+    body = {}
+    try:
+        if await request.body():
+            body = await request.json()
+    except Exception:
+        pass
+
+    from sweeper import DeferredStore, sweep, simulate_arriving_evidence
+    store = DeferredStore(project=PROJECT)
+    est = estate()
+
+    if body.get("simulate_evidence"):
+        simulate_arriving_evidence(store, est)
+
+    gw = Gateway(registry(), Tracer(verbose=True), store=store)
+    out = sweep(store, est, gateway=gw,
+                min_age_days=float(body.get("min_age_days", 0)),
+                verbose=True)
+    print(f"[sweep] examined={out['examined']} "
+          f"reopened={len(out['reopened'])} "
+          f"resolved_late={len(out['resolved_late'])}", flush=True)
+    return {**out, "store": store.stats()}
+
+
 @app.get("/registry")
 def registry_catalog():
     """The published agent catalog — what another department discovers."""
