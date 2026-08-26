@@ -92,13 +92,19 @@ def _armor_managed(text: str) -> ArmorVerdict | None:
             )
         )
         result = resp.sanitization_result
+
+        def _matched(v) -> bool:
+            """MATCH_FOUND and NO_MATCH_FOUND differ by a prefix, so a naive
+            substring test reports every clean filter as a hit — which
+            quarantines the entire queue. Exclude the negative form first."""
+            t = str(v).upper()
+            return "MATCH_FOUND" in t and "NO_MATCH_FOUND" not in t
+
         findings = [k for k, v in dict(result.filter_results).items()
-                    if "MATCH_FOUND" in str(v)]
-        # The top-level match_state enum renders differently across SDK
-        # versions. Per-filter results are the reliable signal: any filter
-        # reporting a match means Model Armor flagged this prompt.
-        state = str(getattr(result, "filter_match_state", ""))
-        blocked = bool(findings) or "NO_MATCH" not in state and "MATCH_FOUND" in state
+                    if _matched(v)]
+        state = str(getattr(result, "filter_match_state", "")).upper()
+        blocked = bool(findings) or (
+            "MATCH_FOUND" in state and "NO_MATCH_FOUND" not in state)
         return ArmorVerdict(blocked, [f"armor:{f}" for f in findings],
                             "model-armor-api")
     except Exception as e:

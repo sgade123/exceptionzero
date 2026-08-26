@@ -82,7 +82,11 @@ async def run(request: Request):
         reg = inject_fault(reg, inject)
 
     tracer = Tracer(verbose=False)
-    gw = Gateway(reg, tracer)
+    # Park deferrals in Firestore so the sweeper has something to re-examine.
+    # A deferred case is a state, not an ending — without the store, every
+    # escalation would be a dead end.
+    from sweeper import DeferredStore
+    gw = Gateway(reg, tracer, store=DeferredStore(project=PROJECT))
     cust = {c["customer_id"]: c for c in estate()["customers"]}
 
     exceptions = estate()["exceptions"]
