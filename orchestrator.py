@@ -80,6 +80,63 @@ class AgentRegistry:
 # without touching call sites.
 # ==========================================================================
 
+_OTEL_READY: dict[str, Any] = {}
+
+
+def _otel_tracer():
+    """Cloud Trace exporter if available, otherwise None. Never fatal —
+    tracing must not be able to take the fleet down."""
+    if "tracer" in _OTEL_READY:
+        return _OTEL_READY["tracer"]
+    _OTEL_READY["tracer"] = None
+    if os.environ.get("EZ_TRACE", "1") != "1":
+        return None
+    try:
+        from opentelemetry import trace
+        from opentelemetry.sdk.resources import Resource
+        from opentelemetry.sdk.trace import TracerProvider
+        from opentelemetry.sdk.trace.export import BatchSpanProcessor
+        provider = TracerProvider(resource=Resource.create({
+            "service.name": "exceptionzero",
+            "service.version": "1.0.0",
+        }))
+        project = os.environ.get("GOOGLE_CLOUD_PROJECT", "")
+        if project:
+            try:
+                from opentelemetry.exporter.cloud_trace import CloudTraceSpanExporter
+                provider.add_span_processor(
+                    BatchSpanProcessor(CloudTraceSpanExporter(project_id=project)))
+            except Exception:
+                pass          # no exporter installed — keep spans in memory
+        trace.set_tracer_provider(provider)
+        _OTEL_READY["tracer"] = trace.get_tracer("exceptionzero")
+    except Exception:
+        pass
+    return _OTEL_READY["tracer"]
+
+
+class _NullCtx:
+    def __enter__(self): return None
+    def __exit__(self, *a): return False
+
+
+class _RootCtx:
+    def __init__(self, tracer, case_id, exception_type):
+        self._t, self._cid, self._type = tracer, case_id, exception_type
+        self._cm = None
+
+    def __enter__(self):
+        self._cm = self._t.start_as_current_span(f"case {self._cid}")
+        span = self._cm.__enter__()
+        span.set_attribute("exception.id", self._cid)
+        if self._type:
+            span.set_attribute("exception.type", self._type)
+        return span
+
+    def __exit__(self, *a):
+        return self._cm.__exit__(*a) if self._cm else False
+
+
 @dataclass
 class Span:
     name: str
@@ -90,12 +147,27 @@ class Span:
 
 
 class Tracer:
+    """Emits OpenTelemetry spans when an exporter is configured, and always
+    keeps them in memory for the trace viewer and the CLI.
+
+    Each case becomes one root span with the agent hops nested underneath, so
+    Cloud Trace shows the reasoning chain end to end: which agent ran, under
+    which service account, how long it took, and which guard rejected what.
+    """
+
     def __init__(self, verbose: bool = True):
         self.spans: list[Span] = []
         self.verbose = verbose
+        self._otel = _otel_tracer()
 
     def span(self, name: str, case_id: str, **attrs):
         return _SpanCtx(self, name, case_id, attrs)
+
+    def case_span(self, case_id: str, exception_type: str = ""):
+        """Root span for one exception. Agent hops nest inside it."""
+        if self._otel is None:
+            return _NullCtx()
+        return _RootCtx(self._otel, case_id, exception_type)
 
     _emit_lock = threading.Lock()
 
@@ -113,15 +185,36 @@ class Tracer:
 class _SpanCtx:
     def __init__(self, tracer, name, case_id, attrs):
         self.t, self.s = tracer, Span(name, case_id, dict(attrs))
+        self._otel_cm = None
 
     def __enter__(self):
         self._t0 = time.perf_counter()
+        ot = getattr(self.t, "_otel", None)
+        if ot is not None:
+            self._otel_cm = ot.start_as_current_span(self.s.name)
+            sp = self._otel_cm.__enter__()
+            sp.set_attribute("exception.id", self.s.case_id)
+            sp.set_attribute("agent", self.s.name)
         return self.s
 
     def __exit__(self, exc_type, exc, tb):
         self.s.ms = (time.perf_counter() - self._t0) * 1000
         if exc:
             self.s.error = f"{exc_type.__name__}: {exc}"
+        if self._otel_cm is not None:
+            try:
+                from opentelemetry import trace as _tr
+                sp = _tr.get_current_span()
+                for k, v in self.s.attrs.items():
+                    sp.set_attribute(f"ez.{k}", str(v))
+                sp.set_attribute("ez.duration_ms", round(self.s.ms, 2))
+                if self.s.error:
+                    sp.set_attribute("ez.guard_rejected", True)
+                    sp.set_attribute("ez.error", self.s.error[:400])
+                    sp.set_status(_tr.Status(_tr.StatusCode.ERROR, self.s.error[:200]))
+            except Exception:
+                pass
+            self._otel_cm.__exit__(exc_type, exc, tb)
         self.t._record(self.s)
         return False
 
@@ -198,6 +291,10 @@ class Gateway:
     def handle(self, exc: dict, customer: dict) -> CaseResult:
         cid = exc["exception_id"]
         n0 = len(self.tracer.spans)
+        with self.tracer.case_span(cid, exc.get("exception_type", "")):
+            return self._handle_inner(exc, customer, cid, n0)
+
+    def _handle_inner(self, exc: dict, customer: dict, cid: str, n0: int) -> CaseResult:
         print(f"\n{cid}  {exc['exception_type']}  "
               f"{exc.get('currency','')} {exc.get('amount')}")
 

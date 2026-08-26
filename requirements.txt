@@ -3,3 +3,6 @@ uvicorn[standard]>=0.32
 pydantic>=2.9
 google-genai>=1.0
 google-cloud-bigquery>=3.25
+opentelemetry-sdk>=1.27
+opentelemetry-api>=1.27
+opentelemetry-exporter-gcp-trace>=1.7
