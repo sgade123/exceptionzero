@@ -144,12 +144,13 @@ class CaseResult:
 # ==========================================================================
 
 class Gateway:
-    def __init__(self, registry: AgentRegistry, tracer: Tracer):
+    def __init__(self, registry: AgentRegistry, tracer: Tracer, store=None):
         self.reg = registry
         self.tracer = tracer
         self.loop = LoopGuard(max_turns=4)
         self.breaker = CircuitBreaker(threshold=3, window=20)
         self._lock = threading.Lock()   # guards are shared across workers
+        self.store = store              # deferred-case store, or None
 
     def _tick(self, cid, agent):
         with self._lock:
@@ -162,16 +163,37 @@ class Gateway:
     def run_batch(self, cases, customers, workers: int = 1):
         """Cases are independent; the guards are the only shared state."""
         if workers <= 1:
-            return [self.handle(e, customers.get(e['counterparty_id'], {}))
-                    for e in cases]
+            res = []
+            for e in cases:
+                r = self.handle(e, customers.get(e['counterparty_id'], {}))
+                self._park(e, r)
+                res.append(r)
+            return res
         out = []
         with ThreadPoolExecutor(max_workers=workers) as pool:
             futs = {pool.submit(self.handle, e,
                                 customers.get(e['counterparty_id'], {})): e
                     for e in cases}
             for f in as_completed(futs):
-                out.append(f.result())
+                r = f.result()
+                self._park(futs[f], r)
+                out.append(r)
         return out
+
+    def _park(self, exc: dict, r: CaseResult) -> None:
+        """A deferred case is a state, not an ending."""
+        if self.store is None or r.outcome != 'deferred' or not r.reasons:
+            return
+        from sweeper import DeferredCase, classify_blocker
+        self.store.defer(DeferredCase(
+            exception_id=exc['exception_id'],
+            exception_type=exc.get('exception_type', ''),
+            amount=float(exc.get('amount', 0)),
+            currency=exc.get('currency', ''),
+            counterparty_id=exc.get('counterparty_id', ''),
+            reason=r.reasons[0],
+            blocker=classify_blocker(r.reasons[0]),
+        ))
 
     def handle(self, exc: dict, customer: dict) -> CaseResult:
         cid = exc["exception_id"]
@@ -402,6 +424,10 @@ def main():
     ap.add_argument("--quiet", action="store_true")
     ap.add_argument("--workers", type=int, default=1,
                     help="parallel cases; 8 is a good default for the full run")
+    ap.add_argument("--simulate-evidence", action="store_true",
+                    help="append later-arriving evidence before sweeping")
+    ap.add_argument("--sweep", action="store_true",
+                    help="re-examine deferred cases instead of running new ones")
     ap.add_argument("--inject", help="hallucination|phantom_key|loop|verify_fail|overconfident")
     args = ap.parse_args()
 
@@ -434,6 +460,24 @@ def main():
         planted = [e for e in estate["exceptions"] if e.get("planted")]
         rest = [e for e in estate["exceptions"] if not e.get("planted")]
         cases = planted + rest[: max(0, args.limit - len(planted))]
+
+    from sweeper import DeferredStore
+    store = DeferredStore(use_firestore=False)
+    gw.store = store
+
+    if args.sweep:
+        from sweeper import sweep, simulate_arriving_evidence
+        if args.simulate_evidence:
+            print('\nweeks pass. new payments arrive...')
+            simulate_arriving_evidence(store, estate)
+        print('\nsweeping deferred cases...')
+        out = sweep(store, estate, gateway=gw)
+        print(f"\n  examined {out['examined']}  "
+              f"reopened {len(out['reopened'])}  "
+              f"resolved-late {len(out['resolved_late'])}  "
+              f"still waiting {out['still_waiting']}")
+        print('  store:', store.stats())
+        return
 
     t0 = time.perf_counter()
     results = gw.run_batch(cases, cust, workers=args.workers)
