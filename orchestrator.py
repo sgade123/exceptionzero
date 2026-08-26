@@ -414,9 +414,18 @@ def _stub_registry(estate: dict) -> AgentRegistry:
 
     def triage(exc):
         untrusted = []
-        memo = (exc.get("memo") or "").lower()
-        if any(p in memo for p in INJ):
-            untrusted.append("memo")
+        try:
+            from agents_adk import screen
+            v = screen(" ".join(str(exc.get(f) or "") for f in
+                                ("memo", "counterparty_name_on_payment")))
+            if v.blocked:
+                untrusted.append("memo")
+                print(f"    [MODEL ARMOR] {exc['exception_id']} blocked via "
+                      f"{v.source}: {v.findings[:2]}")
+        except Exception:
+            memo = (exc.get("memo") or "").lower()
+            if any(p in memo for p in INJ):
+                untrusted.append("memo")
         return TriageOutput(exception_id=exc["exception_id"],
                             exception_type=exc["exception_type"],
                             confidence=0.95, untrusted_fields=untrusted)

@@ -122,6 +122,15 @@ VALID_TYPES = {
 
 
 def triage(exc: dict) -> TriageOutput:
+    """Classification, with Model Armor screening the untrusted fields first.
+
+    Screening happens BEFORE the model call, not after: a payload that reaches
+    Gemini has already had its chance to influence the output.
+    """
+    from agents_adk import screen
+    untrusted_text = " ".join(str(exc.get(f) or "") for f in
+                              ("memo", "counterparty_name_on_payment"))
+    verdict = screen(untrusted_text)
     payload = {
         "exception_id": exc["exception_id"],
         "bank_return_code": exc.get("bank_return_code"),
@@ -143,12 +152,19 @@ def triage(exc: dict) -> TriageOutput:
     etype = out.get("exception_type", "")
     if etype not in VALID_TYPES:
         etype = exc.get("exception_type", "SCREENING_HIT")
+    # Union of what Model Armor found and what the model itself flagged.
+    # Two independent detectors; either one firing is enough to quarantine.
+    flagged = {f for f in out.get("untrusted_fields", []) if isinstance(f, str)}
+    if verdict.blocked:
+        flagged.add("memo")
+        print(f"    [MODEL ARMOR] {exc['exception_id']} blocked via "
+              f"{verdict.source}: {verdict.findings[:2]}", flush=True)
+
     return TriageOutput(
         exception_id=exc["exception_id"],
         exception_type=etype,
         confidence=float(out.get("confidence", 0.5)),
-        untrusted_fields=[f for f in out.get("untrusted_fields", [])
-                          if isinstance(f, str)],
+        untrusted_fields=sorted(flagged),
     )
 
 
