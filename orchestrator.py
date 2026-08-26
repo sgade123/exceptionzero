@@ -476,15 +476,21 @@ def _stub_registry(estate: dict) -> AgentRegistry:
                 action="escalate", rationale="no invoice evidence retrieved",
                 cites=ids[:1], confidence=0.30, reversible=True)
 
-        action, conf = {
-            "NAME_MISMATCH": ("matched_alias_and_resubmitted", 0.94),
-            "UNAPPLIED_CASH": ("matched_invoice_by_amount_and_applied", 0.91),
-            "AMOUNT_MISMATCH": ("classified_as_bank_fee_and_wrote_off_difference", 0.88),
-            "DUPLICATE_SUBMISSION": ("voided_second_submission", 0.93),
-        }.get(t, ("escalate", 0.35))
+        from domains import current as _c
+        _d = _c()
+        acts = [a for a in _d.actions if a != "escalate"]
+        # archetype order matches the domain action order by construction
+        arche = sorted(_d.auto_resolvable)
+        conf_by = {arche[i]: c for i, c in
+                   enumerate([0.94, 0.91, 0.88, 0.93][:len(arche)])}
+        if t in _d.auto_resolvable:
+            action = acts[arche.index(t) % len(acts)]
+            conf = conf_by.get(t, 0.90)
+        else:
+            action, conf = "escalate", 0.35
 
         # A large unexplained shortfall must not read as a bank fee.
-        if t == "AMOUNT_MISMATCH":
+        if t in _d.auto_resolvable and "invoice" in [e.kind for e in ctx.evidence]:
             invoice = next(e for e in ctx.evidence if e.kind == "invoice")
             gap = float(invoice.content["amount"]) - float(exc["amount"])
             if gap > 50:
@@ -521,10 +527,13 @@ TABLES = ("exceptions", "invoices", "customers",
 
 def _load_local() -> dict:
     """Local JSONL. Development and offline demos only."""
+    from domains import current
+    d = current()
+    root = "data" if d.key == "payments" else f"data_{d.key}"
     out = {}
     for t in TABLES:
         try:
-            with open(f"data/{t}.jsonl") as f:
+            with open(f"{root}/{t}.jsonl") as f:
                 out[t] = [json.loads(l) for l in f]
         except FileNotFoundError:
             out[t] = []
@@ -545,13 +554,14 @@ def _plain(v):
     return v
 
 
-def _load_bigquery(project: str) -> dict:
+def _load_bigquery(project: str, domain_key: str = "payments") -> dict:
     """Read the estate from BigQuery — the same tables the specialist agents
     query at runtime, under the same scoped credentials. The fleet operates on
     the warehouse, not on files shipped inside its own container."""
     from google.cloud import bigquery
     client = bigquery.Client(project=project)
-    ds = f"{project}.exceptionzero"
+    ds = (f"{project}.exceptionzero" if domain_key == "payments"
+          else f"{project}.exceptionzero_{domain_key}")
     out = {}
     for t in TABLES:
         rows = client.query(f"SELECT * FROM `{ds}.{t}`").result()
@@ -568,7 +578,8 @@ def load_estate(source: str | None = None) -> dict:
         print("estate: local JSONL")
         return _load_local()
     try:
-        est = _load_bigquery(project)
+        from domains import current as _c
+        est = _load_bigquery(project, _c().key)
         print(f"estate: BigQuery {project}.exceptionzero "
               f"({len(est['exceptions'])} exceptions, "
               f"{len(est['invoices'])} invoices)")

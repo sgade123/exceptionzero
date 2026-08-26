@@ -1,0 +1,813 @@
+{"payment_id": "PAY-500000", "customer_id": "CUST-1046", "invoice_id": "INV-20617", "amount": 2297.37, "currency": "MXN", "paid_at": "2026-04-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500001", "customer_id": "CUST-1047", "invoice_id": "INV-20618", "amount": 4149.52, "currency": "MXN", "paid_at": "2026-02-16T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500002", "customer_id": "CUST-1058", "invoice_id": "INV-20654", "amount": 2003.97, "currency": "MXN", "paid_at": "2026-05-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500003", "customer_id": "CUST-1051", "invoice_id": "INV-20387", "amount": 1238.12, "currency": "SGD", "paid_at": "2025-12-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500004", "customer_id": "CUST-1013", "invoice_id": "INV-20130", "amount": 2788.79, "currency": "AUD", "paid_at": "2025-10-19T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500005", "customer_id": "CUST-1015", "invoice_id": "INV-20544", "amount": 2175.83, "currency": "INR", "paid_at": "2026-05-07T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500006", "customer_id": "CUST-1029", "invoice_id": "INV-20647", "amount": 1575.95, "currency": "MXN", "paid_at": "2026-03-01T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500007", "customer_id": "CUST-1031", "invoice_id": "INV-20308", "amount": 1469.05, "currency": "EUR", "paid_at": "2026-06-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500008", "customer_id": "CUST-1040", "invoice_id": "INV-20116", "amount": 431.29, "currency": "INR", "paid_at": "2026-06-14T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500009", "customer_id": "CUST-1013", "invoice_id": "INV-20570", "amount": 16853.85, "currency": "AUD", "paid_at": "2025-11-22T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500010", "customer_id": "CUST-1040", "invoice_id": "INV-20289", "amount": 8864.8, "currency": "INR", "paid_at": "2025-11-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500011", "customer_id": "CUST-1050", "invoice_id": "INV-20379", "amount": 7503.12, "currency": "MXN", "paid_at": "2026-02-02T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500012", "customer_id": "CUST-1028", "invoice_id": "INV-20122", "amount": 22817.93, "currency": "AUD", "paid_at": "2026-06-05T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500013", "customer_id": "CUST-1038", "invoice_id": "INV-20345", "amount": 238.35, "currency": "EUR", "paid_at": "2026-08-07T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500014", "customer_id": "CUST-1027", "invoice_id": "INV-20464", "amount": 1832.73, "currency": "EUR", "paid_at": "2026-04-05T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500015", "customer_id": "CUST-1031", "invoice_id": "INV-20638", "amount": 4534.1, "currency": "EUR", "paid_at": "2025-09-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500016", "customer_id": "CUST-1002", "invoice_id": "INV-20200", "amount": 11009.81, "currency": "GBP", "paid_at": "2025-09-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500017", "customer_id": "CUST-1058", "invoice_id": "INV-20310", "amount": 3337.92, "currency": "MXN", "paid_at": "2026-02-13T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500018", "customer_id": "CUST-1051", "invoice_id": "INV-20387", "amount": 1238.12, "currency": "SGD", "paid_at": "2026-04-12T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500019", "customer_id": "CUST-1007", "invoice_id": "INV-20536", "amount": 9946.72, "currency": "USD", "paid_at": "2026-01-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500020", "customer_id": "CUST-1021", "invoice_id": "INV-20189", "amount": 3431.35, "currency": "GBP", "paid_at": "2026-02-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500021", "customer_id": "CUST-1009", "invoice_id": "INV-20439", "amount": 2151.76, "currency": "EUR", "paid_at": "2026-04-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500022", "customer_id": "CUST-1037", "invoice_id": "INV-20287", "amount": 60662.73, "currency": "EUR", "paid_at": "2026-03-12T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500023", "customer_id": "CUST-1059", "invoice_id": "INV-20699", "amount": 1772.69, "currency": "MXN", "paid_at": "2026-01-19T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500024", "customer_id": "CUST-1039", "invoice_id": "INV-20666", "amount": 2558.48, "currency": "USD", "paid_at": "2025-11-18T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500025", "customer_id": "CUST-1026", "invoice_id": "INV-20059", "amount": 82382.78, "currency": "INR", "paid_at": "2026-01-08T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500026", "customer_id": "CUST-1000", "invoice_id": "INV-20150", "amount": 1395.08, "currency": "MXN", "paid_at": "2026-07-01T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500027", "customer_id": "CUST-1022", "invoice_id": "INV-20603", "amount": 342.75, "currency": "MXN", "paid_at": "2026-05-19T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500028", "customer_id": "CUST-1004", "invoice_id": "INV-20306", "amount": 49812.78, "currency": "AUD", "paid_at": "2026-04-04T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500029", "customer_id": "CUST-1032", "invoice_id": "INV-20543", "amount": 1672.68, "currency": "AUD", "paid_at": "2026-07-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500030", "customer_id": "CUST-1013", "invoice_id": "INV-20130", "amount": 2788.79, "currency": "AUD", "paid_at": "2026-05-20T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500031", "customer_id": "CUST-1045", "invoice_id": "INV-20156", "amount": 75091.29, "currency": "INR", "paid_at": "2025-12-18T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500032", "customer_id": "CUST-1028", "invoice_id": "INV-20073", "amount": 3294.6, "currency": "AUD", "paid_at": "2026-02-20T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500033", "customer_id": "CUST-1013", "invoice_id": "INV-20009", "amount": 789.67, "currency": "AUD", "paid_at": "2025-07-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500034", "customer_id": "CUST-1013", "invoice_id": "INV-20404", "amount": 2462.23, "currency": "AUD", "paid_at": "2025-10-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500035", "customer_id": "CUST-1040", "invoice_id": "INV-20173", "amount": 73005.8, "currency": "INR", "paid_at": "2026-01-31T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500036", "customer_id": "CUST-1015", "invoice_id": "INV-20664", "amount": 8715.27, "currency": "INR", "paid_at": "2026-01-09T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500037", "customer_id": "CUST-1053", "invoice_id": "INV-20691", "amount": 4237.01, "currency": "MXN", "paid_at": "2026-02-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500038", "customer_id": "CUST-1058", "invoice_id": "INV-20654", "amount": 2003.97, "currency": "MXN", "paid_at": "2026-05-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500039", "customer_id": "CUST-1055", "invoice_id": "INV-20503", "amount": 732.06, "currency": "SGD", "paid_at": "2026-05-12T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500040", "customer_id": "CUST-1039", "invoice_id": "INV-20666", "amount": 2558.48, "currency": "USD", "paid_at": "2026-01-26T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500041", "customer_id": "CUST-1029", "invoice_id": "INV-20569", "amount": 2023.71, "currency": "MXN", "paid_at": "2026-08-14T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500042", "customer_id": "CUST-1049", "invoice_id": "INV-20266", "amount": 4313.42, "currency": "EUR", "paid_at": "2026-07-09T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500043", "customer_id": "CUST-1042", "invoice_id": "INV-20382", "amount": 10647.27, "currency": "AUD", "paid_at": "2025-08-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500044", "customer_id": "CUST-1026", "invoice_id": "INV-20484", "amount": 33784.06, "currency": "INR", "paid_at": "2026-03-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500045", "customer_id": "CUST-1049", "invoice_id": "INV-20495", "amount": 2012.16, "currency": "EUR", "paid_at": "2026-05-29T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500046", "customer_id": "CUST-1001", "invoice_id": "INV-20166", "amount": 10834.27, "currency": "INR", "paid_at": "2025-12-04T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500047", "customer_id": "CUST-1027", "invoice_id": "INV-20578", "amount": 532.49, "currency": "EUR", "paid_at": "2025-08-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500048", "customer_id": "CUST-1058", "invoice_id": "INV-20518", "amount": 14995.5, "currency": "MXN", "paid_at": "2026-01-04T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500049", "customer_id": "CUST-1003", "invoice_id": "INV-20515", "amount": 3816.14, "currency": "MXN", "paid_at": "2025-09-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500050", "customer_id": "CUST-1041", "invoice_id": "INV-20023", "amount": 14728.68, "currency": "MXN", "paid_at": "2025-12-01T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500051", "customer_id": "CUST-1022", "invoice_id": "INV-20696", "amount": 3231.93, "currency": "MXN", "paid_at": "2026-07-22T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500052", "customer_id": "CUST-1037", "invoice_id": "INV-20352", "amount": 4084.97, "currency": "EUR", "paid_at": "2026-01-26T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500053", "customer_id": "CUST-1057", "invoice_id": "INV-20519", "amount": 11829.53, "currency": "MXN", "paid_at": "2026-03-04T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500054", "customer_id": "CUST-1013", "invoice_id": "INV-20183", "amount": 16534.17, "currency": "AUD", "paid_at": "2025-07-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500055", "customer_id": "CUST-1022", "invoice_id": "INV-20488", "amount": 2773.21, "currency": "MXN", "paid_at": "2025-10-02T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500056", "customer_id": "CUST-1055", "invoice_id": "INV-20037", "amount": 1945.88, "currency": "SGD", "paid_at": "2026-05-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500057", "customer_id": "CUST-1034", "invoice_id": "INV-20159", "amount": 296.1, "currency": "AUD", "paid_at": "2026-02-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500058", "customer_id": "CUST-1025", "invoice_id": "INV-20096", "amount": 853.83, "currency": "SGD", "paid_at": "2025-11-07T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500059", "customer_id": "CUST-1049", "invoice_id": "INV-20266", "amount": 4313.42, "currency": "EUR", "paid_at": "2025-12-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500060", "customer_id": "CUST-1016", "invoice_id": "INV-20298", "amount": 1367.07, "currency": "INR", "paid_at": "2026-05-08T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500061", "customer_id": "CUST-1006", "invoice_id": "INV-20147", "amount": 2746.95, "currency": "BRL", "paid_at": "2026-03-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500062", "customer_id": "CUST-1018", "invoice_id": "INV-20091", "amount": 1177.77, "currency": "SGD", "paid_at": "2025-12-20T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500063", "customer_id": "CUST-1041", "invoice_id": "INV-20045", "amount": 8937.86, "currency": "MXN", "paid_at": "2026-06-04T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500064", "customer_id": "CUST-1025", "invoice_id": "INV-20096", "amount": 853.83, "currency": "SGD", "paid_at": "2026-08-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500065", "customer_id": "CUST-1038", "invoice_id": "INV-20085", "amount": 3697.71, "currency": "EUR", "paid_at": "2026-06-10T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500066", "customer_id": "CUST-1032", "invoice_id": "INV-20496", "amount": 1283.71, "currency": "AUD", "paid_at": "2026-04-20T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500067", "customer_id": "CUST-1046", "invoice_id": "INV-20103", "amount": 60457.94, "currency": "MXN", "paid_at": "2025-11-19T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500068", "customer_id": "CUST-1040", "invoice_id": "INV-20289", "amount": 8864.8, "currency": "INR", "paid_at": "2026-03-31T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500069", "customer_id": "CUST-1016", "invoice_id": "INV-20298", "amount": 1367.07, "currency": "INR", "paid_at": "2025-08-29T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500070", "customer_id": "CUST-1003", "invoice_id": "INV-20515", "amount": 3816.14, "currency": "MXN", "paid_at": "2026-06-10T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500071", "customer_id": "CUST-1047", "invoice_id": "INV-20541", "amount": 2019.73, "currency": "MXN", "paid_at": "2026-07-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500072", "customer_id": "CUST-1015", "invoice_id": "INV-20554", "amount": 10707.07, "currency": "INR", "paid_at": "2025-11-02T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500073", "customer_id": "CUST-1032", "invoice_id": "INV-20640", "amount": 1469.95, "currency": "AUD", "paid_at": "2026-05-08T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500074", "customer_id": "CUST-1057", "invoice_id": "INV-20274", "amount": 4353.14, "currency": "MXN", "paid_at": "2025-11-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500075", "customer_id": "CUST-1042", "invoice_id": "INV-20167", "amount": 407.48, "currency": "AUD", "paid_at": "2025-10-08T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500076", "customer_id": "CUST-1048", "invoice_id": "INV-20348", "amount": 2767.17, "currency": "USD", "paid_at": "2025-09-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500077", "customer_id": "CUST-1045", "invoice_id": "INV-20690", "amount": 3644.72, "currency": "INR", "paid_at": "2026-01-08T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500078", "customer_id": "CUST-1038", "invoice_id": "INV-20660", "amount": 17556.12, "currency": "EUR", "paid_at": "2026-04-07T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500079", "customer_id": "CUST-1004", "invoice_id": "INV-20408", "amount": 56878.07, "currency": "AUD", "paid_at": "2025-11-18T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500080", "customer_id": "CUST-1042", "invoice_id": "INV-20623", "amount": 1611.59, "currency": "AUD", "paid_at": "2026-01-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500081", "customer_id": "CUST-1051", "invoice_id": "INV-20387", "amount": 1238.12, "currency": "SGD", "paid_at": "2026-03-13T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500082", "customer_id": "CUST-1001", "invoice_id": "INV-20166", "amount": 10834.27, "currency": "INR", "paid_at": "2026-06-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500083", "customer_id": "CUST-1038", "invoice_id": "INV-20085", "amount": 3697.71, "currency": "EUR", "paid_at": "2025-08-19T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500084", "customer_id": "CUST-1023", "invoice_id": "INV-20256", "amount": 12669.6, "currency": "EUR", "paid_at": "2025-12-09T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500085", "customer_id": "CUST-1003", "invoice_id": "INV-20301", "amount": 792.19, "currency": "MXN", "paid_at": "2026-05-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500086", "customer_id": "CUST-1052", "invoice_id": "INV-20425", "amount": 9068.12, "currency": "INR", "paid_at": "2026-08-18T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500087", "customer_id": "CUST-1041", "invoice_id": "INV-20374", "amount": 2781.86, "currency": "MXN", "paid_at": "2025-08-01T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500088", "customer_id": "CUST-1045", "invoice_id": "INV-20369", "amount": 4305.92, "currency": "INR", "paid_at": "2026-07-12T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500089", "customer_id": "CUST-1013", "invoice_id": "INV-20009", "amount": 789.67, "currency": "AUD", "paid_at": "2026-06-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500090", "customer_id": "CUST-1049", "invoice_id": "INV-20342", "amount": 3935.9, "currency": "EUR", "paid_at": "2025-08-12T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500091", "customer_id": "CUST-1026", "invoice_id": "INV-20484", "amount": 33784.06, "currency": "INR", "paid_at": "2026-01-12T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500092", "customer_id": "CUST-1020", "invoice_id": "INV-20673", "amount": 3717.49, "currency": "SGD", "paid_at": "2025-09-04T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500093", "customer_id": "CUST-1034", "invoice_id": "INV-20311", "amount": 11299.78, "currency": "AUD", "paid_at": "2026-06-20T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500094", "customer_id": "CUST-1059", "invoice_id": "INV-20632", "amount": 403.69, "currency": "MXN", "paid_at": "2025-08-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500095", "customer_id": "CUST-1018", "invoice_id": "INV-20091", "amount": 1177.77, "currency": "SGD", "paid_at": "2025-10-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500096", "customer_id": "CUST-1037", "invoice_id": "INV-20287", "amount": 60662.73, "currency": "EUR", "paid_at": "2026-05-17T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500097", "customer_id": "CUST-1042", "invoice_id": "INV-20382", "amount": 10647.27, "currency": "AUD", "paid_at": "2026-08-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500098", "customer_id": "CUST-1033", "invoice_id": "INV-20467", "amount": 17027.71, "currency": "MXN", "paid_at": "2026-07-16T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500099", "customer_id": "CUST-1006", "invoice_id": "INV-20362", "amount": 191.19, "currency": "BRL", "paid_at": "2026-03-31T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500100", "customer_id": "CUST-1031", "invoice_id": "INV-20308", "amount": 1469.05, "currency": "EUR", "paid_at": "2026-03-09T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500101", "customer_id": "CUST-1022", "invoice_id": "INV-20685", "amount": 2222.23, "currency": "MXN", "paid_at": "2026-01-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500102", "customer_id": "CUST-1041", "invoice_id": "INV-20434", "amount": 14486.08, "currency": "MXN", "paid_at": "2026-05-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500103", "customer_id": "CUST-1024", "invoice_id": "INV-20344", "amount": 2535.24, "currency": "INR", "paid_at": "2026-07-08T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500104", "customer_id": "CUST-1026", "invoice_id": "INV-20088", "amount": 1195.55, "currency": "INR", "paid_at": "2026-01-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500105", "customer_id": "CUST-1004", "invoice_id": "INV-20661", "amount": 762.59, "currency": "AUD", "paid_at": "2026-05-16T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500106", "customer_id": "CUST-1030", "invoice_id": "INV-20267", "amount": 338.19, "currency": "AUD", "paid_at": "2026-03-21T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500107", "customer_id": "CUST-1013", "invoice_id": "INV-20004", "amount": 3664.08, "currency": "AUD", "paid_at": "2025-11-18T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500108", "customer_id": "CUST-1007", "invoice_id": "INV-20681", "amount": 9357.83, "currency": "USD", "paid_at": "2025-09-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500109", "customer_id": "CUST-1028", "invoice_id": "INV-20214", "amount": 7680.45, "currency": "AUD", "paid_at": "2025-12-29T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500110", "customer_id": "CUST-1015", "invoice_id": "INV-20664", "amount": 8715.27, "currency": "INR", "paid_at": "2025-08-09T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500111", "customer_id": "CUST-1022", "invoice_id": "INV-20230", "amount": 3148.85, "currency": "MXN", "paid_at": "2026-03-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500112", "customer_id": "CUST-1003", "invoice_id": "INV-20622", "amount": 15407.69, "currency": "MXN", "paid_at": "2025-08-10T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500113", "customer_id": "CUST-1019", "invoice_id": "INV-20024", "amount": 39813.07, "currency": "INR", "paid_at": "2026-03-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500114", "customer_id": "CUST-1037", "invoice_id": "INV-20287", "amount": 60662.73, "currency": "EUR", "paid_at": "2026-03-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500115", "customer_id": "CUST-1027", "invoice_id": "INV-20006", "amount": 983.36, "currency": "EUR", "paid_at": "2026-08-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500116", "customer_id": "CUST-1020", "invoice_id": "INV-20273", "amount": 2768.43, "currency": "SGD", "paid_at": "2025-11-18T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500117", "customer_id": "CUST-1044", "invoice_id": "INV-20567", "amount": 16920.01, "currency": "BRL", "paid_at": "2025-09-08T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500118", "customer_id": "CUST-1000", "invoice_id": "INV-20191", "amount": 15283.79, "currency": "MXN", "paid_at": "2026-03-20T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500119", "customer_id": "CUST-1057", "invoice_id": "INV-20572", "amount": 313.5, "currency": "MXN", "paid_at": "2026-01-27T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500120", "customer_id": "CUST-1057", "invoice_id": "INV-20336", "amount": 326.21, "currency": "MXN", "paid_at": "2025-07-25T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500121", "customer_id": "CUST-1055", "invoice_id": "INV-20575", "amount": 628.88, "currency": "SGD", "paid_at": "2026-07-29T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500122", "customer_id": "CUST-1025", "invoice_id": "INV-20321", "amount": 9633.14, "currency": "SGD", "paid_at": "2025-12-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500123", "customer_id": "CUST-1036", "invoice_id": "INV-20007", "amount": 13861.34, "currency": "SGD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500124", "customer_id": "CUST-1017", "invoice_id": "INV-20373", "amount": 714.27, "currency": "BRL", "paid_at": "2025-12-01T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500125", "customer_id": "CUST-1003", "invoice_id": "INV-20515", "amount": 3816.14, "currency": "MXN", "paid_at": "2025-09-18T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500126", "customer_id": "CUST-1048", "invoice_id": "INV-20181", "amount": 834.39, "currency": "USD", "paid_at": "2026-07-13T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500127", "customer_id": "CUST-1047", "invoice_id": "INV-20126", "amount": 3255.7, "currency": "MXN", "paid_at": "2026-04-07T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500128", "customer_id": "CUST-1049", "invoice_id": "INV-20342", "amount": 3935.9, "currency": "EUR", "paid_at": "2026-07-14T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500129", "customer_id": "CUST-1024", "invoice_id": "INV-20695", "amount": 2995.59, "currency": "INR", "paid_at": "2026-07-19T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500130", "customer_id": "CUST-1023", "invoice_id": "INV-20256", "amount": 12669.6, "currency": "EUR", "paid_at": "2025-12-16T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500131", "customer_id": "CUST-1000", "invoice_id": "INV-20150", "amount": 1395.08, "currency": "MXN", "paid_at": "2026-03-29T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500132", "customer_id": "CUST-1004", "invoice_id": "INV-20226", "amount": 4306.71, "currency": "AUD", "paid_at": "2025-11-29T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500133", "customer_id": "CUST-1040", "invoice_id": "INV-20116", "amount": 431.29, "currency": "INR", "paid_at": "2025-08-28T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500134", "customer_id": "CUST-1030", "invoice_id": "INV-20394", "amount": 4179.05, "currency": "AUD", "paid_at": "2026-05-20T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500135", "customer_id": "CUST-1031", "invoice_id": "INV-20308", "amount": 1469.05, "currency": "EUR", "paid_at": "2026-03-04T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500136", "customer_id": "CUST-1037", "invoice_id": "INV-20324", "amount": 3488.67, "currency": "EUR", "paid_at": "2025-11-10T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500137", "customer_id": "CUST-1002", "invoice_id": "INV-20200", "amount": 11009.81, "currency": "GBP", "paid_at": "2026-07-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500138", "customer_id": "CUST-1015", "invoice_id": "INV-20079", "amount": 228.1, "currency": "INR", "paid_at": "2025-12-13T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500139", "customer_id": "CUST-1051", "invoice_id": "INV-20283", "amount": 3174.37, "currency": "SGD", "paid_at": "2025-08-09T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500140", "customer_id": "CUST-1051", "invoice_id": "INV-20115", "amount": 2909.79, "currency": "SGD", "paid_at": "2026-08-14T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500141", "customer_id": "CUST-1019", "invoice_id": "INV-20343", "amount": 3117.89, "currency": "INR", "paid_at": "2026-03-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500142", "customer_id": "CUST-1022", "invoice_id": "INV-20488", "amount": 2773.21, "currency": "MXN", "paid_at": "2026-03-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500143", "customer_id": "CUST-1000", "invoice_id": "INV-20191", "amount": 15283.79, "currency": "MXN", "paid_at": "2025-12-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500144", "customer_id": "CUST-1059", "invoice_id": "INV-20409", "amount": 1113.09, "currency": "MXN", "paid_at": "2025-11-10T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500145", "customer_id": "CUST-1058", "invoice_id": "INV-20310", "amount": 3337.92, "currency": "MXN", "paid_at": "2026-04-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500146", "customer_id": "CUST-1040", "invoice_id": "INV-20289", "amount": 8864.8, "currency": "INR", "paid_at": "2026-08-19T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500147", "customer_id": "CUST-1046", "invoice_id": "INV-20233", "amount": 3581.64, "currency": "MXN", "paid_at": "2025-10-25T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500148", "customer_id": "CUST-1004", "invoice_id": "INV-20238", "amount": 3012.44, "currency": "AUD", "paid_at": "2025-11-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500149", "customer_id": "CUST-1051", "invoice_id": "INV-20115", "amount": 2909.79, "currency": "SGD", "paid_at": "2025-12-20T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500150", "customer_id": "CUST-1029", "invoice_id": "INV-20693", "amount": 3565.14, "currency": "MXN", "paid_at": "2025-09-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500151", "customer_id": "CUST-1027", "invoice_id": "INV-20066", "amount": 2615.06, "currency": "EUR", "paid_at": "2026-04-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500152", "customer_id": "CUST-1040", "invoice_id": "INV-20116", "amount": 431.29, "currency": "INR", "paid_at": "2025-07-30T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500153", "customer_id": "CUST-1017", "invoice_id": "INV-20072", "amount": 1125.84, "currency": "BRL", "paid_at": "2025-11-02T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500154", "customer_id": "CUST-1022", "invoice_id": "INV-20627", "amount": 323.31, "currency": "MXN", "paid_at": "2026-02-13T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500155", "customer_id": "CUST-1001", "invoice_id": "INV-20206", "amount": 3622.87, "currency": "INR", "paid_at": "2026-05-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500156", "customer_id": "CUST-1049", "invoice_id": "INV-20266", "amount": 4313.42, "currency": "EUR", "paid_at": "2025-09-29T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500157", "customer_id": "CUST-1022", "invoice_id": "INV-20603", "amount": 342.75, "currency": "MXN", "paid_at": "2025-07-31T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500158", "customer_id": "CUST-1000", "invoice_id": "INV-20191", "amount": 15283.79, "currency": "MXN", "paid_at": "2025-07-27T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500159", "customer_id": "CUST-1040", "invoice_id": "INV-20116", "amount": 431.29, "currency": "INR", "paid_at": "2026-04-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500160", "customer_id": "CUST-1031", "invoice_id": "INV-20293", "amount": 4169.87, "currency": "EUR", "paid_at": "2026-05-09T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500161", "customer_id": "CUST-1006", "invoice_id": "INV-20362", "amount": 191.19, "currency": "BRL", "paid_at": "2026-01-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500162", "customer_id": "CUST-1049", "invoice_id": "INV-20217", "amount": 659.99, "currency": "EUR", "paid_at": "2026-07-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500163", "customer_id": "CUST-1004", "invoice_id": "INV-20238", "amount": 3012.44, "currency": "AUD", "paid_at": "2025-12-09T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500164", "customer_id": "CUST-1027", "invoice_id": "INV-20006", "amount": 983.36, "currency": "EUR", "paid_at": "2026-07-31T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500165", "customer_id": "CUST-1050", "invoice_id": "INV-20650", "amount": 4164.16, "currency": "MXN", "paid_at": "2025-12-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500166", "customer_id": "CUST-1020", "invoice_id": "INV-20436", "amount": 500.91, "currency": "SGD", "paid_at": "2025-08-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500167", "customer_id": "CUST-1017", "invoice_id": "INV-20020", "amount": 17648.23, "currency": "BRL", "paid_at": "2026-05-02T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500168", "customer_id": "CUST-1055", "invoice_id": "INV-20003", "amount": 4540.6, "currency": "SGD", "paid_at": "2026-05-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500169", "customer_id": "CUST-1038", "invoice_id": "INV-20345", "amount": 238.35, "currency": "EUR", "paid_at": "2025-08-26T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500170", "customer_id": "CUST-1044", "invoice_id": "INV-20602", "amount": 5553.61, "currency": "BRL", "paid_at": "2026-05-29T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500171", "customer_id": "CUST-1056", "invoice_id": "INV-20692", "amount": 2555.97, "currency": "BRL", "paid_at": "2025-10-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500172", "customer_id": "CUST-1013", "invoice_id": "INV-20570", "amount": 16853.85, "currency": "AUD", "paid_at": "2026-03-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500173", "customer_id": "CUST-1024", "invoice_id": "INV-20662", "amount": 17286.73, "currency": "INR", "paid_at": "2025-12-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500174", "customer_id": "CUST-1056", "invoice_id": "INV-20090", "amount": 2100.74, "currency": "BRL", "paid_at": "2026-07-18T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500175", "customer_id": "CUST-1044", "invoice_id": "INV-20049", "amount": 1975.07, "currency": "BRL", "paid_at": "2025-11-01T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500176", "customer_id": "CUST-1013", "invoice_id": "INV-20404", "amount": 2462.23, "currency": "AUD", "paid_at": "2025-10-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500177", "customer_id": "CUST-1032", "invoice_id": "INV-20236", "amount": 3915.51, "currency": "AUD", "paid_at": "2026-04-25T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500178", "customer_id": "CUST-1013", "invoice_id": "INV-20570", "amount": 16853.85, "currency": "AUD", "paid_at": "2025-11-14T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500179", "customer_id": "CUST-1046", "invoice_id": "INV-20103", "amount": 60457.94, "currency": "MXN", "paid_at": "2025-10-09T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500180", "customer_id": "CUST-1024", "invoice_id": "INV-20344", "amount": 2535.24, "currency": "INR", "paid_at": "2025-12-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500181", "customer_id": "CUST-1045", "invoice_id": "INV-20156", "amount": 75091.29, "currency": "INR", "paid_at": "2026-03-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500182", "customer_id": "CUST-1033", "invoice_id": "INV-20636", "amount": 2609.01, "currency": "MXN", "paid_at": "2025-08-31T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500183", "customer_id": "CUST-1059", "invoice_id": "INV-20632", "amount": 403.69, "currency": "MXN", "paid_at": "2026-05-12T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500184", "customer_id": "CUST-1039", "invoice_id": "INV-20666", "amount": 2558.48, "currency": "USD", "paid_at": "2025-10-19T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500185", "customer_id": "CUST-1044", "invoice_id": "INV-20302", "amount": 6503.29, "currency": "BRL", "paid_at": "2026-06-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500186", "customer_id": "CUST-1000", "invoice_id": "INV-20191", "amount": 15283.79, "currency": "MXN", "paid_at": "2025-12-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500187", "customer_id": "CUST-1037", "invoice_id": "INV-20324", "amount": 3488.67, "currency": "EUR", "paid_at": "2026-07-02T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500188", "customer_id": "CUST-1035", "invoice_id": "INV-20082", "amount": 2280.96, "currency": "USD", "paid_at": "2025-08-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500189", "customer_id": "CUST-1011", "invoice_id": "INV-20405", "amount": 3918.25, "currency": "AUD", "paid_at": "2026-06-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500190", "customer_id": "CUST-1055", "invoice_id": "INV-20111", "amount": 781.38, "currency": "SGD", "paid_at": "2025-12-20T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500191", "customer_id": "CUST-1038", "invoice_id": "INV-20071", "amount": 28764.66, "currency": "EUR", "paid_at": "2026-04-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500192", "customer_id": "CUST-1047", "invoice_id": "INV-20126", "amount": 3255.7, "currency": "MXN", "paid_at": "2025-12-27T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500193", "customer_id": "CUST-1042", "invoice_id": "INV-20382", "amount": 10647.27, "currency": "AUD", "paid_at": "2026-04-05T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500194", "customer_id": "CUST-1004", "invoice_id": "INV-20538", "amount": 1380.12, "currency": "AUD", "paid_at": "2025-08-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500195", "customer_id": "CUST-1038", "invoice_id": "INV-20071", "amount": 28764.66, "currency": "EUR", "paid_at": "2025-11-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500196", "customer_id": "CUST-1057", "invoice_id": "INV-20626", "amount": 1937.71, "currency": "MXN", "paid_at": "2025-08-20T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500197", "customer_id": "CUST-1042", "invoice_id": "INV-20382", "amount": 10647.27, "currency": "AUD", "paid_at": "2026-03-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500198", "customer_id": "CUST-1052", "invoice_id": "INV-20642", "amount": 14290.09, "currency": "INR", "paid_at": "2025-12-05T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500199", "customer_id": "CUST-1035", "invoice_id": "INV-20445", "amount": 12039.2, "currency": "USD", "paid_at": "2026-03-12T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500200", "customer_id": "CUST-1048", "invoice_id": "INV-20181", "amount": 834.39, "currency": "USD", "paid_at": "2026-03-10T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500201", "customer_id": "CUST-1037", "invoice_id": "INV-20324", "amount": 3488.67, "currency": "EUR", "paid_at": "2026-02-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500202", "customer_id": "CUST-1005", "invoice_id": "INV-20355", "amount": 2626.35, "currency": "EUR", "paid_at": "2025-10-26T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500203", "customer_id": "CUST-1027", "invoice_id": "INV-20066", "amount": 2615.06, "currency": "EUR", "paid_at": "2026-03-01T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500204", "customer_id": "CUST-1046", "invoice_id": "INV-20233", "amount": 3581.64, "currency": "MXN", "paid_at": "2026-07-04T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500205", "customer_id": "CUST-1040", "invoice_id": "INV-20637", "amount": 1858.92, "currency": "INR", "paid_at": "2026-05-31T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500206", "customer_id": "CUST-1024", "invoice_id": "INV-20595", "amount": 4595.17, "currency": "INR", "paid_at": "2025-08-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500207", "customer_id": "CUST-1035", "invoice_id": "INV-20184", "amount": 904.06, "currency": "USD", "paid_at": "2026-02-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500208", "customer_id": "CUST-1034", "invoice_id": "INV-20159", "amount": 296.1, "currency": "AUD", "paid_at": "2026-08-14T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500209", "customer_id": "CUST-1048", "invoice_id": "INV-20438", "amount": 2725.63, "currency": "USD", "paid_at": "2026-01-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500210", "customer_id": "CUST-1009", "invoice_id": "INV-20527", "amount": 2330.07, "currency": "EUR", "paid_at": "2026-05-05T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500211", "customer_id": "CUST-1026", "invoice_id": "INV-20484", "amount": 33784.06, "currency": "INR", "paid_at": "2026-01-18T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500212", "customer_id": "CUST-1029", "invoice_id": "INV-20647", "amount": 1575.95, "currency": "MXN", "paid_at": "2026-08-16T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500213", "customer_id": "CUST-1006", "invoice_id": "INV-20147", "amount": 2746.95, "currency": "BRL", "paid_at": "2025-09-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500214", "customer_id": "CUST-1051", "invoice_id": "INV-20482", "amount": 10237.08, "currency": "SGD", "paid_at": "2026-05-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500215", "customer_id": "CUST-1014", "invoice_id": "INV-20061", "amount": 3016.46, "currency": "MXN", "paid_at": "2026-05-31T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500216", "customer_id": "CUST-1058", "invoice_id": "INV-20502", "amount": 2771.14, "currency": "MXN", "paid_at": "2025-08-31T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500217", "customer_id": "CUST-1031", "invoice_id": "INV-20410", "amount": 1268.67, "currency": "EUR", "paid_at": "2026-01-19T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500218", "customer_id": "CUST-1036", "invoice_id": "INV-20463", "amount": 4292.15, "currency": "SGD", "paid_at": "2025-11-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500219", "customer_id": "CUST-1015", "invoice_id": "INV-20422", "amount": 1213.74, "currency": "INR", "paid_at": "2026-08-07T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500220", "customer_id": "CUST-1045", "invoice_id": "INV-20156", "amount": 75091.29, "currency": "INR", "paid_at": "2025-09-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500221", "customer_id": "CUST-1015", "invoice_id": "INV-20132", "amount": 2873.75, "currency": "INR", "paid_at": "2026-03-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500222", "customer_id": "CUST-1048", "invoice_id": "INV-20564", "amount": 3022.43, "currency": "USD", "paid_at": "2026-07-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500223", "customer_id": "CUST-1016", "invoice_id": "INV-20298", "amount": 1367.07, "currency": "INR", "paid_at": "2025-09-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500224", "customer_id": "CUST-1017", "invoice_id": "INV-20144", "amount": 815.09, "currency": "BRL", "paid_at": "2025-08-26T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500225", "customer_id": "CUST-1038", "invoice_id": "INV-20593", "amount": 530.98, "currency": "EUR", "paid_at": "2025-11-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500226", "customer_id": "CUST-1038", "invoice_id": "INV-20593", "amount": 530.98, "currency": "EUR", "paid_at": "2025-12-18T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500227", "customer_id": "CUST-1051", "invoice_id": "INV-20330", "amount": 17067.48, "currency": "SGD", "paid_at": "2025-11-01T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500228", "customer_id": "CUST-1038", "invoice_id": "INV-20101", "amount": 19375.32, "currency": "EUR", "paid_at": "2025-11-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500229", "customer_id": "CUST-1017", "invoice_id": "INV-20072", "amount": 1125.84, "currency": "BRL", "paid_at": "2026-06-20T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500230", "customer_id": "CUST-1027", "invoice_id": "INV-20464", "amount": 1832.73, "currency": "EUR", "paid_at": "2026-06-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500231", "customer_id": "CUST-1037", "invoice_id": "INV-20630", "amount": 320.07, "currency": "EUR", "paid_at": "2026-05-07T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500232", "customer_id": "CUST-1042", "invoice_id": "INV-20167", "amount": 407.48, "currency": "AUD", "paid_at": "2026-01-16T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500233", "customer_id": "CUST-1022", "invoice_id": "INV-20685", "amount": 2222.23, "currency": "MXN", "paid_at": "2026-04-05T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500234", "customer_id": "CUST-1033", "invoice_id": "INV-20467", "amount": 17027.71, "currency": "MXN", "paid_at": "2026-04-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500235", "customer_id": "CUST-1051", "invoice_id": "INV-20387", "amount": 1238.12, "currency": "SGD", "paid_at": "2026-07-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500236", "customer_id": "CUST-1050", "invoice_id": "INV-20074", "amount": 2311.27, "currency": "MXN", "paid_at": "2026-06-14T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500237", "customer_id": "CUST-1007", "invoice_id": "INV-20044", "amount": 2986.91, "currency": "USD", "paid_at": "2026-05-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500238", "customer_id": "CUST-1036", "invoice_id": "INV-20007", "amount": 13861.34, "currency": "SGD", "paid_at": "2025-11-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500239", "customer_id": "CUST-1011", "invoice_id": "INV-20405", "amount": 3918.25, "currency": "AUD", "paid_at": "2026-04-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500240", "customer_id": "CUST-1037", "invoice_id": "INV-20352", "amount": 4084.97, "currency": "EUR", "paid_at": "2026-05-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500241", "customer_id": "CUST-1009", "invoice_id": "INV-20070", "amount": 915.58, "currency": "EUR", "paid_at": "2025-10-09T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500242", "customer_id": "CUST-1040", "invoice_id": "INV-20116", "amount": 431.29, "currency": "INR", "paid_at": "2026-03-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500243", "customer_id": "CUST-1059", "invoice_id": "INV-20106", "amount": 1425.1, "currency": "MXN", "paid_at": "2026-08-16T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500244", "customer_id": "CUST-1026", "invoice_id": "INV-20088", "amount": 1195.55, "currency": "INR", "paid_at": "2026-03-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500245", "customer_id": "CUST-1035", "invoice_id": "INV-20604", "amount": 4242.74, "currency": "USD", "paid_at": "2025-11-16T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500246", "customer_id": "CUST-1058", "invoice_id": "INV-20275", "amount": 589.75, "currency": "MXN", "paid_at": "2025-10-27T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500247", "customer_id": "CUST-1033", "invoice_id": "INV-20467", "amount": 17027.71, "currency": "MXN", "paid_at": "2026-03-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500248", "customer_id": "CUST-1049", "invoice_id": "INV-20639", "amount": 2148.0, "currency": "EUR", "paid_at": "2026-01-02T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500249", "customer_id": "CUST-1008", "invoice_id": "INV-20040", "amount": 330.17, "currency": "GBP", "paid_at": "2026-06-07T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500250", "customer_id": "CUST-1001", "invoice_id": "INV-20206", "amount": 3622.87, "currency": "INR", "paid_at": "2026-01-13T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500251", "customer_id": "CUST-1015", "invoice_id": "INV-20000", "amount": 14403.23, "currency": "INR", "paid_at": "2026-03-14T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500252", "customer_id": "CUST-1047", "invoice_id": "INV-20126", "amount": 3255.7, "currency": "MXN", "paid_at": "2025-09-07T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500253", "customer_id": "CUST-1025", "invoice_id": "INV-20096", "amount": 853.83, "currency": "SGD", "paid_at": "2025-09-27T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500254", "customer_id": "CUST-1031", "invoice_id": "INV-20293", "amount": 4169.87, "currency": "EUR", "paid_at": "2026-08-09T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500255", "customer_id": "CUST-1038", "invoice_id": "INV-20101", "amount": 19375.32, "currency": "EUR", "paid_at": "2025-07-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500256", "customer_id": "CUST-1034", "invoice_id": "INV-20164", "amount": 3773.56, "currency": "AUD", "paid_at": "2025-12-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500257", "customer_id": "CUST-1001", "invoice_id": "INV-20022", "amount": 5667.71, "currency": "INR", "paid_at": "2026-02-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500258", "customer_id": "CUST-1008", "invoice_id": "INV-20040", "amount": 330.17, "currency": "GBP", "paid_at": "2026-02-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500259", "customer_id": "CUST-1050", "invoice_id": "INV-20314", "amount": 11192.04, "currency": "MXN", "paid_at": "2026-04-24T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500260", "customer_id": "CUST-1044", "invoice_id": "INV-20602", "amount": 5553.61, "currency": "BRL", "paid_at": "2025-10-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500261", "customer_id": "CUST-1052", "invoice_id": "INV-20642", "amount": 14290.09, "currency": "INR", "paid_at": "2025-10-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500262", "customer_id": "CUST-1059", "invoice_id": "INV-20609", "amount": 1512.74, "currency": "MXN", "paid_at": "2026-02-16T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500263", "customer_id": "CUST-1017", "invoice_id": "INV-20446", "amount": 28627.97, "currency": "BRL", "paid_at": "2026-02-04T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500264", "customer_id": "CUST-1026", "invoice_id": "INV-20059", "amount": 82382.78, "currency": "INR", "paid_at": "2026-07-10T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500265", "customer_id": "CUST-1050", "invoice_id": "INV-20624", "amount": 13273.98, "currency": "MXN", "paid_at": "2025-09-14T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500266", "customer_id": "CUST-1056", "invoice_id": "INV-20081", "amount": 2887.33, "currency": "BRL", "paid_at": "2025-12-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500267", "customer_id": "CUST-1053", "invoice_id": "INV-20598", "amount": 8536.58, "currency": "MXN", "paid_at": "2026-08-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500268", "customer_id": "CUST-1056", "invoice_id": "INV-20034", "amount": 73313.47, "currency": "BRL", "paid_at": "2025-09-09T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500269", "customer_id": "CUST-1034", "invoice_id": "INV-20159", "amount": 296.1, "currency": "AUD", "paid_at": "2026-02-26T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500270", "customer_id": "CUST-1020", "invoice_id": "INV-20673", "amount": 3717.49, "currency": "SGD", "paid_at": "2025-10-10T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500271", "customer_id": "CUST-1040", "invoice_id": "INV-20116", "amount": 431.29, "currency": "INR", "paid_at": "2026-05-25T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500272", "customer_id": "CUST-1051", "invoice_id": "INV-20330", "amount": 17067.48, "currency": "SGD", "paid_at": "2026-07-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500273", "customer_id": "CUST-1044", "invoice_id": "INV-20055", "amount": 3673.3, "currency": "BRL", "paid_at": "2025-07-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500274", "customer_id": "CUST-1017", "invoice_id": "INV-20446", "amount": 28627.97, "currency": "BRL", "paid_at": "2025-10-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500275", "customer_id": "CUST-1004", "invoice_id": "INV-20408", "amount": 56878.07, "currency": "AUD", "paid_at": "2026-07-19T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500276", "customer_id": "CUST-1023", "invoice_id": "INV-20511", "amount": 1539.09, "currency": "EUR", "paid_at": "2026-04-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500277", "customer_id": "CUST-1036", "invoice_id": "INV-20463", "amount": 4292.15, "currency": "SGD", "paid_at": "2026-01-26T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500278", "customer_id": "CUST-1000", "invoice_id": "INV-20571", "amount": 3078.22, "currency": "MXN", "paid_at": "2025-10-12T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500279", "customer_id": "CUST-1023", "invoice_id": "INV-20586", "amount": 2183.23, "currency": "EUR", "paid_at": "2025-10-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500280", "customer_id": "CUST-1045", "invoice_id": "INV-20644", "amount": 1076.56, "currency": "INR", "paid_at": "2026-04-04T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500281", "customer_id": "CUST-1045", "invoice_id": "INV-20135", "amount": 4442.96, "currency": "INR", "paid_at": "2026-02-10T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500282", "customer_id": "CUST-1048", "invoice_id": "INV-20348", "amount": 2767.17, "currency": "USD", "paid_at": "2025-09-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500283", "customer_id": "CUST-1045", "invoice_id": "INV-20135", "amount": 4442.96, "currency": "INR", "paid_at": "2025-11-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500284", "customer_id": "CUST-1035", "invoice_id": "INV-20445", "amount": 12039.2, "currency": "USD", "paid_at": "2026-05-27T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500285", "customer_id": "CUST-1035", "invoice_id": "INV-20082", "amount": 2280.96, "currency": "USD", "paid_at": "2025-09-02T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500286", "customer_id": "CUST-1000", "invoice_id": "INV-20150", "amount": 1395.08, "currency": "MXN", "paid_at": "2026-08-07T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500287", "customer_id": "CUST-1050", "invoice_id": "INV-20163", "amount": 11816.08, "currency": "MXN", "paid_at": "2026-05-05T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500288", "customer_id": "CUST-1059", "invoice_id": "INV-20632", "amount": 403.69, "currency": "MXN", "paid_at": "2025-11-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500289", "customer_id": "CUST-1041", "invoice_id": "INV-20045", "amount": 8937.86, "currency": "MXN", "paid_at": "2026-01-05T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500290", "customer_id": "CUST-1035", "invoice_id": "INV-20082", "amount": 2280.96, "currency": "USD", "paid_at": "2026-02-20T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500291", "customer_id": "CUST-1047", "invoice_id": "INV-20618", "amount": 4149.52, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500292", "customer_id": "CUST-1040", "invoice_id": "INV-20173", "amount": 73005.8, "currency": "INR", "paid_at": "2025-11-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500293", "customer_id": "CUST-1019", "invoice_id": "INV-20343", "amount": 3117.89, "currency": "INR", "paid_at": "2025-12-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500294", "customer_id": "CUST-1049", "invoice_id": "INV-20217", "amount": 659.99, "currency": "EUR", "paid_at": "2025-08-19T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500295", "customer_id": "CUST-1035", "invoice_id": "INV-20604", "amount": 4242.74, "currency": "USD", "paid_at": "2026-02-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500296", "customer_id": "CUST-1040", "invoice_id": "INV-20381", "amount": 3896.69, "currency": "INR", "paid_at": "2025-10-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500297", "customer_id": "CUST-1030", "invoice_id": "INV-20042", "amount": 13567.56, "currency": "AUD", "paid_at": "2026-07-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500298", "customer_id": "CUST-1013", "invoice_id": "INV-20130", "amount": 2788.79, "currency": "AUD", "paid_at": "2025-11-04T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500299", "customer_id": "CUST-1039", "invoice_id": "INV-20599", "amount": 1374.44, "currency": "USD", "paid_at": "2026-01-25T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500300", "customer_id": "CUST-1058", "invoice_id": "INV-20654", "amount": 2003.97, "currency": "MXN", "paid_at": "2026-04-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500301", "customer_id": "CUST-1028", "invoice_id": "INV-20214", "amount": 7680.45, "currency": "AUD", "paid_at": "2026-03-25T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500302", "customer_id": "CUST-1017", "invoice_id": "INV-20020", "amount": 17648.23, "currency": "BRL", "paid_at": "2026-03-14T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500303", "customer_id": "CUST-1032", "invoice_id": "INV-20443", "amount": 2753.08, "currency": "AUD", "paid_at": "2026-03-27T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500304", "customer_id": "CUST-1026", "invoice_id": "INV-20088", "amount": 1195.55, "currency": "INR", "paid_at": "2026-01-13T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500305", "customer_id": "CUST-1038", "invoice_id": "INV-20551", "amount": 33599.76, "currency": "EUR", "paid_at": "2025-10-13T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500306", "customer_id": "CUST-1055", "invoice_id": "INV-20003", "amount": 4540.6, "currency": "SGD", "paid_at": "2025-10-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500307", "customer_id": "CUST-1038", "invoice_id": "INV-20227", "amount": 844.69, "currency": "EUR", "paid_at": "2025-12-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500308", "customer_id": "CUST-1056", "invoice_id": "INV-20692", "amount": 2555.97, "currency": "BRL", "paid_at": "2026-02-18T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500309", "customer_id": "CUST-1003", "invoice_id": "INV-20301", "amount": 792.19, "currency": "MXN", "paid_at": "2026-04-27T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500310", "customer_id": "CUST-1014", "invoice_id": "INV-20235", "amount": 12135.95, "currency": "MXN", "paid_at": "2025-12-19T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500311", "customer_id": "CUST-1020", "invoice_id": "INV-20472", "amount": 1822.11, "currency": "SGD", "paid_at": "2025-11-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500312", "customer_id": "CUST-1050", "invoice_id": "INV-20624", "amount": 13273.98, "currency": "MXN", "paid_at": "2026-04-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500313", "customer_id": "CUST-1049", "invoice_id": "INV-20217", "amount": 659.99, "currency": "EUR", "paid_at": "2026-02-26T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500314", "customer_id": "CUST-1014", "invoice_id": "INV-20235", "amount": 12135.95, "currency": "MXN", "paid_at": "2026-07-27T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500315", "customer_id": "CUST-1040", "invoice_id": "INV-20637", "amount": 1858.92, "currency": "INR", "paid_at": "2025-07-27T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500316", "customer_id": "CUST-1041", "invoice_id": "INV-20434", "amount": 14486.08, "currency": "MXN", "paid_at": "2025-10-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500317", "customer_id": "CUST-1039", "invoice_id": "INV-20583", "amount": 478.79, "currency": "USD", "paid_at": "2025-11-25T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500318", "customer_id": "CUST-1030", "invoice_id": "INV-20394", "amount": 4179.05, "currency": "AUD", "paid_at": "2025-08-12T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500319", "customer_id": "CUST-1039", "invoice_id": "INV-20666", "amount": 2558.48, "currency": "USD", "paid_at": "2025-11-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500320", "customer_id": "CUST-1049", "invoice_id": "INV-20504", "amount": 1833.12, "currency": "EUR", "paid_at": "2026-07-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500321", "customer_id": "CUST-1015", "invoice_id": "INV-20132", "amount": 2873.75, "currency": "INR", "paid_at": "2025-08-02T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500322", "customer_id": "CUST-1035", "invoice_id": "INV-20687", "amount": 3577.41, "currency": "USD", "paid_at": "2026-02-16T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500323", "customer_id": "CUST-1038", "invoice_id": "INV-20071", "amount": 28764.66, "currency": "EUR", "paid_at": "2025-09-05T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500324", "customer_id": "CUST-1019", "invoice_id": "INV-20332", "amount": 3076.9, "currency": "INR", "paid_at": "2026-01-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500325", "customer_id": "CUST-1021", "invoice_id": "INV-20533", "amount": 11273.25, "currency": "GBP", "paid_at": "2026-08-20T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500326", "customer_id": "CUST-1013", "invoice_id": "INV-20004", "amount": 3664.08, "currency": "AUD", "paid_at": "2025-12-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500327", "customer_id": "CUST-1031", "invoice_id": "INV-20410", "amount": 1268.67, "currency": "EUR", "paid_at": "2025-09-25T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500328", "customer_id": "CUST-1041", "invoice_id": "INV-20100", "amount": 1825.62, "currency": "MXN", "paid_at": "2026-04-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500329", "customer_id": "CUST-1048", "invoice_id": "INV-20348", "amount": 2767.17, "currency": "USD", "paid_at": "2026-03-08T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500330", "customer_id": "CUST-1029", "invoice_id": "INV-20033", "amount": 2856.71, "currency": "MXN", "paid_at": "2026-01-10T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500331", "customer_id": "CUST-1008", "invoice_id": "INV-20121", "amount": 2474.18, "currency": "GBP", "paid_at": "2026-03-02T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500332", "customer_id": "CUST-1004", "invoice_id": "INV-20480", "amount": 3730.21, "currency": "AUD", "paid_at": "2026-07-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500333", "customer_id": "CUST-1059", "invoice_id": "INV-20409", "amount": 1113.09, "currency": "MXN", "paid_at": "2026-03-01T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500334", "customer_id": "CUST-1045", "invoice_id": "INV-20135", "amount": 4442.96, "currency": "INR", "paid_at": "2026-01-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500335", "customer_id": "CUST-1003", "invoice_id": "INV-20301", "amount": 792.19, "currency": "MXN", "paid_at": "2026-05-08T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500336", "customer_id": "CUST-1022", "invoice_id": "INV-20172", "amount": 1876.79, "currency": "MXN", "paid_at": "2026-01-13T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500337", "customer_id": "CUST-1046", "invoice_id": "INV-20233", "amount": 3581.64, "currency": "MXN", "paid_at": "2025-12-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500338", "customer_id": "CUST-1056", "invoice_id": "INV-20034", "amount": 73313.47, "currency": "BRL", "paid_at": "2025-09-14T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500339", "customer_id": "CUST-1039", "invoice_id": "INV-20583", "amount": 478.79, "currency": "USD", "paid_at": "2026-08-01T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500340", "customer_id": "CUST-1037", "invoice_id": "INV-20630", "amount": 320.07, "currency": "EUR", "paid_at": "2026-05-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500341", "customer_id": "CUST-1024", "invoice_id": "INV-20139", "amount": 4343.19, "currency": "INR", "paid_at": "2026-01-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500342", "customer_id": "CUST-1007", "invoice_id": "INV-20201", "amount": 14250.39, "currency": "USD", "paid_at": "2025-09-27T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500343", "customer_id": "CUST-1007", "invoice_id": "INV-20536", "amount": 9946.72, "currency": "USD", "paid_at": "2026-05-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500344", "customer_id": "CUST-1039", "invoice_id": "INV-20666", "amount": 2558.48, "currency": "USD", "paid_at": "2025-09-08T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500345", "customer_id": "CUST-1059", "invoice_id": "INV-20106", "amount": 1425.1, "currency": "MXN", "paid_at": "2025-12-04T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500346", "customer_id": "CUST-1040", "invoice_id": "INV-20381", "amount": 3896.69, "currency": "INR", "paid_at": "2025-11-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500347", "customer_id": "CUST-1045", "invoice_id": "INV-20135", "amount": 4442.96, "currency": "INR", "paid_at": "2026-01-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500348", "customer_id": "CUST-1047", "invoice_id": "INV-20689", "amount": 3365.7, "currency": "MXN", "paid_at": "2026-07-18T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500349", "customer_id": "CUST-1032", "invoice_id": "INV-20296", "amount": 3749.87, "currency": "AUD", "paid_at": "2026-07-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500350", "customer_id": "CUST-1046", "invoice_id": "INV-20103", "amount": 60457.94, "currency": "MXN", "paid_at": "2025-07-26T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500351", "customer_id": "CUST-1038", "invoice_id": "INV-20345", "amount": 238.35, "currency": "EUR", "paid_at": "2026-01-06T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500352", "customer_id": "CUST-1004", "invoice_id": "INV-20538", "amount": 1380.12, "currency": "AUD", "paid_at": "2026-02-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500353", "customer_id": "CUST-1045", "invoice_id": "INV-20156", "amount": 75091.29, "currency": "INR", "paid_at": "2026-07-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500354", "customer_id": "CUST-1029", "invoice_id": "INV-20647", "amount": 1575.95, "currency": "MXN", "paid_at": "2026-08-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500355", "customer_id": "CUST-1028", "invoice_id": "INV-20073", "amount": 3294.6, "currency": "AUD", "paid_at": "2026-06-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500356", "customer_id": "CUST-1014", "invoice_id": "INV-20235", "amount": 12135.95, "currency": "MXN", "paid_at": "2026-08-02T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500357", "customer_id": "CUST-1028", "invoice_id": "INV-20122", "amount": 22817.93, "currency": "AUD", "paid_at": "2026-06-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500358", "customer_id": "CUST-1049", "invoice_id": "INV-20342", "amount": 3935.9, "currency": "EUR", "paid_at": "2025-12-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500359", "customer_id": "CUST-1041", "invoice_id": "INV-20100", "amount": 1825.62, "currency": "MXN", "paid_at": "2026-04-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500360", "customer_id": "CUST-1031", "invoice_id": "INV-20410", "amount": 1268.67, "currency": "EUR", "paid_at": "2025-11-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500361", "customer_id": "CUST-1038", "invoice_id": "INV-20101", "amount": 19375.32, "currency": "EUR", "paid_at": "2025-08-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500362", "customer_id": "CUST-1016", "invoice_id": "INV-20338", "amount": 3688.06, "currency": "INR", "paid_at": "2026-03-05T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500363", "customer_id": "CUST-1024", "invoice_id": "INV-20573", "amount": 6969.02, "currency": "INR", "paid_at": "2026-02-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500364", "customer_id": "CUST-1033", "invoice_id": "INV-20467", "amount": 17027.71, "currency": "MXN", "paid_at": "2025-08-31T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500365", "customer_id": "CUST-1019", "invoice_id": "INV-20024", "amount": 39813.07, "currency": "INR", "paid_at": "2025-11-02T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500366", "customer_id": "CUST-1024", "invoice_id": "INV-20344", "amount": 2535.24, "currency": "INR", "paid_at": "2025-08-27T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500367", "customer_id": "CUST-1013", "invoice_id": "INV-20009", "amount": 789.67, "currency": "AUD", "paid_at": "2025-10-08T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500368", "customer_id": "CUST-1040", "invoice_id": "INV-20637", "amount": 1858.92, "currency": "INR", "paid_at": "2026-01-18T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500369", "customer_id": "CUST-1025", "invoice_id": "INV-20398", "amount": 1544.8, "currency": "SGD", "paid_at": "2026-05-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500370", "customer_id": "CUST-1031", "invoice_id": "INV-20638", "amount": 4534.1, "currency": "EUR", "paid_at": "2025-11-07T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500371", "customer_id": "CUST-1013", "invoice_id": "INV-20404", "amount": 2462.23, "currency": "AUD", "paid_at": "2026-04-26T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500372", "customer_id": "CUST-1013", "invoice_id": "INV-20404", "amount": 2462.23, "currency": "AUD", "paid_at": "2026-07-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500373", "customer_id": "CUST-1029", "invoice_id": "INV-20033", "amount": 2856.71, "currency": "MXN", "paid_at": "2025-10-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500374", "customer_id": "CUST-1008", "invoice_id": "INV-20076", "amount": 422.41, "currency": "GBP", "paid_at": "2026-02-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500375", "customer_id": "CUST-1058", "invoice_id": "INV-20654", "amount": 2003.97, "currency": "MXN", "paid_at": "2026-06-14T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500376", "customer_id": "CUST-1002", "invoice_id": "INV-20200", "amount": 11009.81, "currency": "GBP", "paid_at": "2026-02-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500377", "customer_id": "CUST-1022", "invoice_id": "INV-20656", "amount": 2097.09, "currency": "MXN", "paid_at": "2025-10-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500378", "customer_id": "CUST-1058", "invoice_id": "INV-20275", "amount": 589.75, "currency": "MXN", "paid_at": "2026-04-14T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500379", "customer_id": "CUST-1046", "invoice_id": "INV-20104", "amount": 1032.73, "currency": "MXN", "paid_at": "2026-02-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500380", "customer_id": "CUST-1042", "invoice_id": "INV-20623", "amount": 1611.59, "currency": "AUD", "paid_at": "2026-07-05T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500381", "customer_id": "CUST-1025", "invoice_id": "INV-20096", "amount": 853.83, "currency": "SGD", "paid_at": "2026-04-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500382", "customer_id": "CUST-1015", "invoice_id": "INV-20170", "amount": 5580.74, "currency": "INR", "paid_at": "2026-03-27T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500383", "customer_id": "CUST-1041", "invoice_id": "INV-20434", "amount": 14486.08, "currency": "MXN", "paid_at": "2026-05-25T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500384", "customer_id": "CUST-1053", "invoice_id": "INV-20691", "amount": 4237.01, "currency": "MXN", "paid_at": "2025-11-10T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500385", "customer_id": "CUST-1041", "invoice_id": "INV-20434", "amount": 14486.08, "currency": "MXN", "paid_at": "2025-11-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500386", "customer_id": "CUST-1003", "invoice_id": "INV-20241", "amount": 17436.07, "currency": "MXN", "paid_at": "2026-07-31T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500387", "customer_id": "CUST-1042", "invoice_id": "INV-20382", "amount": 10647.27, "currency": "AUD", "paid_at": "2025-10-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500388", "customer_id": "CUST-1016", "invoice_id": "INV-20298", "amount": 1367.07, "currency": "INR", "paid_at": "2026-08-02T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500389", "customer_id": "CUST-1031", "invoice_id": "INV-20410", "amount": 1268.67, "currency": "EUR", "paid_at": "2026-06-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500390", "customer_id": "CUST-1022", "invoice_id": "INV-20656", "amount": 2097.09, "currency": "MXN", "paid_at": "2025-11-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500391", "customer_id": "CUST-1046", "invoice_id": "INV-20233", "amount": 3581.64, "currency": "MXN", "paid_at": "2025-12-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500392", "customer_id": "CUST-1013", "invoice_id": "INV-20570", "amount": 16853.85, "currency": "AUD", "paid_at": "2026-03-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500393", "customer_id": "CUST-1010", "invoice_id": "INV-20136", "amount": 1589.27, "currency": "BRL", "paid_at": "2026-03-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500394", "customer_id": "CUST-1034", "invoice_id": "INV-20168", "amount": 51029.6, "currency": "AUD", "paid_at": "2025-11-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500395", "customer_id": "CUST-1029", "invoice_id": "INV-20693", "amount": 3565.14, "currency": "MXN", "paid_at": "2026-03-01T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500396", "customer_id": "CUST-1017", "invoice_id": "INV-20373", "amount": 714.27, "currency": "BRL", "paid_at": "2026-04-25T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500397", "customer_id": "CUST-1013", "invoice_id": "INV-20570", "amount": 16853.85, "currency": "AUD", "paid_at": "2026-03-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500398", "customer_id": "CUST-1006", "invoice_id": "INV-20147", "amount": 2746.95, "currency": "BRL", "paid_at": "2025-12-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500399", "customer_id": "CUST-1048", "invoice_id": "INV-20257", "amount": 1092.38, "currency": "USD", "paid_at": "2025-10-12T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500400", "customer_id": "CUST-1022", "invoice_id": "INV-20316", "amount": 2946.61, "currency": "MXN", "paid_at": "2026-04-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500401", "customer_id": "CUST-1057", "invoice_id": "INV-20452", "amount": 2974.32, "currency": "MXN", "paid_at": "2026-02-18T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500402", "customer_id": "CUST-1003", "invoice_id": "INV-20515", "amount": 3816.14, "currency": "MXN", "paid_at": "2025-12-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500403", "customer_id": "CUST-1039", "invoice_id": "INV-20599", "amount": 1374.44, "currency": "USD", "paid_at": "2026-04-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500404", "customer_id": "CUST-1009", "invoice_id": "INV-20527", "amount": 2330.07, "currency": "EUR", "paid_at": "2026-07-04T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500405", "customer_id": "CUST-1015", "invoice_id": "INV-20664", "amount": 8715.27, "currency": "INR", "paid_at": "2026-05-01T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500406", "customer_id": "CUST-1001", "invoice_id": "INV-20166", "amount": 10834.27, "currency": "INR", "paid_at": "2025-12-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500407", "customer_id": "CUST-1041", "invoice_id": "INV-20023", "amount": 14728.68, "currency": "MXN", "paid_at": "2026-05-26T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500408", "customer_id": "CUST-1053", "invoice_id": "INV-20691", "amount": 4237.01, "currency": "MXN", "paid_at": "2025-09-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500409", "customer_id": "CUST-1045", "invoice_id": "INV-20135", "amount": 4442.96, "currency": "INR", "paid_at": "2025-10-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500410", "customer_id": "CUST-1052", "invoice_id": "INV-20425", "amount": 9068.12, "currency": "INR", "paid_at": "2026-06-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500411", "customer_id": "CUST-1040", "invoice_id": "INV-20381", "amount": 3896.69, "currency": "INR", "paid_at": "2025-08-21T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500412", "customer_id": "CUST-1048", "invoice_id": "INV-20257", "amount": 1092.38, "currency": "USD", "paid_at": "2025-09-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500413", "customer_id": "CUST-1039", "invoice_id": "INV-20599", "amount": 1374.44, "currency": "USD", "paid_at": "2026-04-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500414", "customer_id": "CUST-1003", "invoice_id": "INV-20241", "amount": 17436.07, "currency": "MXN", "paid_at": "2026-01-09T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500415", "customer_id": "CUST-1050", "invoice_id": "INV-20379", "amount": 7503.12, "currency": "MXN", "paid_at": "2025-08-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500416", "customer_id": "CUST-1023", "invoice_id": "INV-20413", "amount": 1137.67, "currency": "EUR", "paid_at": "2025-10-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500417", "customer_id": "CUST-1027", "invoice_id": "INV-20066", "amount": 2615.06, "currency": "EUR", "paid_at": "2025-08-29T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500418", "customer_id": "CUST-1052", "invoice_id": "INV-20425", "amount": 9068.12, "currency": "INR", "paid_at": "2025-12-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500419", "customer_id": "CUST-1058", "invoice_id": "INV-20654", "amount": 2003.97, "currency": "MXN", "paid_at": "2026-02-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500420", "customer_id": "CUST-1035", "invoice_id": "INV-20184", "amount": 904.06, "currency": "USD", "paid_at": "2026-07-31T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500421", "customer_id": "CUST-1007", "invoice_id": "INV-20280", "amount": 840.05, "currency": "USD", "paid_at": "2026-05-18T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500422", "customer_id": "CUST-1022", "invoice_id": "INV-20172", "amount": 1876.79, "currency": "MXN", "paid_at": "2026-07-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500423", "customer_id": "CUST-1008", "invoice_id": "INV-20076", "amount": 422.41, "currency": "GBP", "paid_at": "2025-11-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500424", "customer_id": "CUST-1015", "invoice_id": "INV-20367", "amount": 1841.14, "currency": "INR", "paid_at": "2026-02-05T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500425", "customer_id": "CUST-1000", "invoice_id": "INV-20150", "amount": 1395.08, "currency": "MXN", "paid_at": "2025-11-29T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500426", "customer_id": "CUST-1039", "invoice_id": "INV-20583", "amount": 478.79, "currency": "USD", "paid_at": "2026-05-24T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500427", "customer_id": "CUST-1045", "invoice_id": "INV-20179", "amount": 4327.04, "currency": "INR", "paid_at": "2025-12-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500428", "customer_id": "CUST-1050", "invoice_id": "INV-20624", "amount": 13273.98, "currency": "MXN", "paid_at": "2025-08-04T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500429", "customer_id": "CUST-1055", "invoice_id": "INV-20003", "amount": 4540.6, "currency": "SGD", "paid_at": "2026-01-29T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500430", "customer_id": "CUST-1043", "invoice_id": "INV-20392", "amount": 9457.78, "currency": "MXN", "paid_at": "2026-07-02T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500431", "customer_id": "CUST-1049", "invoice_id": "INV-20342", "amount": 3935.9, "currency": "EUR", "paid_at": "2026-06-27T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500432", "customer_id": "CUST-1039", "invoice_id": "INV-20583", "amount": 478.79, "currency": "USD", "paid_at": "2026-07-01T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500433", "customer_id": "CUST-1041", "invoice_id": "INV-20023", "amount": 14728.68, "currency": "MXN", "paid_at": "2026-06-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500434", "customer_id": "CUST-1001", "invoice_id": "INV-20022", "amount": 5667.71, "currency": "INR", "paid_at": "2026-06-20T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500435", "customer_id": "CUST-1016", "invoice_id": "INV-20298", "amount": 1367.07, "currency": "INR", "paid_at": "2026-03-04T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500436", "customer_id": "CUST-1042", "invoice_id": "INV-20151", "amount": 2312.55, "currency": "AUD", "paid_at": "2025-10-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500437", "customer_id": "CUST-1038", "invoice_id": "INV-20227", "amount": 844.69, "currency": "EUR", "paid_at": "2026-06-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500438", "customer_id": "CUST-1043", "invoice_id": "INV-20485", "amount": 17283.2, "currency": "MXN", "paid_at": "2026-05-10T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500439", "customer_id": "CUST-1054", "invoice_id": "INV-20505", "amount": 3752.6, "currency": "AUD", "paid_at": "2026-08-19T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500440", "customer_id": "CUST-1031", "invoice_id": "INV-20410", "amount": 1268.67, "currency": "EUR", "paid_at": "2025-12-05T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500441", "customer_id": "CUST-1034", "invoice_id": "INV-20311", "amount": 11299.78, "currency": "AUD", "paid_at": "2026-08-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500442", "customer_id": "CUST-1026", "invoice_id": "INV-20557", "amount": 3805.3, "currency": "INR", "paid_at": "2025-08-13T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500443", "customer_id": "CUST-1011", "invoice_id": "INV-20670", "amount": 525.72, "currency": "AUD", "paid_at": "2025-11-05T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500444", "customer_id": "CUST-1038", "invoice_id": "INV-20101", "amount": 19375.32, "currency": "EUR", "paid_at": "2026-02-04T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500445", "customer_id": "CUST-1024", "invoice_id": "INV-20344", "amount": 2535.24, "currency": "INR", "paid_at": "2026-03-17T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500446", "customer_id": "CUST-1003", "invoice_id": "INV-20301", "amount": 792.19, "currency": "MXN", "paid_at": "2025-09-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500447", "customer_id": "CUST-1019", "invoice_id": "INV-20024", "amount": 39813.07, "currency": "INR", "paid_at": "2026-01-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500448", "customer_id": "CUST-1050", "invoice_id": "INV-20314", "amount": 11192.04, "currency": "MXN", "paid_at": "2025-09-07T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500449", "customer_id": "CUST-1022", "invoice_id": "INV-20488", "amount": 2773.21, "currency": "MXN", "paid_at": "2026-02-05T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500450", "customer_id": "CUST-1034", "invoice_id": "INV-20159", "amount": 296.1, "currency": "AUD", "paid_at": "2026-02-01T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500451", "customer_id": "CUST-1006", "invoice_id": "INV-20362", "amount": 191.19, "currency": "BRL", "paid_at": "2025-12-19T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500452", "customer_id": "CUST-1058", "invoice_id": "INV-20502", "amount": 2771.14, "currency": "MXN", "paid_at": "2026-08-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500453", "customer_id": "CUST-1021", "invoice_id": "INV-20537", "amount": 4397.83, "currency": "GBP", "paid_at": "2026-05-14T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500454", "customer_id": "CUST-1049", "invoice_id": "INV-20639", "amount": 2148.0, "currency": "EUR", "paid_at": "2026-05-31T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500455", "customer_id": "CUST-1034", "invoice_id": "INV-20168", "amount": 51029.6, "currency": "AUD", "paid_at": "2026-06-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500456", "customer_id": "CUST-1049", "invoice_id": "INV-20217", "amount": 659.99, "currency": "EUR", "paid_at": "2025-10-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500457", "customer_id": "CUST-1031", "invoice_id": "INV-20638", "amount": 4534.1, "currency": "EUR", "paid_at": "2025-12-05T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500458", "customer_id": "CUST-1013", "invoice_id": "INV-20130", "amount": 2788.79, "currency": "AUD", "paid_at": "2026-02-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500459", "customer_id": "CUST-1039", "invoice_id": "INV-20599", "amount": 1374.44, "currency": "USD", "paid_at": "2025-08-31T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500460", "customer_id": "CUST-1028", "invoice_id": "INV-20073", "amount": 3294.6, "currency": "AUD", "paid_at": "2025-08-20T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500461", "customer_id": "CUST-1018", "invoice_id": "INV-20489", "amount": 3689.46, "currency": "SGD", "paid_at": "2025-10-14T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500462", "customer_id": "CUST-1034", "invoice_id": "INV-20652", "amount": 12084.1, "currency": "AUD", "paid_at": "2026-07-08T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500463", "customer_id": "CUST-1048", "invoice_id": "INV-20438", "amount": 2725.63, "currency": "USD", "paid_at": "2026-02-14T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500464", "customer_id": "CUST-1026", "invoice_id": "INV-20059", "amount": 82382.78, "currency": "INR", "paid_at": "2025-08-31T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500465", "customer_id": "CUST-1017", "invoice_id": "INV-20020", "amount": 17648.23, "currency": "BRL", "paid_at": "2025-11-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500466", "customer_id": "CUST-1038", "invoice_id": "INV-20345", "amount": 238.35, "currency": "EUR", "paid_at": "2026-05-26T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500467", "customer_id": "CUST-1030", "invoice_id": "INV-20042", "amount": 13567.56, "currency": "AUD", "paid_at": "2025-12-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500468", "customer_id": "CUST-1031", "invoice_id": "INV-20638", "amount": 4534.1, "currency": "EUR", "paid_at": "2026-03-13T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500469", "customer_id": "CUST-1022", "invoice_id": "INV-20361", "amount": 14136.85, "currency": "MXN", "paid_at": "2025-09-02T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500470", "customer_id": "CUST-1051", "invoice_id": "INV-20682", "amount": 7659.99, "currency": "SGD", "paid_at": "2025-10-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500471", "customer_id": "CUST-1057", "invoice_id": "INV-20572", "amount": 313.5, "currency": "MXN", "paid_at": "2025-10-09T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500472", "customer_id": "CUST-1050", "invoice_id": "INV-20624", "amount": 13273.98, "currency": "MXN", "paid_at": "2025-10-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500473", "customer_id": "CUST-1046", "invoice_id": "INV-20617", "amount": 2297.37, "currency": "MXN", "paid_at": "2026-02-19T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500474", "customer_id": "CUST-1034", "invoice_id": "INV-20652", "amount": 12084.1, "currency": "AUD", "paid_at": "2026-01-14T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500475", "customer_id": "CUST-1021", "invoice_id": "INV-20189", "amount": 3431.35, "currency": "GBP", "paid_at": "2025-10-04T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500476", "customer_id": "CUST-1024", "invoice_id": "INV-20128", "amount": 2686.61, "currency": "INR", "paid_at": "2026-05-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500477", "customer_id": "CUST-1058", "invoice_id": "INV-20654", "amount": 2003.97, "currency": "MXN", "paid_at": "2026-01-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500478", "customer_id": "CUST-1028", "invoice_id": "INV-20119", "amount": 458.16, "currency": "AUD", "paid_at": "2026-08-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500479", "customer_id": "CUST-1041", "invoice_id": "INV-20434", "amount": 14486.08, "currency": "MXN", "paid_at": "2026-08-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500480", "customer_id": "CUST-1039", "invoice_id": "INV-20583", "amount": 478.79, "currency": "USD", "paid_at": "2025-10-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500481", "customer_id": "CUST-1048", "invoice_id": "INV-20257", "amount": 1092.38, "currency": "USD", "paid_at": "2026-06-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500482", "customer_id": "CUST-1055", "invoice_id": "INV-20003", "amount": 4540.6, "currency": "SGD", "paid_at": "2025-11-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500483", "customer_id": "CUST-1006", "invoice_id": "INV-20147", "amount": 2746.95, "currency": "BRL", "paid_at": "2026-07-26T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500484", "customer_id": "CUST-1024", "invoice_id": "INV-20240", "amount": 2684.35, "currency": "INR", "paid_at": "2026-04-10T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500485", "customer_id": "CUST-1055", "invoice_id": "INV-20111", "amount": 781.38, "currency": "SGD", "paid_at": "2026-03-05T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500486", "customer_id": "CUST-1056", "invoice_id": "INV-20034", "amount": 73313.47, "currency": "BRL", "paid_at": "2025-11-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500487", "customer_id": "CUST-1059", "invoice_id": "INV-20699", "amount": 1772.69, "currency": "MXN", "paid_at": "2026-02-13T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500488", "customer_id": "CUST-1037", "invoice_id": "INV-20352", "amount": 4084.97, "currency": "EUR", "paid_at": "2025-08-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500489", "customer_id": "CUST-1041", "invoice_id": "INV-20434", "amount": 14486.08, "currency": "MXN", "paid_at": "2025-08-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500490", "customer_id": "CUST-1055", "invoice_id": "INV-20003", "amount": 4540.6, "currency": "SGD", "paid_at": "2026-07-13T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500491", "customer_id": "CUST-1026", "invoice_id": "INV-20473", "amount": 3551.28, "currency": "INR", "paid_at": "2026-03-05T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500492", "customer_id": "CUST-1048", "invoice_id": "INV-20596", "amount": 1418.51, "currency": "USD", "paid_at": "2026-07-25T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500493", "customer_id": "CUST-1007", "invoice_id": "INV-20536", "amount": 9946.72, "currency": "USD", "paid_at": "2025-08-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500494", "customer_id": "CUST-1024", "invoice_id": "INV-20595", "amount": 4595.17, "currency": "INR", "paid_at": "2025-11-20T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500495", "customer_id": "CUST-1052", "invoice_id": "INV-20540", "amount": 1529.2, "currency": "INR", "paid_at": "2026-01-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500496", "customer_id": "CUST-1047", "invoice_id": "INV-20120", "amount": 2918.78, "currency": "MXN", "paid_at": "2026-01-26T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500497", "customer_id": "CUST-1059", "invoice_id": "INV-20106", "amount": 1425.1, "currency": "MXN", "paid_at": "2026-05-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500498", "customer_id": "CUST-1037", "invoice_id": "INV-20630", "amount": 320.07, "currency": "EUR", "paid_at": "2025-09-23T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500499", "customer_id": "CUST-1053", "invoice_id": "INV-20099", "amount": 1888.05, "currency": "MXN", "paid_at": "2025-08-03T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500500", "customer_id": "CUST-1034", "invoice_id": "INV-20255", "amount": 2676.89, "currency": "AUD", "paid_at": "2025-08-02T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500501", "customer_id": "CUST-1004", "invoice_id": "INV-20226", "amount": 4306.71, "currency": "AUD", "paid_at": "2026-03-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500502", "customer_id": "CUST-1032", "invoice_id": "INV-20443", "amount": 2753.08, "currency": "AUD", "paid_at": "2026-01-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500503", "customer_id": "CUST-1055", "invoice_id": "INV-20094", "amount": 56613.54, "currency": "SGD", "paid_at": "2026-06-02T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500504", "customer_id": "CUST-1025", "invoice_id": "INV-20370", "amount": 2162.93, "currency": "SGD", "paid_at": "2026-01-08T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500505", "customer_id": "CUST-1010", "invoice_id": "INV-20483", "amount": 2016.66, "currency": "BRL", "paid_at": "2026-06-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500506", "customer_id": "CUST-1038", "invoice_id": "INV-20227", "amount": 844.69, "currency": "EUR", "paid_at": "2026-05-07T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500507", "customer_id": "CUST-1044", "invoice_id": "INV-20302", "amount": 6503.29, "currency": "BRL", "paid_at": "2026-03-20T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500508", "customer_id": "CUST-1034", "invoice_id": "INV-20415", "amount": 4539.4, "currency": "AUD", "paid_at": "2025-11-19T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500509", "customer_id": "CUST-1046", "invoice_id": "INV-20103", "amount": 60457.94, "currency": "MXN", "paid_at": "2026-02-07T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500510", "customer_id": "CUST-1017", "invoice_id": "INV-20373", "amount": 714.27, "currency": "BRL", "paid_at": "2026-03-07T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500511", "customer_id": "CUST-1021", "invoice_id": "INV-20537", "amount": 4397.83, "currency": "GBP", "paid_at": "2026-07-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500512", "customer_id": "CUST-1044", "invoice_id": "INV-20302", "amount": 6503.29, "currency": "BRL", "paid_at": "2025-08-26T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500513", "customer_id": "CUST-1022", "invoice_id": "INV-20696", "amount": 3231.93, "currency": "MXN", "paid_at": "2026-02-08T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500514", "customer_id": "CUST-1042", "invoice_id": "INV-20382", "amount": 10647.27, "currency": "AUD", "paid_at": "2025-10-13T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500515", "customer_id": "CUST-1008", "invoice_id": "INV-20040", "amount": 330.17, "currency": "GBP", "paid_at": "2025-12-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500516", "customer_id": "CUST-1023", "invoice_id": "INV-20511", "amount": 1539.09, "currency": "EUR", "paid_at": "2026-04-24T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500517", "customer_id": "CUST-1004", "invoice_id": "INV-20306", "amount": 49812.78, "currency": "AUD", "paid_at": "2026-06-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500518", "customer_id": "CUST-1041", "invoice_id": "INV-20374", "amount": 2781.86, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500519", "customer_id": "CUST-1048", "invoice_id": "INV-20181", "amount": 834.39, "currency": "USD", "paid_at": "2025-07-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500520", "customer_id": "CUST-1014", "invoice_id": "INV-20083", "amount": 1936.7, "currency": "MXN", "paid_at": "2025-07-29T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500521", "customer_id": "CUST-1019", "invoice_id": "INV-20332", "amount": 3076.9, "currency": "INR", "paid_at": "2025-08-27T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500522", "customer_id": "CUST-1039", "invoice_id": "INV-20666", "amount": 2558.48, "currency": "USD", "paid_at": "2026-02-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500523", "customer_id": "CUST-1022", "invoice_id": "INV-20316", "amount": 2946.61, "currency": "MXN", "paid_at": "2026-02-09T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500524", "customer_id": "CUST-1056", "invoice_id": "INV-20692", "amount": 2555.97, "currency": "BRL", "paid_at": "2025-12-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500525", "customer_id": "CUST-1046", "invoice_id": "INV-20104", "amount": 1032.73, "currency": "MXN", "paid_at": "2026-08-04T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500526", "customer_id": "CUST-1038", "invoice_id": "INV-20660", "amount": 17556.12, "currency": "EUR", "paid_at": "2026-05-16T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500527", "customer_id": "CUST-1050", "invoice_id": "INV-20650", "amount": 4164.16, "currency": "MXN", "paid_at": "2025-09-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500528", "customer_id": "CUST-1015", "invoice_id": "INV-20000", "amount": 14403.23, "currency": "INR", "paid_at": "2025-12-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500529", "customer_id": "CUST-1044", "invoice_id": "INV-20602", "amount": 5553.61, "currency": "BRL", "paid_at": "2025-08-27T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500530", "customer_id": "CUST-1025", "invoice_id": "INV-20096", "amount": 853.83, "currency": "SGD", "paid_at": "2026-07-26T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500531", "customer_id": "CUST-1041", "invoice_id": "INV-20045", "amount": 8937.86, "currency": "MXN", "paid_at": "2025-12-06T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500532", "customer_id": "CUST-1057", "invoice_id": "INV-20400", "amount": 214.59, "currency": "MXN", "paid_at": "2026-08-16T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500533", "customer_id": "CUST-1057", "invoice_id": "INV-20572", "amount": 313.5, "currency": "MXN", "paid_at": "2025-10-05T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500534", "customer_id": "CUST-1038", "invoice_id": "INV-20551", "amount": 33599.76, "currency": "EUR", "paid_at": "2025-11-13T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500535", "customer_id": "CUST-1035", "invoice_id": "INV-20445", "amount": 12039.2, "currency": "USD", "paid_at": "2025-07-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500536", "customer_id": "CUST-1050", "invoice_id": "INV-20074", "amount": 2311.27, "currency": "MXN", "paid_at": "2025-10-04T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500537", "customer_id": "CUST-1042", "invoice_id": "INV-20054", "amount": 193.72, "currency": "AUD", "paid_at": "2025-10-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500538", "customer_id": "CUST-1015", "invoice_id": "INV-20170", "amount": 5580.74, "currency": "INR", "paid_at": "2026-05-02T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500539", "customer_id": "CUST-1050", "invoice_id": "INV-20074", "amount": 2311.27, "currency": "MXN", "paid_at": "2026-03-31T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500540", "customer_id": "CUST-1024", "invoice_id": "INV-20573", "amount": 6969.02, "currency": "INR", "paid_at": "2025-08-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500541", "customer_id": "CUST-1007", "invoice_id": "INV-20044", "amount": 2986.91, "currency": "USD", "paid_at": "2026-06-03T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500542", "customer_id": "CUST-1049", "invoice_id": "INV-20504", "amount": 1833.12, "currency": "EUR", "paid_at": "2025-07-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500543", "customer_id": "CUST-1020", "invoice_id": "INV-20436", "amount": 500.91, "currency": "SGD", "paid_at": "2026-01-09T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500544", "customer_id": "CUST-1043", "invoice_id": "INV-20485", "amount": 17283.2, "currency": "MXN", "paid_at": "2026-05-12T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500545", "customer_id": "CUST-1024", "invoice_id": "INV-20128", "amount": 2686.61, "currency": "INR", "paid_at": "2026-04-24T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500546", "customer_id": "CUST-1045", "invoice_id": "INV-20041", "amount": 1200.15, "currency": "INR", "paid_at": "2026-04-26T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500547", "customer_id": "CUST-1022", "invoice_id": "INV-20685", "amount": 2222.23, "currency": "MXN", "paid_at": "2026-08-11T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500548", "customer_id": "CUST-1039", "invoice_id": "INV-20583", "amount": 478.79, "currency": "USD", "paid_at": "2025-08-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500549", "customer_id": "CUST-1038", "invoice_id": "INV-20071", "amount": 28764.66, "currency": "EUR", "paid_at": "2026-06-16T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500550", "customer_id": "CUST-1023", "invoice_id": "INV-20511", "amount": 1539.09, "currency": "EUR", "paid_at": "2025-08-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500551", "customer_id": "CUST-1014", "invoice_id": "INV-20083", "amount": 1936.7, "currency": "MXN", "paid_at": "2026-04-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500552", "customer_id": "CUST-1018", "invoice_id": "INV-20091", "amount": 1177.77, "currency": "SGD", "paid_at": "2026-04-10T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500553", "customer_id": "CUST-1050", "invoice_id": "INV-20650", "amount": 4164.16, "currency": "MXN", "paid_at": "2025-08-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500554", "customer_id": "CUST-1042", "invoice_id": "INV-20382", "amount": 10647.27, "currency": "AUD", "paid_at": "2025-11-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500555", "customer_id": "CUST-1026", "invoice_id": "INV-20484", "amount": 33784.06, "currency": "INR", "paid_at": "2026-03-12T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500556", "customer_id": "CUST-1047", "invoice_id": "INV-20541", "amount": 2019.73, "currency": "MXN", "paid_at": "2026-07-25T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500557", "customer_id": "CUST-1038", "invoice_id": "INV-20660", "amount": 17556.12, "currency": "EUR", "paid_at": "2025-11-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500558", "customer_id": "CUST-1041", "invoice_id": "INV-20374", "amount": 2781.86, "currency": "MXN", "paid_at": "2026-05-21T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500559", "customer_id": "CUST-1014", "invoice_id": "INV-20083", "amount": 1936.7, "currency": "MXN", "paid_at": "2026-07-10T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500560", "customer_id": "CUST-1022", "invoice_id": "INV-20361", "amount": 14136.85, "currency": "MXN", "paid_at": "2026-03-19T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500561", "customer_id": "CUST-1047", "invoice_id": "INV-20126", "amount": 3255.7, "currency": "MXN", "paid_at": "2025-10-01T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500562", "customer_id": "CUST-1022", "invoice_id": "INV-20696", "amount": 3231.93, "currency": "MXN", "paid_at": "2025-10-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500563", "customer_id": "CUST-1002", "invoice_id": "INV-20200", "amount": 11009.81, "currency": "GBP", "paid_at": "2026-06-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500564", "customer_id": "CUST-1054", "invoice_id": "INV-20505", "amount": 3752.6, "currency": "AUD", "paid_at": "2025-10-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500565", "customer_id": "CUST-1034", "invoice_id": "INV-20164", "amount": 3773.56, "currency": "AUD", "paid_at": "2026-04-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500566", "customer_id": "CUST-1004", "invoice_id": "INV-20538", "amount": 1380.12, "currency": "AUD", "paid_at": "2026-02-17T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500567", "customer_id": "CUST-1051", "invoice_id": "INV-20682", "amount": 7659.99, "currency": "SGD", "paid_at": "2026-05-04T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500568", "customer_id": "CUST-1015", "invoice_id": "INV-20132", "amount": 2873.75, "currency": "INR", "paid_at": "2025-09-25T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500569", "customer_id": "CUST-1032", "invoice_id": "INV-20443", "amount": 2753.08, "currency": "AUD", "paid_at": "2026-07-18T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500570", "customer_id": "CUST-1042", "invoice_id": "INV-20054", "amount": 193.72, "currency": "AUD", "paid_at": "2026-05-20T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500571", "customer_id": "CUST-1049", "invoice_id": "INV-20448", "amount": 2981.77, "currency": "EUR", "paid_at": "2026-01-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500572", "customer_id": "CUST-1032", "invoice_id": "INV-20296", "amount": 3749.87, "currency": "AUD", "paid_at": "2026-07-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500573", "customer_id": "CUST-1051", "invoice_id": "INV-20057", "amount": 3970.38, "currency": "SGD", "paid_at": "2025-12-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500574", "customer_id": "CUST-1039", "invoice_id": "INV-20599", "amount": 1374.44, "currency": "USD", "paid_at": "2025-08-26T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500575", "customer_id": "CUST-1015", "invoice_id": "INV-20475", "amount": 8682.51, "currency": "INR", "paid_at": "2026-07-18T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500576", "customer_id": "CUST-1030", "invoice_id": "INV-20394", "amount": 4179.05, "currency": "AUD", "paid_at": "2025-12-15T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500577", "customer_id": "CUST-1010", "invoice_id": "INV-20043", "amount": 571.31, "currency": "BRL", "paid_at": "2026-02-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500578", "customer_id": "CUST-1048", "invoice_id": "INV-20257", "amount": 1092.38, "currency": "USD", "paid_at": "2026-04-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500579", "customer_id": "CUST-1051", "invoice_id": "INV-20283", "amount": 3174.37, "currency": "SGD", "paid_at": "2026-07-03T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500580", "customer_id": "CUST-1031", "invoice_id": "INV-20308", "amount": 1469.05, "currency": "EUR", "paid_at": "2025-11-16T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500581", "customer_id": "CUST-1003", "invoice_id": "INV-20346", "amount": 976.15, "currency": "MXN", "paid_at": "2026-01-16T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500582", "customer_id": "CUST-1015", "invoice_id": "INV-20067", "amount": 1593.37, "currency": "INR", "paid_at": "2026-05-07T00:00:00+00:00", "status": "returned"}
+{"payment_id": "PAY-500583", "customer_id": "CUST-1034", "invoice_id": "INV-20159", "amount": 296.1, "currency": "AUD", "paid_at": "2026-06-19T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500584", "customer_id": "CUST-1050", "invoice_id": "INV-20379", "amount": 7503.12, "currency": "MXN", "paid_at": "2025-11-19T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500585", "customer_id": "CUST-1003", "invoice_id": "INV-20515", "amount": 3816.14, "currency": "MXN", "paid_at": "2026-08-23T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500586", "customer_id": "CUST-1059", "invoice_id": "INV-20699", "amount": 1772.69, "currency": "MXN", "paid_at": "2026-07-22T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500587", "customer_id": "CUST-1014", "invoice_id": "INV-20061", "amount": 3016.46, "currency": "MXN", "paid_at": "2025-10-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500588", "customer_id": "CUST-1013", "invoice_id": "INV-20009", "amount": 789.67, "currency": "AUD", "paid_at": "2026-03-29T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500589", "customer_id": "CUST-1058", "invoice_id": "INV-20518", "amount": 14995.5, "currency": "MXN", "paid_at": "2025-07-26T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500590", "customer_id": "CUST-1026", "invoice_id": "INV-20399", "amount": 53295.17, "currency": "INR", "paid_at": "2025-12-12T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500591", "customer_id": "CUST-1051", "invoice_id": "INV-20115", "amount": 2909.79, "currency": "SGD", "paid_at": "2026-05-28T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500592", "customer_id": "CUST-1042", "invoice_id": "INV-20382", "amount": 10647.27, "currency": "AUD", "paid_at": "2025-11-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500593", "customer_id": "CUST-1024", "invoice_id": "INV-20128", "amount": 2686.61, "currency": "INR", "paid_at": "2026-05-02T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500594", "customer_id": "CUST-1056", "invoice_id": "INV-20692", "amount": 2555.97, "currency": "BRL", "paid_at": "2025-08-02T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500595", "customer_id": "CUST-1044", "invoice_id": "INV-20602", "amount": 5553.61, "currency": "BRL", "paid_at": "2025-09-13T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500596", "customer_id": "CUST-1047", "invoice_id": "INV-20618", "amount": 4149.52, "currency": "MXN", "paid_at": "2026-07-06T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500597", "customer_id": "CUST-1020", "invoice_id": "INV-20472", "amount": 1822.11, "currency": "SGD", "paid_at": "2025-09-30T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500598", "customer_id": "CUST-1022", "invoice_id": "INV-20627", "amount": 323.31, "currency": "MXN", "paid_at": "2025-11-19T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-500599", "customer_id": "CUST-1025", "invoice_id": "INV-20096", "amount": 853.83, "currency": "SGD", "paid_at": "2026-06-04T00:00:00+00:00", "status": "settled"}
+{"payment_id": "PAY-800000", "customer_id": "CUST-1056", "invoice_id": "INV-20026", "amount": 1886.12, "currency": "BRL", "paid_at": "2026-08-14T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-800004", "customer_id": "CUST-1010", "invoice_id": "INV-20659", "amount": 1995.83, "currency": "BRL", "paid_at": "2026-08-13T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-900050", "customer_id": "CUST-1038", "invoice_id": "INV-20071", "amount": 28745.91, "currency": "EUR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-900051", "customer_id": "CUST-1038", "invoice_id": "INV-20085", "amount": 3678.96, "currency": "EUR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-900110", "customer_id": "CUST-1034", "invoice_id": "INV-20027", "amount": 2611.15, "currency": "AUD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-900111", "customer_id": "CUST-1034", "invoice_id": "INV-20159", "amount": 266.1, "currency": "AUD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-900120", "customer_id": "CUST-1018", "invoice_id": "INV-20018", "amount": 997.65, "currency": "SGD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-900121", "customer_id": "CUST-1018", "invoice_id": "INV-20091", "amount": 1152.77, "currency": "SGD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-900170", "customer_id": "CUST-1023", "invoice_id": "INV-20052", "amount": 5410.2, "currency": "EUR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-900171", "customer_id": "CUST-1023", "invoice_id": "INV-20141", "amount": 465.77, "currency": "EUR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-800018", "customer_id": "CUST-1045", "invoice_id": "INV-20268", "amount": 14867.02, "currency": "INR", "paid_at": "2026-08-14T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-900210", "customer_id": "CUST-1007", "invoice_id": "INV-20044", "amount": 2956.91, "currency": "USD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-900211", "customer_id": "CUST-1007", "invoice_id": "INV-20146", "amount": 3665.42, "currency": "USD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-900230", "customer_id": "CUST-1050", "invoice_id": "INV-20031", "amount": 1096.63, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-900231", "customer_id": "CUST-1050", "invoice_id": "INV-20039", "amount": 3715.64, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-800025", "customer_id": "CUST-1044", "invoice_id": "INV-20498", "amount": 63438.76, "currency": "BRL", "paid_at": "2026-08-11T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-900270", "customer_id": "CUST-1053", "invoice_id": "INV-20002", "amount": 1131.03, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-900271", "customer_id": "CUST-1053", "invoice_id": "INV-20029", "amount": 502.33, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-900290", "customer_id": "CUST-1015", "invoice_id": "INV-20000", "amount": 14378.23, "currency": "INR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-900291", "customer_id": "CUST-1015", "invoice_id": "INV-20053", "amount": 2898.24, "currency": "INR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-900300", "customer_id": "CUST-1037", "invoice_id": "INV-20198", "amount": 3247.71, "currency": "EUR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-900301", "customer_id": "CUST-1037", "invoice_id": "INV-20220", "amount": 1981.2, "currency": "EUR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-900320", "customer_id": "CUST-1001", "invoice_id": "INV-20022", "amount": 5642.71, "currency": "INR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-900321", "customer_id": "CUST-1001", "invoice_id": "INV-20084", "amount": 9730.29, "currency": "INR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-900340", "customer_id": "CUST-1053", "invoice_id": "INV-20099", "amount": 1863.05, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-900341", "customer_id": "CUST-1053", "invoice_id": "INV-20157", "amount": 850.88, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-900410", "customer_id": "CUST-1018", "invoice_id": "INV-20213", "amount": 30663.58, "currency": "SGD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-900411", "customer_id": "CUST-1018", "invoice_id": "INV-20248", "amount": 2387.34, "currency": "SGD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-800042", "customer_id": "CUST-1054", "invoice_id": "INV-20218", "amount": 7343.48, "currency": "AUD", "paid_at": "2026-08-18T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-900440", "customer_id": "CUST-1017", "invoice_id": "INV-20020", "amount": 17618.23, "currency": "BRL", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-900441", "customer_id": "CUST-1017", "invoice_id": "INV-20056", "amount": 2081.39, "currency": "BRL", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-800048", "customer_id": "CUST-1021", "invoice_id": "INV-20641", "amount": 2012.69, "currency": "GBP", "paid_at": "2026-08-08T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-800049", "customer_id": "CUST-1026", "invoice_id": "INV-20649", "amount": 51760.48, "currency": "INR", "paid_at": "2026-08-06T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-900510", "customer_id": "CUST-1046", "invoice_id": "INV-20046", "amount": 1823.48, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-900511", "customer_id": "CUST-1046", "invoice_id": "INV-20103", "amount": 60439.19, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-900530", "customer_id": "CUST-1024", "invoice_id": "INV-20128", "amount": 2661.61, "currency": "INR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-900531", "customer_id": "CUST-1024", "invoice_id": "INV-20139", "amount": 4318.19, "currency": "INR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-800056", "customer_id": "CUST-1012", "invoice_id": "INV-20077", "amount": 16136.54, "currency": "EUR", "paid_at": "2026-08-06T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-900570", "customer_id": "CUST-1034", "invoice_id": "INV-20164", "amount": 3754.81, "currency": "AUD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-900571", "customer_id": "CUST-1034", "invoice_id": "INV-20168", "amount": 51010.85, "currency": "AUD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-900580", "customer_id": "CUST-1020", "invoice_id": "INV-20013", "amount": 2911.13, "currency": "SGD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-900581", "customer_id": "CUST-1020", "invoice_id": "INV-20117", "amount": 2147.59, "currency": "SGD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-800063", "customer_id": "CUST-1044", "invoice_id": "INV-20229", "amount": 3998.53, "currency": "BRL", "paid_at": "2026-08-18T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-900650", "customer_id": "CUST-1003", "invoice_id": "INV-20086", "amount": 2693.32, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-900651", "customer_id": "CUST-1003", "invoice_id": "INV-20241", "amount": 17423.57, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-900690", "customer_id": "CUST-1049", "invoice_id": "INV-20028", "amount": 13677.39, "currency": "EUR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-900691", "customer_id": "CUST-1049", "invoice_id": "INV-20131", "amount": 9321.78, "currency": "EUR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-800070", "customer_id": "CUST-1049", "invoice_id": "INV-20566", "amount": 1760.7, "currency": "EUR", "paid_at": "2026-08-07T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-900710", "customer_id": "CUST-1044", "invoice_id": "INV-20015", "amount": 2109.21, "currency": "BRL", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-900711", "customer_id": "CUST-1044", "invoice_id": "INV-20049", "amount": 1956.32, "currency": "BRL", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-900720", "customer_id": "CUST-1038", "invoice_id": "INV-20101", "amount": 19345.32, "currency": "EUR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-900721", "customer_id": "CUST-1038", "invoice_id": "INV-20188", "amount": 4439.39, "currency": "EUR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-900780", "customer_id": "CUST-1040", "invoice_id": "INV-20011", "amount": 3959.52, "currency": "INR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-900781", "customer_id": "CUST-1040", "invoice_id": "INV-20116", "amount": 406.29, "currency": "INR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-900830", "customer_id": "CUST-1021", "invoice_id": "INV-20032", "amount": 331.66, "currency": "GBP", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-900831", "customer_id": "CUST-1021", "invoice_id": "INV-20189", "amount": 3406.35, "currency": "GBP", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-900850", "customer_id": "CUST-1021", "invoice_id": "INV-20278", "amount": 16111.38, "currency": "GBP", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-900851", "customer_id": "CUST-1021", "invoice_id": "INV-20390", "amount": 4548.63, "currency": "GBP", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-800086", "customer_id": "CUST-1042", "invoice_id": "INV-20193", "amount": 17768.42, "currency": "AUD", "paid_at": "2026-08-10T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-800088", "customer_id": "CUST-1010", "invoice_id": "INV-20190", "amount": 2217.84, "currency": "BRL", "paid_at": "2026-08-07T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-900890", "customer_id": "CUST-1057", "invoice_id": "INV-20158", "amount": 3485.83, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-900891", "customer_id": "CUST-1057", "invoice_id": "INV-20210", "amount": 2729.2, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-900950", "customer_id": "CUST-1050", "invoice_id": "INV-20074", "amount": 2281.27, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-900951", "customer_id": "CUST-1050", "invoice_id": "INV-20163", "amount": 11786.08, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-900990", "customer_id": "CUST-1034", "invoice_id": "INV-20255", "amount": 2646.89, "currency": "AUD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-900991", "customer_id": "CUST-1034", "invoice_id": "INV-20311", "amount": 11269.78, "currency": "AUD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-901030", "customer_id": "CUST-1028", "invoice_id": "INV-20073", "amount": 3275.85, "currency": "AUD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-901031", "customer_id": "CUST-1028", "invoice_id": "INV-20119", "amount": 439.41, "currency": "AUD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-901060", "customer_id": "CUST-1034", "invoice_id": "INV-20358", "amount": 1676.16, "currency": "AUD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-901061", "customer_id": "CUST-1034", "invoice_id": "INV-20397", "amount": 2425.38, "currency": "AUD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-901090", "customer_id": "CUST-1027", "invoice_id": "INV-20006", "amount": 964.61, "currency": "EUR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-901091", "customer_id": "CUST-1027", "invoice_id": "INV-20036", "amount": 2439.11, "currency": "EUR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-901100", "customer_id": "CUST-1045", "invoice_id": "INV-20001", "amount": 2439.79, "currency": "INR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-901101", "customer_id": "CUST-1045", "invoice_id": "INV-20041", "amount": 1181.4, "currency": "INR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-800113", "customer_id": "CUST-1009", "invoice_id": "INV-20219", "amount": 2611.9, "currency": "EUR", "paid_at": "2026-08-13T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-901180", "customer_id": "CUST-1033", "invoice_id": "INV-20318", "amount": 624.29, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-901181", "customer_id": "CUST-1033", "invoice_id": "INV-20341", "amount": 3055.53, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-901210", "customer_id": "CUST-1043", "invoice_id": "INV-20016", "amount": 1428.24, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-901211", "customer_id": "CUST-1043", "invoice_id": "INV-20312", "amount": 14080.39, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-800122", "customer_id": "CUST-1041", "invoice_id": "INV-20679", "amount": 4374.46, "currency": "MXN", "paid_at": "2026-08-15T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-901240", "customer_id": "CUST-1054", "invoice_id": "INV-20062", "amount": 214.46, "currency": "AUD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-901241", "customer_id": "CUST-1054", "invoice_id": "INV-20459", "amount": 2389.97, "currency": "AUD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-901280", "customer_id": "CUST-1047", "invoice_id": "INV-20048", "amount": 376.54, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-901281", "customer_id": "CUST-1047", "invoice_id": "INV-20120", "amount": 2906.28, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-800129", "customer_id": "CUST-1038", "invoice_id": "INV-20442", "amount": 355.73, "currency": "EUR", "paid_at": "2026-08-23T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-901300", "customer_id": "CUST-1049", "invoice_id": "INV-20145", "amount": 11152.34, "currency": "EUR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-901301", "customer_id": "CUST-1049", "invoice_id": "INV-20195", "amount": 2823.9, "currency": "EUR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-800131", "customer_id": "CUST-1044", "invoice_id": "INV-20528", "amount": 4105.32, "currency": "BRL", "paid_at": "2026-08-20T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-901340", "customer_id": "CUST-1033", "invoice_id": "INV-20440", "amount": 2893.33, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-901341", "customer_id": "CUST-1033", "invoice_id": "INV-20467", "amount": 17002.71, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-901360", "customer_id": "CUST-1046", "invoice_id": "INV-20104", "amount": 1020.23, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-901361", "customer_id": "CUST-1046", "invoice_id": "INV-20205", "amount": 3829.04, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-901370", "customer_id": "CUST-1021", "invoice_id": "INV-20429", "amount": 4400.99, "currency": "GBP", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-901371", "customer_id": "CUST-1021", "invoice_id": "INV-20533", "amount": 11260.75, "currency": "GBP", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-800138", "customer_id": "CUST-1013", "invoice_id": "INV-20328", "amount": 382.24, "currency": "AUD", "paid_at": "2026-08-11T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-901390", "customer_id": "CUST-1020", "invoice_id": "INV-20140", "amount": 3301.28, "currency": "SGD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-901391", "customer_id": "CUST-1020", "invoice_id": "INV-20197", "amount": 8173.42, "currency": "SGD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-901420", "customer_id": "CUST-1028", "invoice_id": "INV-20122", "amount": 22792.93, "currency": "AUD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-901421", "customer_id": "CUST-1028", "invoice_id": "INV-20152", "amount": 1620.21, "currency": "AUD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-800144", "customer_id": "CUST-1037", "invoice_id": "INV-20667", "amount": 2195.87, "currency": "EUR", "paid_at": "2026-08-22T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-901450", "customer_id": "CUST-1049", "invoice_id": "INV-20215", "amount": 458.88, "currency": "EUR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-901451", "customer_id": "CUST-1049", "invoice_id": "INV-20217", "amount": 629.99, "currency": "EUR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-901470", "customer_id": "CUST-1033", "invoice_id": "INV-20636", "amount": 2590.26, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-901471", "customer_id": "CUST-1033", "invoice_id": "INV-20651", "amount": 4499.46, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-901480", "customer_id": "CUST-1012", "invoice_id": "INV-20148", "amount": 10008.79, "currency": "EUR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-901481", "customer_id": "CUST-1012", "invoice_id": "INV-20165", "amount": 2917.28, "currency": "EUR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-800149", "customer_id": "CUST-1049", "invoice_id": "INV-20532", "amount": 1421.48, "currency": "EUR", "paid_at": "2026-08-12T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-901520", "customer_id": "CUST-1020", "invoice_id": "INV-20239", "amount": 8839.99, "currency": "SGD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-901521", "customer_id": "CUST-1020", "invoice_id": "INV-20273", "amount": 2743.43, "currency": "SGD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-901540", "customer_id": "CUST-1034", "invoice_id": "INV-20415", "amount": 4520.65, "currency": "AUD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-901541", "customer_id": "CUST-1034", "invoice_id": "INV-20490", "amount": 4083.92, "currency": "AUD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-800155", "customer_id": "CUST-1019", "invoice_id": "INV-20068", "amount": 4487.91, "currency": "INR", "paid_at": "2026-08-09T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-901560", "customer_id": "CUST-1003", "invoice_id": "INV-20265", "amount": 4650.03, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-901561", "customer_id": "CUST-1003", "invoice_id": "INV-20301", "amount": 779.69, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-901570", "customer_id": "CUST-1009", "invoice_id": "INV-20070", "amount": 885.58, "currency": "EUR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-901571", "customer_id": "CUST-1009", "invoice_id": "INV-20095", "amount": 6796.16, "currency": "EUR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-800160", "customer_id": "CUST-1039", "invoice_id": "INV-20105", "amount": 3069.93, "currency": "USD", "paid_at": "2026-08-10T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-800161", "customer_id": "CUST-1024", "invoice_id": "INV-20245", "amount": 8187.9, "currency": "INR", "paid_at": "2026-08-17T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-901640", "customer_id": "CUST-1025", "invoice_id": "INV-20065", "amount": 2228.72, "currency": "SGD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-901641", "customer_id": "CUST-1025", "invoice_id": "INV-20089", "amount": 3411.09, "currency": "SGD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-901660", "customer_id": "CUST-1050", "invoice_id": "INV-20309", "amount": 1918.97, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-901661", "customer_id": "CUST-1050", "invoice_id": "INV-20314", "amount": 11162.04, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-901680", "customer_id": "CUST-1012", "invoice_id": "INV-20207", "amount": 1466.28, "currency": "EUR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-901681", "customer_id": "CUST-1012", "invoice_id": "INV-20281", "amount": 481.55, "currency": "EUR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-901700", "customer_id": "CUST-1051", "invoice_id": "INV-20057", "amount": 3945.38, "currency": "SGD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-901701", "customer_id": "CUST-1051", "invoice_id": "INV-20058", "amount": 4272.7, "currency": "SGD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-800171", "customer_id": "CUST-1029", "invoice_id": "INV-20371", "amount": 11169.09, "currency": "MXN", "paid_at": "2026-08-21T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-901720", "customer_id": "CUST-1013", "invoice_id": "INV-20004", "amount": 3651.58, "currency": "AUD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-901721", "customer_id": "CUST-1013", "invoice_id": "INV-20009", "amount": 777.17, "currency": "AUD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-901740", "customer_id": "CUST-1051", "invoice_id": "INV-20115", "amount": 2891.04, "currency": "SGD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-901741", "customer_id": "CUST-1051", "invoice_id": "INV-20178", "amount": 2994.56, "currency": "SGD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-901830", "customer_id": "CUST-1040", "invoice_id": "INV-20173", "amount": 72993.3, "currency": "INR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-901831", "customer_id": "CUST-1040", "invoice_id": "INV-20289", "amount": 8852.3, "currency": "INR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-800187", "customer_id": "CUST-1008", "invoice_id": "INV-20625", "amount": 6042.69, "currency": "GBP", "paid_at": "2026-08-11T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-800196", "customer_id": "CUST-1030", "invoice_id": "INV-20668", "amount": 3209.62, "currency": "AUD", "paid_at": "2026-08-22T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-901970", "customer_id": "CUST-1045", "invoice_id": "INV-20135", "amount": 4430.46, "currency": "INR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-901971", "customer_id": "CUST-1045", "invoice_id": "INV-20156", "amount": 75078.79, "currency": "INR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-901980", "customer_id": "CUST-1030", "invoice_id": "INV-20042", "amount": 13537.56, "currency": "AUD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-901981", "customer_id": "CUST-1030", "invoice_id": "INV-20113", "amount": 12420.8, "currency": "AUD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-901990", "customer_id": "CUST-1035", "invoice_id": "INV-20082", "amount": 2262.21, "currency": "USD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-901991", "customer_id": "CUST-1035", "invoice_id": "INV-20184", "amount": 885.31, "currency": "USD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-902130", "customer_id": "CUST-1032", "invoice_id": "INV-20014", "amount": 12130.98, "currency": "AUD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-902131", "customer_id": "CUST-1032", "invoice_id": "INV-20236", "amount": 3896.76, "currency": "AUD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-902140", "customer_id": "CUST-1044", "invoice_id": "INV-20055", "amount": 3660.8, "currency": "BRL", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-902141", "customer_id": "CUST-1044", "invoice_id": "INV-20123", "amount": 1433.58, "currency": "BRL", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-902160", "customer_id": "CUST-1019", "invoice_id": "INV-20024", "amount": 39788.07, "currency": "INR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-902161", "customer_id": "CUST-1019", "invoice_id": "INV-20332", "amount": 3051.9, "currency": "INR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-902180", "customer_id": "CUST-1014", "invoice_id": "INV-20061", "amount": 2991.46, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-902181", "customer_id": "CUST-1014", "invoice_id": "INV-20083", "amount": 1911.7, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-902200", "customer_id": "CUST-1049", "invoice_id": "INV-20252", "amount": 3691.42, "currency": "EUR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-902201", "customer_id": "CUST-1049", "invoice_id": "INV-20266", "amount": 4300.92, "currency": "EUR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-902230", "customer_id": "CUST-1005", "invoice_id": "INV-20110", "amount": 3889.68, "currency": "EUR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-902231", "customer_id": "CUST-1005", "invoice_id": "INV-20225", "amount": 863.07, "currency": "EUR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-902240", "customer_id": "CUST-1041", "invoice_id": "INV-20023", "amount": 14703.68, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-902241", "customer_id": "CUST-1041", "invoice_id": "INV-20045", "amount": 8912.86, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-902310", "customer_id": "CUST-1004", "invoice_id": "INV-20060", "amount": 8875.06, "currency": "AUD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-902311", "customer_id": "CUST-1004", "invoice_id": "INV-20212", "amount": 9220.05, "currency": "AUD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-902340", "customer_id": "CUST-1045", "invoice_id": "INV-20179", "amount": 4297.04, "currency": "INR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-902341", "customer_id": "CUST-1045", "invoice_id": "INV-20351", "amount": 10541.12, "currency": "INR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-800236", "customer_id": "CUST-1024", "invoice_id": "INV-20276", "amount": 1178.42, "currency": "INR", "paid_at": "2026-08-13T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-902370", "customer_id": "CUST-1020", "invoice_id": "INV-20436", "amount": 482.16, "currency": "SGD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-902371", "customer_id": "CUST-1020", "invoice_id": "INV-20472", "amount": 1803.36, "currency": "SGD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-902400", "customer_id": "CUST-1026", "invoice_id": "INV-20059", "amount": 82370.28, "currency": "INR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-902401", "customer_id": "CUST-1026", "invoice_id": "INV-20064", "amount": 11138.09, "currency": "INR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-800241", "customer_id": "CUST-1028", "invoice_id": "INV-20366", "amount": 808.86, "currency": "AUD", "paid_at": "2026-08-07T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-902420", "customer_id": "CUST-1022", "invoice_id": "INV-20138", "amount": 2945.08, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-902421", "customer_id": "CUST-1022", "invoice_id": "INV-20172", "amount": 1851.79, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-902440", "customer_id": "CUST-1058", "invoice_id": "INV-20275", "amount": 577.25, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-902441", "customer_id": "CUST-1058", "invoice_id": "INV-20310", "amount": 3325.42, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-902470", "customer_id": "CUST-1048", "invoice_id": "INV-20181", "amount": 821.89, "currency": "USD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-902471", "customer_id": "CUST-1048", "invoice_id": "INV-20257", "amount": 1079.88, "currency": "USD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-800250", "customer_id": "CUST-1019", "invoice_id": "INV-20407", "amount": 1119.06, "currency": "INR", "paid_at": "2026-08-21T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-902560", "customer_id": "CUST-1028", "invoice_id": "INV-20214", "amount": 7650.45, "currency": "AUD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-902561", "customer_id": "CUST-1028", "invoice_id": "INV-20507", "amount": 3956.81, "currency": "AUD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-800259", "customer_id": "CUST-1031", "invoice_id": "INV-20038", "amount": 2060.71, "currency": "EUR", "paid_at": "2026-08-09T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-800260", "customer_id": "CUST-1051", "invoice_id": "INV-20228", "amount": 3192.38, "currency": "SGD", "paid_at": "2026-08-23T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-902670", "customer_id": "CUST-1031", "invoice_id": "INV-20155", "amount": 9130.68, "currency": "EUR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-902671", "customer_id": "CUST-1031", "invoice_id": "INV-20293", "amount": 4151.12, "currency": "EUR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-902700", "customer_id": "CUST-1048", "invoice_id": "INV-20348", "amount": 2748.42, "currency": "USD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-902701", "customer_id": "CUST-1048", "invoice_id": "INV-20438", "amount": 2706.88, "currency": "USD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-902720", "customer_id": "CUST-1042", "invoice_id": "INV-20054", "amount": 168.72, "currency": "AUD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-902721", "customer_id": "CUST-1042", "invoice_id": "INV-20151", "amount": 2287.55, "currency": "AUD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-902740", "customer_id": "CUST-1026", "invoice_id": "INV-20088", "amount": 1165.55, "currency": "INR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-902741", "customer_id": "CUST-1026", "invoice_id": "INV-20399", "amount": 53265.17, "currency": "INR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-902760", "customer_id": "CUST-1000", "invoice_id": "INV-20150", "amount": 1365.08, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-902761", "customer_id": "CUST-1000", "invoice_id": "INV-20191", "amount": 15253.79, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-902830", "customer_id": "CUST-1024", "invoice_id": "INV-20240", "amount": 2659.35, "currency": "INR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-902831", "customer_id": "CUST-1024", "invoice_id": "INV-20297", "amount": 33530.18, "currency": "INR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-902850", "customer_id": "CUST-1051", "invoice_id": "INV-20283", "amount": 3149.37, "currency": "SGD", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-902851", "customer_id": "CUST-1051", "invoice_id": "INV-20330", "amount": 17042.48, "currency": "SGD", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-902860", "customer_id": "CUST-1001", "invoice_id": "INV-20166", "amount": 10804.27, "currency": "INR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-902861", "customer_id": "CUST-1001", "invoice_id": "INV-20206", "amount": 3592.87, "currency": "INR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 30.0 bank fee, accepted"}
+{"payment_id": "PAY-800290", "customer_id": "CUST-1015", "invoice_id": "INV-20109", "amount": 77535.93, "currency": "INR", "paid_at": "2026-08-18T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-902940", "customer_id": "CUST-1041", "invoice_id": "INV-20100", "amount": 1813.12, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-902941", "customer_id": "CUST-1041", "invoice_id": "INV-20374", "amount": 2769.36, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-902970", "customer_id": "CUST-1022", "invoice_id": "INV-20230", "amount": 3130.1, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-902971", "customer_id": "CUST-1022", "invoice_id": "INV-20316", "amount": 2927.86, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-903030", "customer_id": "CUST-1046", "invoice_id": "INV-20233", "amount": 3562.89, "currency": "MXN", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-903031", "customer_id": "CUST-1046", "invoice_id": "INV-20612", "amount": 3470.88, "currency": "MXN", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-800304", "customer_id": "CUST-1011", "invoice_id": "INV-20633", "amount": 499.45, "currency": "AUD", "paid_at": "2026-08-23T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-903050", "customer_id": "CUST-1056", "invoice_id": "INV-20034", "amount": 73288.47, "currency": "BRL", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-903051", "customer_id": "CUST-1056", "invoice_id": "INV-20081", "amount": 2862.33, "currency": "BRL", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-903100", "customer_id": "CUST-1045", "invoice_id": "INV-20369", "amount": 4287.17, "currency": "INR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-903101", "customer_id": "CUST-1045", "invoice_id": "INV-20644", "amount": 1057.81, "currency": "INR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-903120", "customer_id": "CUST-1001", "invoice_id": "INV-20315", "amount": 997.08, "currency": "INR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-903121", "customer_id": "CUST-1001", "invoice_id": "INV-20357", "amount": 8939.34, "currency": "INR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-903140", "customer_id": "CUST-1016", "invoice_id": "INV-20298", "amount": 1342.07, "currency": "INR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-903141", "customer_id": "CUST-1016", "invoice_id": "INV-20338", "amount": 3663.06, "currency": "INR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 25.0 bank fee, accepted"}
+{"payment_id": "PAY-903180", "customer_id": "CUST-1031", "invoice_id": "INV-20308", "amount": 1450.3, "currency": "EUR", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-903181", "customer_id": "CUST-1031", "invoice_id": "INV-20386", "amount": 195.71, "currency": "EUR", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 18.75 bank fee, accepted"}
+{"payment_id": "PAY-800320", "customer_id": "CUST-1032", "invoice_id": "INV-20476", "amount": 1352.79, "currency": "AUD", "paid_at": "2026-08-09T00:00:00+00:00", "status": "settled", "note": "original submission, settled"}
+{"payment_id": "PAY-903210", "customer_id": "CUST-1056", "invoice_id": "INV-20090", "amount": 2088.24, "currency": "BRL", "paid_at": "2026-07-17T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}
+{"payment_id": "PAY-903211", "customer_id": "CUST-1056", "invoice_id": "INV-20692", "amount": 2543.47, "currency": "BRL", "paid_at": "2026-06-12T00:00:00+00:00", "status": "settled", "note": "short-paid by 12.5 bank fee, accepted"}

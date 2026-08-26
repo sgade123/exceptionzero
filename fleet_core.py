@@ -140,27 +140,20 @@ def validate_referenced_keys(res: ProposedResolution, ctx: ContextOutput) -> Non
 # model's job; the decision boundary is the system's.
 # ==========================================================================
 
-COMPENSATING = {
-    "matched_alias_and_resubmitted": "cancel_resubmission_and_reopen_exception",
-    "matched_invoice_by_amount_and_applied": "unapply_cash_and_reopen_exception",
-    "classified_as_bank_fee_and_wrote_off_difference": "reverse_writeoff_and_reopen",
-    "voided_second_submission": "unvoid_submission_and_reopen",
-}
+def compensating_action(action: str, domain=None) -> str | None:
+    """Written BEFORE execution. An action with no compensating path is not
+    reversible, and the gate will have escalated it. Sourced from the active
+    domain connector so a new domain declares its own undo semantics."""
+    if domain is None:
+        from domains import current
+        domain = current()
+    comp = domain.actions.get(action)
+    return None if comp in (None, "none") else comp
 
 
-def compensating_action(action: str) -> str | None:
-    """Written BEFORE execution. If no compensating action exists, the action
-    is not reversible and the gate will have escalated it already."""
-    return COMPENSATING.get(action)
-
-
-AUTO_RESOLVABLE = {
-    "NAME_MISMATCH", "UNAPPLIED_CASH", "AMOUNT_MISMATCH", "DUPLICATE_SUBMISSION",
-}
-
-CONFIDENCE_FLOOR = 0.85
-VALUE_CEILING = 5_000.0
-FEE_TOLERANCE = 50.0        # plausible bank fee / FX drift on a mismatch
+# Policy comes from the active domain connector, not from constants here.
+# The gate logic below never mentions payments.
+FEE_TOLERANCE = 50.0        # plausible fee / rounding drift on a mismatch
 
 
 def risk_gate(
@@ -168,7 +161,13 @@ def risk_gate(
     exception: dict[str, Any],
     customer: dict[str, Any],
     injection_detected: bool = False,
+    domain=None,
 ) -> GateOutput:
+    """The act/escalate boundary. Deterministic by design — a probabilistic
+    gate is not a control. Thresholds come from the domain connector."""
+    if domain is None:
+        from domains import current
+        domain = current()
     reasons: list[str] = []
 
     if injection_detected:
@@ -185,22 +184,24 @@ def risk_gate(
             reasons=["diagnosis proposed escalation: " + (res.root_cause or "no resolution")],
         )
 
-    if exception.get("exception_type") not in AUTO_RESOLVABLE:
+    if exception.get("exception_type") not in domain.auto_resolvable:
         reasons.append(f"type {exception.get('exception_type')} is never auto-resolved")
-    if res.confidence < CONFIDENCE_FLOOR:
-        reasons.append(f"confidence {res.confidence:.2f} below floor {CONFIDENCE_FLOOR}")
-    if float(exception.get("amount", 0)) > VALUE_CEILING:
-        reasons.append(f"amount {exception.get('amount')} exceeds ceiling {VALUE_CEILING}")
+    if res.confidence < domain.confidence_floor:
+        reasons.append(f"confidence {res.confidence:.2f} below floor "
+                       f"{domain.confidence_floor}")
+    if float(exception.get("amount", 0)) > domain.value_ceiling:
+        reasons.append(f"{domain.value_noun} {exception.get('amount')} exceeds "
+                       f"ceiling {domain.value_ceiling}")
     # Reversibility is a property of the system, not an opinion of the model.
     # An action is reversible iff a compensating action is defined for it.
     # Trusting the model here would let a confident wrong answer widen its own
     # authority — the same failure the gate exists to prevent.
-    if compensating_action(res.action) is None:
+    if compensating_action(res.action, domain) is None:
         reasons.append(f"no compensating action defined for '{res.action}'")
     if customer.get("screening_risk") == "elevated":
-        reasons.append("counterparty carries elevated screening risk")
-    if customer.get("payment_count", 0) < 3:
-        reasons.append("insufficient counterparty payment history")
+        reasons.append(f"{domain.party_noun} carries elevated screening risk")
+    if customer.get("payment_count", 0) < domain.min_counterparty_history:
+        reasons.append(f"insufficient {domain.party_noun} history")
 
     decision = Decision.ESCALATE if reasons else Decision.AUTO_RESOLVE
     if decision is Decision.AUTO_RESOLVE:

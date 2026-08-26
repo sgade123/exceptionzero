@@ -131,6 +131,16 @@ def triage(exc: dict) -> TriageOutput:
     untrusted_text = " ".join(str(exc.get(f) or "") for f in
                               ("memo", "counterparty_name_on_payment"))
     verdict = screen(untrusted_text)
+
+    # Route the cheap, high-volume label to the small model. Gemini is
+    # reserved for diagnosis, where the reasoning actually matters.
+    # Gemma never sees the untrusted memo — it works from structured fields
+    # only, so the injection surface stays on one model, not two.
+    if not verdict.blocked:
+        import gemma
+        cheap = gemma.classify(exc)
+        if cheap is not None:
+            return cheap
     payload = {
         "exception_id": exc["exception_id"],
         "bank_return_code": exc.get("bank_return_code"),
