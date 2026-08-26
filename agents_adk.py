@@ -79,7 +79,12 @@ def _armor_managed(text: str) -> ArmorVerdict | None:
         return None
     try:
         from google.cloud import modelarmor_v1
-        client = modelarmor_v1.ModelArmorClient()
+        # Model Armor templates are regional. The client must target the same
+        # region or the call fails and we silently fall back to the local
+        # detector — which looks identical in the logs except for the source.
+        region = ARMOR_TEMPLATE.split("/locations/")[1].split("/")[0]
+        client = modelarmor_v1.ModelArmorClient(client_options={
+            "api_endpoint": f"modelarmor.{region}.rep.googleapis.com"})
         resp = client.sanitize_user_prompt(
             request=modelarmor_v1.SanitizeUserPromptRequest(
                 name=ARMOR_TEMPLATE,
@@ -87,11 +92,18 @@ def _armor_managed(text: str) -> ArmorVerdict | None:
             )
         )
         result = resp.sanitization_result
-        blocked = str(getattr(result, "filter_match_state", "")).endswith("MATCH_FOUND")
         findings = [k for k, v in dict(result.filter_results).items()
                     if "MATCH_FOUND" in str(v)]
-        return ArmorVerdict(blocked, findings, "model-armor-api")
-    except Exception:
+        # The top-level match_state enum renders differently across SDK
+        # versions. Per-filter results are the reliable signal: any filter
+        # reporting a match means Model Armor flagged this prompt.
+        state = str(getattr(result, "filter_match_state", ""))
+        blocked = bool(findings) or "NO_MATCH" not in state and "MATCH_FOUND" in state
+        return ArmorVerdict(blocked, [f"armor:{f}" for f in findings],
+                            "model-armor-api")
+    except Exception as e:
+        if os.environ.get("EZ_ARMOR_DEBUG") == "1":
+            print(f"    [armor] managed call failed: {str(e)[:160]}", flush=True)
         return None          # never let the guardrail take the fleet down
 
 
@@ -107,8 +119,26 @@ def _armor_local(text: str) -> ArmorVerdict:
 
 
 def screen(text: str) -> ArmorVerdict:
-    """Managed Model Armor if configured, local detector otherwise."""
-    return _armor_managed(text) or _armor_local(text)
+    """Run BOTH detectors and union their findings.
+
+    Defence in depth means both look, not one falling back to the other. An
+    earlier version returned the managed verdict whenever the API answered —
+    so a payload the managed service rated clean was never seen by the local
+    detector at all. Two independent detectors, either sufficient to block.
+    """
+    local = _armor_local(text)
+    managed = _armor_managed(text)
+    if managed is None:
+        return local
+    findings = list(dict.fromkeys(managed.findings + local.findings))
+    return ArmorVerdict(
+        blocked=managed.blocked or local.blocked,
+        findings=findings,
+        source=("both" if managed.blocked and local.blocked
+                else "model-armor-api" if managed.blocked
+                else "local-detector" if local.blocked
+                else "model-armor-api+local (clean)"),
+    )
 
 
 # Per-invocation findings, read back by the orchestrator after the agent runs.

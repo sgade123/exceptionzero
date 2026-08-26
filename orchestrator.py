@@ -92,6 +92,8 @@ def _otel_tracer():
     if os.environ.get("EZ_TRACE", "1") != "1":
         return None
     try:
+        import warnings
+        warnings.filterwarnings('ignore', message='.*CloudTraceSpanExporter.*')
         from opentelemetry import trace
         from opentelemetry.sdk.resources import Resource
         from opentelemetry.sdk.trace import TracerProvider

@@ -10,10 +10,18 @@ REGION="${REGION:-us-central1}"
 SERVICE="exceptionzero"
 TOPIC="exceptions"
 RUNTIME_SA="ez-coord@${PROJECT}.iam.gserviceaccount.com"
-EZ_ARMOR_TEMPLATE=projects/exceptionzero-10540/locations/us-central1/templates/ez-armor
+ARMOR_TEMPLATE="ez-armor"
 
 gcloud config set project "$PROJECT" >/dev/null
 
+echo "== runtime permissions =="
+for role in roles/modelarmor.user roles/bigquery.dataViewer roles/cloudtrace.agent; do
+  gcloud projects add-iam-policy-binding "$PROJECT" \
+    --member="serviceAccount:${RUNTIME_SA}" --role="$role" \
+    --condition=None >/dev/null 2>&1 && echo "  + $role" || echo "  (already) $role"
+done
+
+echo
 echo "== build + deploy =="
 gcloud run deploy "$SERVICE" \
   --source . \
@@ -21,7 +29,7 @@ gcloud run deploy "$SERVICE" \
   --service-account "$RUNTIME_SA" \
   --allow-unauthenticated \
   --memory 1Gi --cpu 2 --timeout 900 --concurrency 20 \
-  --set-env-vars "GOOGLE_CLOUD_PROJECT=${PROJECT},GOOGLE_CLOUD_LOCATION=global,EZ_MODEL=gemini-3.5-flash,EZ_MODEL_REASONING=gemini-3.5-flash,STUB=0" \
+  --set-env-vars "GOOGLE_CLOUD_PROJECT=${PROJECT},GOOGLE_CLOUD_LOCATION=global,EZ_MODEL=gemini-3.5-flash,EZ_MODEL_REASONING=gemini-3.5-flash,STUB=0,EZ_ESTATE=bigquery,EZ_ARMOR_TEMPLATE=projects/${PROJECT}/locations/us-central1/templates/ez-armor" \
   --quiet
 
 URL=$(gcloud run services describe "$SERVICE" --region "$REGION" --format='value(status.url)')
