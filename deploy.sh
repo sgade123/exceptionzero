@@ -10,6 +10,7 @@ REGION="${REGION:-us-central1}"
 SERVICE="exceptionzero"
 TOPIC="exceptions"
 RUNTIME_SA="ez-coord@${PROJECT}.iam.gserviceaccount.com"
+EZ_ARMOR_TEMPLATE=projects/exceptionzero-10540/locations/us-central1/templates/ez-armor
 
 gcloud config set project "$PROJECT" >/dev/null
 

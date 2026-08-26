@@ -21,7 +21,7 @@ from typing import Any
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 
-from orchestrator import AgentRegistry, Gateway, Tracer, _load_local, _stub_registry
+from orchestrator import AgentRegistry, Gateway, Tracer, load_estate, _stub_registry
 
 STUB = os.environ.get("STUB", "0") == "1"
 PROJECT = os.environ.get("GOOGLE_CLOUD_PROJECT", "")
@@ -34,7 +34,7 @@ _registry: AgentRegistry | None = None
 def estate() -> dict:
     global _estate
     if _estate is None:
-        _estate = _load_local()
+        _estate = load_estate()
     return _estate
 
 
@@ -49,11 +49,24 @@ def registry() -> AgentRegistry:
     return _registry
 
 
-@app.get("/healthz")
-def healthz():
+def _status() -> dict:
+    est = estate()
     return {"ok": True, "mode": "stub" if STUB else "real",
             "model": os.environ.get("EZ_MODEL", "gemini-3.5-flash"),
-            "project": PROJECT}
+            "project": PROJECT,
+            "estate": os.environ.get("EZ_ESTATE", "auto"),
+            "exceptions": len(est.get("exceptions", []))}
+
+
+@app.get("/healthz")
+def healthz():
+    return _status()
+
+
+@app.get("/status")
+def status():
+    """Alias — /healthz is intercepted upstream on some Cloud Run hosts."""
+    return _status()
 
 
 @app.post("/run")
@@ -170,7 +183,7 @@ tr:nth-child(even){background:var(--ledger)}
 <div id=tally></div><div id=out></div><div id=agents></div>
 <script>
 const $=s=>document.querySelector(s);
-fetch('/healthz').then(r=>r.json()).then(h=>{$('#mode').textContent=h.mode+' · '+h.model});
+fetch('/status').then(r=>r.json()).then(h=>{$('#mode').textContent=h.mode+' · '+h.model+' · '+h.exceptions+' exceptions from BigQuery'});
 $('#go').onclick=async()=>{
   const b=$('#go');b.disabled=true;b.textContent='running…';
   $('#tally').innerHTML='';$('#out').innerHTML='';

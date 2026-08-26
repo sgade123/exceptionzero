@@ -515,12 +515,67 @@ def _stub_registry(estate: dict) -> AgentRegistry:
     return reg
 
 
+TABLES = ("exceptions", "invoices", "customers",
+          "payment_history", "prior_resolutions")
+
+
 def _load_local() -> dict:
+    """Local JSONL. Development and offline demos only."""
     out = {}
-    for t in ("exceptions", "invoices", "customers"):
-        with open(f"data/{t}.jsonl") as f:
-            out[t] = [json.loads(l) for l in f]
+    for t in TABLES:
+        try:
+            with open(f"data/{t}.jsonl") as f:
+                out[t] = [json.loads(l) for l in f]
+        except FileNotFoundError:
+            out[t] = []
     return out
+
+
+def _plain(v):
+    """BigQuery returns datetime/Decimal/date objects; the agents and the JSON
+    responses need plain values."""
+    import datetime as _dt
+    import decimal as _dec
+    if isinstance(v, (_dt.datetime, _dt.date)):
+        return v.isoformat()
+    if isinstance(v, _dec.Decimal):
+        return float(v)
+    if isinstance(v, list):
+        return [_plain(x) for x in v]
+    return v
+
+
+def _load_bigquery(project: str) -> dict:
+    """Read the estate from BigQuery — the same tables the specialist agents
+    query at runtime, under the same scoped credentials. The fleet operates on
+    the warehouse, not on files shipped inside its own container."""
+    from google.cloud import bigquery
+    client = bigquery.Client(project=project)
+    ds = f"{project}.exceptionzero"
+    out = {}
+    for t in TABLES:
+        rows = client.query(f"SELECT * FROM `{ds}.{t}`").result()
+        out[t] = [{k: _plain(v) for k, v in dict(r).items()} for r in rows]
+    return out
+
+
+def load_estate(source: str | None = None) -> dict:
+    """`bigquery` reads the warehouse, `local` reads JSONL, default picks
+    BigQuery whenever a project is configured."""
+    source = source or os.environ.get("EZ_ESTATE", "auto")
+    project = os.environ.get("GOOGLE_CLOUD_PROJECT", "")
+    if source == "local" or (source == "auto" and not project):
+        print("estate: local JSONL")
+        return _load_local()
+    try:
+        est = _load_bigquery(project)
+        print(f"estate: BigQuery {project}.exceptionzero "
+              f"({len(est['exceptions'])} exceptions, "
+              f"{len(est['invoices'])} invoices)")
+        return est
+    except Exception as e:
+        print(f"estate: BigQuery unavailable ({str(e)[:70]}) — falling back to JSONL")
+        return _load_local()
 
 
 def main():
@@ -528,6 +583,8 @@ def main():
     ap.add_argument("--limit", type=int, default=15)
     ap.add_argument("--case", help="run one exception by id")
     ap.add_argument("--quiet", action="store_true")
+    ap.add_argument("--estate", choices=["auto", "bigquery", "local"],
+                    default=None, help="where to read the data estate from")
     ap.add_argument("--workers", type=int, default=1,
                     help="parallel cases; 8 is a good default for the full run")
     ap.add_argument("--simulate-evidence", action="store_true",
@@ -537,7 +594,7 @@ def main():
     ap.add_argument("--inject", help="hallucination|phantom_key|loop|verify_fail|overconfident")
     args = ap.parse_args()
 
-    estate = _load_local()
+    estate = load_estate(args.estate)
     cust = {c["customer_id"]: c for c in estate["customers"]}
 
     # STUB=1 (default): deterministic fake agents, no cloud, instant.
