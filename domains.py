@@ -33,9 +33,19 @@ class Domain:
     confidence_floor: float = 0.85
     value_ceiling: float = 5_000.0
     min_counterparty_history: int = 3
+    # Which specialists a given exception type actually needs. Dispatching
+    # all four on every case is a fan-out, not delegation — and it costs four
+    # queries where two would do.
+    evidence_plan: dict[str, list[str]] = field(default_factory=dict)
+    default_plan: tuple[str, ...] = ("counterparty", "invoice")
     value_noun: str = "amount"
     party_noun: str = "counterparty"
     record_noun: str = "invoice"
+
+    def specialists_for(self, exception_type: str) -> list[str]:
+        """Which specialists this exception needs. The coordinator chooses;
+        it does not call everything and hope."""
+        return list(self.evidence_plan.get(exception_type, self.default_plan))
 
     def escalate_only(self) -> frozenset[str]:
         return frozenset(self.types) - self.auto_resolvable
@@ -71,6 +81,23 @@ PAYMENTS = Domain(
         "AM04": "INSUFFICIENT_FUNDS", "AM05": "DUPLICATE_SUBMISSION",
         "AM09": "AMOUNT_MISMATCH", "RR04": "SCREENING_HIT",
         "MD07": "EXPIRED_AUTHORIZATION",
+    },
+    evidence_plan={
+        # A registered alias on the customer record resolves this; the
+        # invoice itself adds nothing.
+        "NAME_MISMATCH": ["counterparty", "precedent"],
+        # No reference to look up — the answer is an amount match against
+        # open invoices, corroborated by how this payer has behaved before.
+        "UNAPPLIED_CASH": ["invoice", "history", "counterparty"],
+        # Is this shortfall the fee pattern this payer always short-pays by?
+        "AMOUNT_MISMATCH": ["invoice", "history", "precedent"],
+        # Only provable if the original settled payment is on file.
+        "DUPLICATE_SUBMISSION": ["invoice", "history"],
+        # Never auto-resolved; gather only enough for the human reviewer.
+        "INVALID_ACCOUNT": ["counterparty"],
+        "INSUFFICIENT_FUNDS": ["counterparty", "history"],
+        "EXPIRED_AUTHORIZATION": ["invoice"],
+        "SCREENING_HIT": ["counterparty"],
     },
     value_noun="amount", party_noun="counterparty", record_noun="invoice",
 )
@@ -117,6 +144,16 @@ SUPPLY_CHAIN = Domain(
     confidence_floor=0.80,
     value_ceiling=12_000.0,
     min_counterparty_history=2,
+    evidence_plan={
+        "SUBSTITUTE_SKU": ["counterparty", "precedent"],
+        "UNLABELLED_DELIVERY": ["invoice", "history", "counterparty"],
+        "SHORT_SHIPMENT": ["invoice", "history", "precedent"],
+        "DUPLICATE_ASN": ["invoice", "history"],
+        "DAMAGED_ON_ARRIVAL": ["counterparty"],
+        "CUSTOMS_HOLD": ["invoice"],
+        "UNAPPROVED_VENDOR": ["counterparty", "history"],
+        "PRICE_VARIANCE": ["invoice", "history", "precedent"],
+    },
     value_noun="value", party_noun="vendor", record_noun="purchase order",
 )
 

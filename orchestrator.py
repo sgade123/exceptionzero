@@ -369,8 +369,15 @@ class Gateway:
                 sp.attrs["evidence"] = len(ctx.evidence)
 
             # -- 3. Diagnosis (no tools) + citation guard ------------------
+            #
+            # If the agent reports it could not establish something, the
+            # coordinator dispatches those specialists and the case is
+            # reconsidered. Routing here is decided at runtime by the agent's
+            # own assessment of what it is missing — bounded by the loop guard,
+            # so an agent cannot ask forever.
             agent = self.reg.discover("diagnosis")
             res = None
+            gathered = set()
             for attempt in (1, 2):
                 with self.tracer.span("diagnosis", cid,
                                       sa=agent.service_account,
@@ -389,13 +396,36 @@ class Gateway:
                     with self.tracer.span("guard.citations", cid):
                         validate_citations(res, ctx)
                         validate_referenced_keys(res, ctx)
-                    break
                 except CitationError as e:
                     if attempt == 2:
                         self._record_outcome(False)
                         return CaseResult(cid, "deferred",
                                           [f"unrecoverable citation failure: {e}"],
                                           spans=len(self.tracer.spans) - n0)
+                    continue
+
+                # The agent has a defensible answer. If it is confident, or has
+                # asked for nothing more, we are done.
+                wanted = [w for w in (res.needs_evidence or [])
+                          if w not in gathered]
+                if attempt == 2 or res.confidence >= 0.85 or not wanted:
+                    break
+
+                # Otherwise: go and get what it asked for, then reconsider.
+                ctx_agent = self.reg.discover("context")
+                with self.tracer.span("context.adaptive", cid,
+                                      requested=",".join(wanted)) as sp:
+                    self._tick(cid, "context")
+                    extra = ctx_agent.handler(exc, tri, wanted)
+                    sp.attrs["evidence"] = len(extra.evidence)
+                gathered.update(wanted)
+
+                # Re-key the additional evidence so IDs stay unique, then merge.
+                merged = list(ctx.evidence)
+                for e in extra.evidence:
+                    merged.append(e.model_copy(
+                        update={"evidence_id": f"EV-{len(merged) + 1}"}))
+                ctx = ContextOutput(exception_id=cid, evidence=merged)
 
             # -- 4. Risk gate (deterministic) ------------------------------
             with self.tracer.span("risk_gate", cid, kind="deterministic") as sp:
@@ -479,7 +509,9 @@ def _stub_registry(estate: dict) -> AgentRegistry:
                             exception_type=exc["exception_type"],
                             confidence=0.95, untrusted_fields=untrusted)
 
-    def context(exc, tri):
+    def context(exc, tri, only=None):
+        from domains import current as _d
+        chosen = only if only is not None else _d().specialists_for(tri.exception_type)
         ev, n = [], 0
 
         def add(kind, table, key, content):
@@ -489,21 +521,23 @@ def _stub_registry(estate: dict) -> AgentRegistry:
                                source_table=table, source_key=key,
                                content=content))
 
-        c = cust.get(exc["counterparty_id"])
-        if c:
-            add("customer", "customers", c["customer_id"], c)
-        ref = exc.get("invoice_ref")
+        if "counterparty" in chosen:
+            c = cust.get(exc["counterparty_id"])
+            if c:
+                add("customer", "customers", c["customer_id"], c)
+        ref = exc.get("invoice_ref") if "invoice" in chosen else None
         if ref:
             found = inv.get(ref)
             if found:                       # absent invoice -> no evidence
                 add("invoice", "invoices", ref, found)
-        else:
+        elif "invoice" in chosen:
             for cand in [i for i in estate["invoices"]
                          if i["customer_id"] == exc["counterparty_id"]
                          and abs(i["amount"] - exc["amount"]) <= 50][:2]:
                 add("invoice", "invoices", cand["invoice_id"], cand)
-        add("prior", "prior_resolutions", exc["exception_type"],
-            {"exception_type": exc["exception_type"], "successes": 4})
+        if "precedent" in chosen:
+            add("prior", "prior_resolutions", exc["exception_type"],
+                {"exception_type": exc["exception_type"], "successes": 4})
         return ContextOutput(exception_id=exc["exception_id"], evidence=ev)
 
     def diagnosis(exc, tri, ctx, attempt):
@@ -523,7 +557,8 @@ def _stub_registry(estate: dict) -> AgentRegistry:
             return ProposedResolution(
                 exception_id=exc["exception_id"], root_cause="no matching invoice",
                 action="escalate", rationale="no invoice evidence retrieved",
-                cites=ids[:1], confidence=0.30, reversible=True)
+                cites=ids[:1], confidence=0.30, reversible=True,
+                needs_evidence=["invoice", "history"])
 
         from domains import current as _c
         _d = _c()

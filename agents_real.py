@@ -184,7 +184,8 @@ def triage(exc: dict) -> TriageOutput:
 # exception type, not a model decision.
 # ==========================================================================
 
-def context(exc: dict, tri: TriageOutput) -> ContextOutput:
+def context(exc: dict, tri: TriageOutput,
+            only: list[str] | None = None) -> ContextOutput:
     """Coordinator. Dispatches four specialists CONCURRENTLY, each under its
     own service account, then merges their findings and assigns evidence IDs.
 
@@ -204,6 +205,7 @@ def context(exc: dict, tri: TriageOutput) -> ContextOutput:
     # trace — the spans are all there, but the waterfall showing four agents
     # running in parallel under one case is not.
     from opentelemetry import context as _otel_ctx
+    from opentelemetry import trace as trace_mod
     _parent = _otel_ctx.get_current()
 
     def _traced(cap: str, fn):
@@ -267,13 +269,31 @@ def context(exc: dict, tri: TriageOutput) -> ContextOutput:
                      "successes": len(priors),
                      "actions": sorted({p["action_taken"] for p in priors})})
 
-    specialists = [
-        _traced("counterparty", spec_counterparty),
-        _traced("invoice", spec_invoice),
-        _traced("history", spec_history),
-        _traced("precedent", spec_precedent),
-    ]
-    with ThreadPoolExecutor(max_workers=4) as pool:
+    available = {
+        "counterparty": spec_counterparty,
+        "invoice": spec_invoice,
+        "history": spec_history,
+        "precedent": spec_precedent,
+    }
+
+    # The coordinator CHOOSES. A name mismatch is settled by the customer
+    # record and precedent; querying payment history for it would be four
+    # queries where two do the job. `only` lets the diagnosis agent ask for
+    # specific evidence it found missing.
+    from domains import current as _dom
+    chosen = only if only is not None else _dom().specialists_for(tri.exception_type)
+    chosen = [c for c in chosen if c in available]
+    if not chosen:
+        chosen = ["counterparty", "invoice"]
+
+    if _ot is not None:
+        _sp = trace_mod.get_current_span()
+        _sp.set_attribute("ez.specialists_chosen", ",".join(chosen))
+        _sp.set_attribute("ez.specialists_count", len(chosen))
+        _sp.set_attribute("ez.dispatch", "adaptive" if only is not None else "planned")
+
+    specialists = [_traced(c, available[c]) for c in chosen]
+    with ThreadPoolExecutor(max_workers=len(specialists)) as pool:
         results = list(pool.map(_safe, specialists))
 
     evidence: list[Evidence] = []
@@ -340,7 +360,9 @@ def diagnosis(exc: dict, tri: TriageOutput, ctx: ContextOutput,
         "Return JSON only:\n"
         '{"root_cause": "<short>", "action": "<one of: '
         + ", ".join(ACTIONS) + '>", "rationale": "<why, referencing evidence>", '
-        '"cites": ["EV-1", ...], "confidence": <0-1>, "reversible": <bool>}'
+        '"cites": ["EV-1", ...], "confidence": <0-1>, "reversible": <bool>, '
+        '"needs_evidence": [<any of: counterparty, invoice, history, precedent — '
+        'evidence you lack that would let you decide>]}'
     )
     out = _ask(DIAGNOSIS, user, model=MODEL_REASONING)
 
@@ -359,6 +381,8 @@ def diagnosis(exc: dict, tri: TriageOutput, ctx: ContextOutput,
         cites=cites,
         confidence=max(0.0, min(1.0, float(out.get("confidence", 0.5)))),
         reversible=bool(out.get("reversible", True)),
+        needs_evidence=[n for n in out.get("needs_evidence", [])
+                        if n in ("counterparty", "invoice", "history", "precedent")],
     )
 
 

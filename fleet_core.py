@@ -72,6 +72,11 @@ class ProposedResolution(BaseModel):
     cites: list[str] = Field(min_length=1)   # evidence_ids — never empty
     confidence: float = Field(ge=0.0, le=1.0)
     reversible: bool
+    # What the agent could not establish. When this is non-empty and
+    # confidence is low, the coordinator dispatches those specialists and the
+    # case is reconsidered — the system deciding it needs more information
+    # rather than guessing with what it has.
+    needs_evidence: list[str] = Field(default_factory=list)
 
 
 class GateOutput(BaseModel):
