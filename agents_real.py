@@ -198,23 +198,33 @@ def context(exc: dict, tri: TriageOutput) -> ContextOutput:
 
     _ot = _otel_tracer()
 
+    # OpenTelemetry context is thread-local, and the fan-out runs each
+    # specialist on its own thread. Without explicitly carrying the parent
+    # context across that boundary, every specialist becomes a separate root
+    # trace — the spans are all there, but the waterfall showing four agents
+    # running in parallel under one case is not.
+    from opentelemetry import context as _otel_ctx
+    _parent = _otel_ctx.get_current()
+
     def _traced(cap: str, fn):
-        """Each specialist gets its own span, nested under the case. Without
-        this the fan-out is real but invisible — Cloud Trace would show one
-        context span and the delegation would be indistinguishable from a
-        linear pipeline."""
+        """One span per specialist, nested under the case span."""
         def run():
             if _ot is None:
                 with running_as(cap):
                     return fn()
-            with _ot.start_as_current_span(f"specialist.{cap}") as sp:
-                sp.set_attribute("agent", cap)
-                sp.set_attribute("ez.sa", sa_email(cap) or "-")
-                sp.set_attribute("exception.id", exc["exception_id"])
-                with running_as(cap):
-                    out = fn()
-                sp.set_attribute("ez.evidence_found", bool(out and out[3]))
-                return out
+            token = _otel_ctx.attach(_parent)
+            try:
+                with _ot.start_as_current_span(f"specialist.{cap}") as sp:
+                    sp.set_attribute("agent", cap)
+                    sp.set_attribute("ez.sa", sa_email(cap) or "-")
+                    sp.set_attribute("exception.id", exc["exception_id"])
+                    sp.set_attribute("ez.concurrent", True)
+                    with running_as(cap):
+                        out = fn()
+                    sp.set_attribute("ez.evidence_found", bool(out and out[3]))
+                    return out
+            finally:
+                _otel_ctx.detach(token)
         return run
 
     cid = exc["counterparty_id"]
