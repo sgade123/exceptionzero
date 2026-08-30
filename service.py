@@ -213,6 +213,43 @@ $('#go').onclick=async()=>{
 </script></body></html>"""
 
 
+@app.get("/queue")
+def review_queue():
+    """The human review queue.
+
+    "Escalates to a human" is only true if there is somewhere for the human to
+    look. Every deferred case lands here with the reason it could not be
+    resolved, what would have to change to clear it, and how long it has been
+    waiting — so the reviewer starts from the fleet's work rather than from
+    scratch.
+    """
+    from sweeper import BLOCKERS, DeferredStore
+    store = DeferredStore(project=PROJECT)
+    cases = []
+    try:
+        rows = (store._load_local().values() if not store.firestore
+                else [d.to_dict() for d in
+                      store._db().collection("deferred_cases").stream()])
+    except Exception:
+        rows = []
+    for r in rows:
+        if r.get("resolved_at"):
+            continue
+        cases.append({
+            "exception_id": r.get("exception_id"),
+            "type": r.get("exception_type"),
+            "value": r.get("amount"),
+            "currency": r.get("currency"),
+            "reason": r.get("reason"),
+            "blocker": r.get("blocker"),
+            "what_would_clear_it": BLOCKERS.get(r.get("blocker", ""), "human judgement"),
+            "deferred_at": r.get("deferred_at"),
+            "times_reexamined": r.get("sweeps", 0),
+        })
+    cases.sort(key=lambda c: (c.get("value") or 0), reverse=True)
+    return {"awaiting_review": len(cases), "cases": cases}
+
+
 @app.post("/sweep")
 async def sweep_endpoint(request: Request):
     """Cloud Scheduler target. Re-examines deferred cases and re-opens the
@@ -245,6 +282,25 @@ async def sweep_endpoint(request: Request):
           f"reopened={len(out['reopened'])} "
           f"resolved_late={len(out['resolved_late'])}", flush=True)
     return {**out, "store": store.stats()}
+
+
+@app.get("/identity")
+def identity_proof():
+    """Prove the identity model rather than describing it.
+
+    Each agent attempts a BigQuery read under its OWN service account.
+    Specialists reach their tables; `diagnosis` is refused, because
+    ez-diagnosis holds aiplatform.user and cloudtrace.agent and nothing else.
+    """
+    from identity import ENABLED, identity_report
+    rows = identity_report()
+    return {
+        "impersonation_enabled": ENABLED,
+        "claim": "the diagnosis agent cannot read the data estate",
+        "verdict": next((r["bigquery"] for r in rows
+                         if r["capability"] == "diagnosis"), "unknown"),
+        "agents": rows,
+    }
 
 
 @app.get("/registry")

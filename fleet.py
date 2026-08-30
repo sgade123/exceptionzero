@@ -21,22 +21,23 @@ DATASET = f"{PROJECT}.exceptionzero"
 _client = None
 
 
-def _bq():
-    global _client
-    if _client is None:
-        from google.cloud import bigquery
-        _client = bigquery.Client(project=PROJECT)
-    return _client
+def _bq(capability: str | None = None):
+    """Client bound to the calling agent's service account. Not a shared
+    singleton: sharing one client would mean sharing one identity, which is
+    exactly what the per-agent model exists to prevent."""
+    from identity import bigquery_client
+    return bigquery_client(capability)
 
 
-def _rows(sql: str, params: dict[str, Any]) -> list[dict]:
+def _rows(sql: str, params: dict[str, Any],
+          capability: str | None = None) -> list[dict]:
     from google.cloud import bigquery
     types = {str: "STRING", int: "INT64", float: "FLOAT64"}
     cfg = bigquery.QueryJobConfig(query_parameters=[
         bigquery.ScalarQueryParameter(k, types.get(type(v), "STRING"), v)
         for k, v in params.items()
     ])
-    return [dict(r) for r in _bq().query(sql, job_config=cfg).result()]
+    return [dict(r) for r in _bq(capability).query(sql, job_config=cfg).result()]
 
 
 # ==========================================================================
@@ -49,6 +50,7 @@ def fetch_open_exceptions(limit: int = 50) -> list[dict]:
         f"SELECT * FROM `{DATASET}.exceptions` "
         f"WHERE status = 'open' ORDER BY received_at LIMIT @limit",
         {"limit": limit},
+        capability="triage",
     )
 
 
@@ -63,6 +65,7 @@ def lookup_invoice(invoice_id: str) -> list[dict]:
     return _rows(
         f"SELECT * FROM `{DATASET}.invoices` WHERE invoice_id = @id",
         {"id": invoice_id},
+        capability="invoice",
     )
 
 
@@ -72,6 +75,7 @@ def lookup_customer(customer_id: str) -> list[dict]:
     return _rows(
         f"SELECT * FROM `{DATASET}.customers` WHERE customer_id = @id",
         {"id": customer_id},
+        capability="counterparty",
     )
 
 
@@ -84,6 +88,7 @@ def find_invoices_by_amount(customer_id: str, amount: float,
         f"WHERE customer_id = @cid AND status IN ('open','partially_paid') "
         f"AND ABS(amount - @amt) <= @tol ORDER BY ABS(amount - @amt) LIMIT 5",
         {"cid": customer_id, "amt": amount, "tol": tolerance},
+        capability="invoice",
     )
 
 
@@ -94,6 +99,7 @@ def payment_history(customer_id: str, limit: int = 10) -> list[dict]:
         f"SELECT * FROM `{DATASET}.payment_history` "
         f"WHERE customer_id = @cid ORDER BY paid_at DESC LIMIT @limit",
         {"cid": customer_id, "limit": limit},
+        capability="history",
     )
 
 
@@ -105,6 +111,7 @@ def similar_prior_resolutions(exception_type: str, limit: int = 5) -> list[dict]
         f"WHERE exception_type = @t AND outcome = 'success' "
         f"ORDER BY resolved_at DESC LIMIT @limit",
         {"t": exception_type, "limit": limit},
+        capability="precedent",
     )
 
 
@@ -120,6 +127,7 @@ def apply_resolution(exception_id: str, action: str, idempotency_key: str,
         f"UPDATE `{DATASET}.exceptions` SET status = 'resolved' "
         f"WHERE exception_id = @id AND status = 'open'",
         {"id": exception_id},
+        capability="execution",
     )
     return {"exception_id": exception_id, "action": action,
             "idempotency_key": idempotency_key,
@@ -132,6 +140,7 @@ def rollback(exception_id: str, compensating_action: str) -> dict:
         f"UPDATE `{DATASET}.exceptions` SET status = 'open' "
         f"WHERE exception_id = @id",
         {"id": exception_id},
+        capability="verification",
     )
     return {"exception_id": exception_id, "rolled_back": True,
             "via": compensating_action}

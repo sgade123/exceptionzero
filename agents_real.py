@@ -185,51 +185,85 @@ def triage(exc: dict) -> TriageOutput:
 # ==========================================================================
 
 def context(exc: dict, tri: TriageOutput) -> ContextOutput:
-    evidence: list[Evidence] = []
+    """Coordinator. Dispatches four specialists CONCURRENTLY, each under its
+    own service account, then merges their findings and assigns evidence IDs.
 
-    def add(kind: str, table: str, key: str, content: Any) -> None:
+    The coordinator performs no lookups itself — it holds `dispatch` scope and
+    nothing else. Each specialist can read exactly one table, so a compromised
+    or misbehaving specialist cannot widen its own reach.
+    """
+    from concurrent.futures import ThreadPoolExecutor
+    from identity import running_as
+
+    cid = exc["counterparty_id"]
+    ref = exc.get("invoice_ref")
+
+    def spec_counterparty():
+        with running_as("counterparty"):
+            return ("customer", "customers", cid, lookup_customer(cid))
+
+    def spec_invoice():
+        with running_as("invoice"):
+            if ref:
+                found = lookup_invoice(ref)
+                if found:
+                    return ("invoice", "invoices", ref, found)
+                # Absence is evidence. Reporting it is what stops the
+                # diagnosis agent inventing a record to fill the gap.
+                return ("invoice_absent", "invoices", ref,
+                        {"invoice_id": ref, "found": False,
+                         "note": "referenced record does not exist in the estate"})
+            cands = find_invoices_by_amount(cid, float(exc["amount"]))[:2]
+            return ("invoice", "invoices",
+                    cands[0]["invoice_id"] if cands else "", cands)
+
+    def spec_history():
+        with running_as("history"):
+            hist = payment_history(cid, limit=10)
+            if not hist:
+                return None
+            return ("history", "payment_history", cid,
+                    {"recent": hist[:5], "count": len(hist),
+                     "settled": sum(1 for h in hist if h["status"] == "settled")})
+
+    def spec_precedent():
+        with running_as("precedent"):
+            priors = similar_prior_resolutions(tri.exception_type)
+            if not priors:
+                return None
+            return ("prior_resolution", "prior_resolutions", tri.exception_type,
+                    {"exception_type": tri.exception_type,
+                     "successes": len(priors),
+                     "actions": sorted({p["action_taken"] for p in priors})})
+
+    specialists = [spec_counterparty, spec_invoice, spec_history, spec_precedent]
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        results = list(pool.map(lambda f: _safe(f), specialists))
+
+    evidence: list[Evidence] = []
+    for r in results:
+        if not r:
+            continue
+        kind, table, key, content = r
         if not content:
-            return
+            continue
         evidence.append(Evidence(
             evidence_id=f"EV-{len(evidence) + 1}", kind=kind,
             source_table=table, source_key=str(key),
             content=content[0] if isinstance(content, list) else content,
         ))
-
-    cid = exc["counterparty_id"]
-
-    # ez-cp@ — customers only
-    add("customer", "customers", cid, lookup_customer(cid))
-
-    # ez-inv@ — invoices only. Absence is evidence and must be reported.
-    ref = exc.get("invoice_ref")
-    if ref:
-        found = lookup_invoice(ref)
-        if found:
-            add("invoice", "invoices", ref, found)
-        else:
-            add("invoice_absent", "invoices", ref,
-                {"invoice_id": ref, "found": False,
-                 "note": "referenced invoice does not exist in the estate"})
-    else:
-        for cand in find_invoices_by_amount(cid, float(exc["amount"]))[:2]:
-            add("invoice", "invoices", cand["invoice_id"], cand)
-
-    # ez-hist@ — payment history only
-    hist = payment_history(cid, limit=10)
-    if hist:
-        add("history", "payment_history", cid,
-            {"recent": hist[:5], "count": len(hist),
-             "settled": sum(1 for h in hist if h["status"] == "settled")})
-
-    # ez-prec@ — prior resolutions only
-    priors = similar_prior_resolutions(tri.exception_type)
-    if priors:
-        add("prior_resolution", "prior_resolutions", tri.exception_type,
-            {"exception_type": tri.exception_type, "successes": len(priors),
-             "actions": sorted({p["action_taken"] for p in priors})})
-
     return ContextOutput(exception_id=exc["exception_id"], evidence=evidence)
+
+
+def _safe(fn):
+    """One specialist failing must not take down the retrieval step — the
+    diagnosis agent will simply have less evidence and lower confidence,
+    which the gate already handles."""
+    try:
+        return fn()
+    except Exception as e:
+        print(f"    [specialist] {fn.__name__} failed: {str(e)[:70]}", flush=True)
+        return None
 
 
 # ==========================================================================
@@ -331,6 +365,10 @@ def verification(exception_id: str, ex: ExecutionResult,
 
 SPECS = [
     ("triage",       "TriageAgent",        "ez-triage",    ["exceptions:read"],       triage),
+    ("invoice",      "InvoiceSpecialist",     "ez-invoice",   ["invoices:read"],          None),
+    ("counterparty", "CounterpartySpecialist","ez-customer",  ["customers:read"],         None),
+    ("history",      "HistorySpecialist",     "ez-history",   ["payment_history:read"],   None),
+    ("precedent",    "PrecedentSpecialist",   "ez-precedent", ["prior_resolutions:read"], None),
     ("context",      "ContextCoordinator", "ez-coord",     ["dispatch", "bq:jobUser"], context),
     ("diagnosis",    "DiagnosisAgent",     "ez-diagnosis", [],                        diagnosis),
     ("execution",    "ExecutionAgent",     "ez-exec",      ["exceptions:write"],      execution),
@@ -343,6 +381,8 @@ def build_registry():
     project = os.environ.get("GOOGLE_CLOUD_PROJECT", "PROJECT")
     reg = AgentRegistry()
     for cap, name, sa, scope, fn in SPECS:
+        # Specialists are dispatched by the coordinator rather than by the
+        # gateway, so they publish for discovery but carry no handler.
         reg.publish(AgentRecord(
             name=name, capability=cap, version="1.0.0",
             service_account=f"{sa}@{project}.iam.gserviceaccount.com",

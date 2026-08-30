@@ -11,7 +11,7 @@
 #
 #   ./setup_iam.sh exceptionzero-10540
 #
-set -euo pipefail
+set -uo pipefail   # not -e: one failed grant must not abort the rest
 
 PROJECT="${1:?usage: ./setup_iam.sh PROJECT_ID}"
 DATASET="exceptionzero"
@@ -24,8 +24,11 @@ create_sa() {
   if gcloud iam service-accounts describe "$(sa_email "$id")" >/dev/null 2>&1; then
     echo "  exists   $id"
   else
-    gcloud iam service-accounts create "$id" --display-name="$desc" >/dev/null
-    echo "  created  $id"
+    if gcloud iam service-accounts create "$id" --display-name="$desc" >/dev/null 2>&1; then
+      echo "  created  $id"
+    else
+      echo "  FAILED   $id (continuing — grants below still run)"
+    fi
   fi
 }
 
@@ -36,23 +39,29 @@ grant() {
   echo "    + $2"
 }
 
+# One list, used everywhere below. Adding an agent means adding it here.
+ALL_SAS=(ez-triage ez-coord ez-invoice ez-customer ez-history ez-precedent
+         ez-diagnosis ez-exec ez-verify)
+
 echo "== service accounts =="
-create_sa ez-triage      "ExceptionZero Triage"
-create_sa ez-coord       "ExceptionZero Context Coordinator"
-create_sa ez-inv         "ExceptionZero Invoice Specialist"
-create_sa ez-customer          "ExceptionZero Counterparty Specialist"
-create_sa ez-hist        "ExceptionZero History Specialist"
-create_sa ez-prec        "ExceptionZero Precedent Specialist"
-create_sa ez-diagnosis   "ExceptionZero Diagnosis"
-create_sa ez-exec        "ExceptionZero Execution"
-create_sa ez-verify      "ExceptionZero Verification"
+declare -A SA_DESC=(
+  [ez-triage]="Triage" [ez-coord]="Context Coordinator"
+  [ez-invoice]="Invoice Specialist" [ez-customer]="Counterparty Specialist"
+  [ez-history]="History Specialist" [ez-precedent]="Precedent Specialist"
+  [ez-diagnosis]="Diagnosis" [ez-exec]="Execution" [ez-verify]="Verification"
+)
+for sa in "${ALL_SAS[@]}"; do
+  create_sa "$sa" "ExceptionZero ${SA_DESC[$sa]}"
+done
 
 # --------------------------------------------------------------------------
 # Every reasoning agent needs Vertex. Nothing else is shared.
 # --------------------------------------------------------------------------
 echo
 echo "== model access (all reasoning agents) =="
-for sa in ez-triage ez-coord ez-inv ez-customer ez-hist ez-prec ez-diagnosis; do
+REASONING_SAS=(ez-triage ez-coord ez-invoice ez-customer ez-history
+               ez-precedent ez-diagnosis)
+for sa in "${REASONING_SAS[@]}"; do
   echo "  $sa"
   grant "$sa" roles/aiplatform.user
 done
@@ -63,7 +72,11 @@ done
 # --------------------------------------------------------------------------
 echo
 echo "== read scopes =="
-for sa in ez-coord ez-inv ez-customer ez-hist ez-prec ez-exec ez-verify; do
+# NOTE: ez-diagnosis is absent by design. Without bigquery.jobUser it
+# cannot even start a query, let alone read a result.
+QUERY_SAS=(ez-coord ez-invoice ez-customer ez-history ez-precedent
+           ez-exec ez-verify)
+for sa in "${QUERY_SAS[@]}"; do
   grant "$sa" roles/bigquery.jobUser
 done
 
@@ -79,10 +92,12 @@ table_read() {  # table_read <sa> <table>
 echo
 echo "== per-table grants — each specialist sees exactly one table =="
 table_read ez-triage exceptions
-table_read ez-inv    invoices
-table_read ez-customer     customers
-table_read ez-hist   payment_history
-table_read ez-prec   prior_resolutions
+# Each specialist reads exactly one table. This is the boundary that makes
+# the fan-out meaningful: a compromised specialist cannot widen its reach.
+table_read ez-invoice    invoices
+table_read ez-customer   customers
+table_read ez-history    payment_history
+table_read ez-precedent  prior_resolutions
 
 echo
 echo "== write scope — exactly one agent =="
@@ -108,8 +123,33 @@ grant ez-verify roles/datastore.user
 # Tracing.
 # --------------------------------------------------------------------------
 echo
+echo "== impersonation — bind declared identity to execution =="
+# Declaring a service account on an agent record is a label. Impersonation is
+# what makes it load-bearing: every tool call runs under the agent's own
+# credentials, so IAM decides whether it succeeds.
+#
+# The caller (you) and the Cloud Run runtime SA must both be able to mint
+# tokens for each agent SA. Failures are printed, not swallowed — a silently
+# missing grant means the identity model quietly stops being enforced.
+CALLER="$(gcloud config get-value account 2>/dev/null)"
+RUNTIME="$(sa_email ez-coord)"
+
+for sa in "${ALL_SAS[@]}"; do
+  target="$(sa_email "$sa")"
+  for member in "user:${CALLER}" "serviceAccount:${RUNTIME}"; do
+    if gcloud iam service-accounts add-iam-policy-binding "$target" \
+         --member="$member" --role="roles/iam.serviceAccountTokenCreator" \
+         --quiet >/dev/null 2>&1; then
+      echo "    $sa <- $member"
+    else
+      echo "    FAILED  $sa <- $member"
+    fi
+  done
+done
+
+echo
 echo "== tracing =="
-for sa in ez-triage ez-coord ez-inv ez-customer ez-hist ez-prec ez-diagnosis ez-exec ez-verify; do
+for sa in "${ALL_SAS[@]}"; do
   grant "$sa" roles/cloudtrace.agent
 done
 
@@ -120,6 +160,25 @@ done
 #
 # It reasons over evidence handed to it, and the platform enforces that.
 # ==========================================================================
+
+echo
+echo "== verifying impersonation actually works =="
+python3 - <<'PYCHECK' 2>/dev/null || echo "  (python check skipped)"
+import os, sys
+os.environ.setdefault("GOOGLE_CLOUD_PROJECT", os.environ.get("PROJECT", ""))
+try:
+    import identity
+    rows = identity.identity_report()
+    bad = [r for r in rows if r.get("identity") not in ("IMPERSONATED", "AMBIENT")]
+    for r in rows:
+        print(f"    {r['capability']:14} {r.get('identity','?'):20} bigquery={r['bigquery']}")
+    if bad:
+        print("    -> impersonation not working for: "
+              + ", ".join(r["capability"] for r in bad))
+        print("       grants can take a minute to propagate; re-run this script")
+except Exception as e:
+    print(f"    check unavailable: {str(e)[:80]}")
+PYCHECK
 
 cat <<BANNER
 

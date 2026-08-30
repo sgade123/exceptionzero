@@ -48,7 +48,9 @@ class Domain:
 PAYMENTS = Domain(
     key="payments",
     label="payment exceptions",
-    hero="the operations person at a 40-person distributor",
+    hero=("the receiving-and-office clerk at a 40-person distributor — "
+          "not an engineer, not in finance, doing this on top of four "
+          "other jobs"),
     types={
         "NAME_MISMATCH": 22, "UNAPPLIED_CASH": 20, "AMOUNT_MISMATCH": 18,
         "DUPLICATE_SUBMISSION": 14, "INVALID_ACCOUNT": 10,
@@ -86,7 +88,9 @@ PAYMENTS = Domain(
 SUPPLY_CHAIN = Domain(
     key="supply_chain",
     label="supply-chain exceptions",
-    hero="the receiving clerk at a regional distribution centre",
+    hero=("the dock supervisor at a regional distribution centre — "
+          "signs for freight, has no systems team, and is the last "
+          "person who can catch a wrong delivery"),
     types={
         "SHORT_SHIPMENT": 24, "UNLABELLED_DELIVERY": 18, "PRICE_VARIANCE": 16,
         "DUPLICATE_ASN": 12, "SUBSTITUTE_SKU": 12, "DAMAGED_ON_ARRIVAL": 8,

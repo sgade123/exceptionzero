@@ -649,6 +649,8 @@ def main():
                     help="parallel cases; 8 is a good default for the full run")
     ap.add_argument("--simulate-evidence", action="store_true",
                     help="append later-arriving evidence before sweeping")
+    ap.add_argument("--publish-all", action="store_true",
+                    help="publish every domain fleet to the registry")
     ap.add_argument("--registry", action="store_true",
                     help="print the published agent catalog and exit")
     ap.add_argument("--sweep", action="store_true",
@@ -689,6 +691,21 @@ def main():
     from sweeper import DeferredStore
     store = DeferredStore(use_firestore=False)
     gw.store = store
+
+    if args.publish_all:
+        # Cross-department discovery only means something if more than one
+        # department has published. Register both domains' fleets.
+        import os as _os
+        from domains import DOMAINS
+        for key in DOMAINS:
+            _os.environ["EZ_DOMAIN"] = key
+            if STUB:
+                _stub_registry(estate)
+            else:
+                from agents_real import build_registry as _b
+                _b()
+            print(f"  published fleet for domain: {key}")
+        return
 
     if args.registry:
         print("\npublished agent catalog (Firestore):")
