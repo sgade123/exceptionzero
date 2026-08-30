@@ -176,7 +176,10 @@ tr:nth-child(even){background:var(--ledger)}
 .none{color:var(--stop);font-weight:600}
 </style></head><body>
 <h1>ExceptionZero</h1>
-<p class=sub>Six agents · least-privilege identity · deterministic risk gate · <span id=mode>—</span></p>
+<p class=sub>Ten agents · per-agent IAM identity · deterministic risk gate · <span id=mode>—</span></p>
+<p class=sub style="max-width:52rem">Built for the receiving-and-office clerk at a 40-person distributor —
+not an engineer, not in finance, doing this on top of four other jobs. The fleet resolves what it can
+prove, and escalates the rest with its reasoning attached.</p>
 <div>
 <select id=limit><option value=10>10 cases</option><option value=20 selected>20</option>
 <option value=50>50</option><option value=339>all 339</option></select>

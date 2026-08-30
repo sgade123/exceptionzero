@@ -193,17 +193,38 @@ def context(exc: dict, tri: TriageOutput) -> ContextOutput:
     or misbehaving specialist cannot widen its own reach.
     """
     from concurrent.futures import ThreadPoolExecutor
-    from identity import running_as
+    from identity import running_as, sa_email
+    from orchestrator import _otel_tracer
+
+    _ot = _otel_tracer()
+
+    def _traced(cap: str, fn):
+        """Each specialist gets its own span, nested under the case. Without
+        this the fan-out is real but invisible — Cloud Trace would show one
+        context span and the delegation would be indistinguishable from a
+        linear pipeline."""
+        def run():
+            if _ot is None:
+                with running_as(cap):
+                    return fn()
+            with _ot.start_as_current_span(f"specialist.{cap}") as sp:
+                sp.set_attribute("agent", cap)
+                sp.set_attribute("ez.sa", sa_email(cap) or "-")
+                sp.set_attribute("exception.id", exc["exception_id"])
+                with running_as(cap):
+                    out = fn()
+                sp.set_attribute("ez.evidence_found", bool(out and out[3]))
+                return out
+        return run
 
     cid = exc["counterparty_id"]
     ref = exc.get("invoice_ref")
 
     def spec_counterparty():
-        with running_as("counterparty"):
-            return ("customer", "customers", cid, lookup_customer(cid))
+        return ("customer", "customers", cid, lookup_customer(cid))
 
     def spec_invoice():
-        with running_as("invoice"):
+        if True:
             if ref:
                 found = lookup_invoice(ref)
                 if found:
@@ -218,7 +239,7 @@ def context(exc: dict, tri: TriageOutput) -> ContextOutput:
                     cands[0]["invoice_id"] if cands else "", cands)
 
     def spec_history():
-        with running_as("history"):
+        if True:
             hist = payment_history(cid, limit=10)
             if not hist:
                 return None
@@ -227,7 +248,7 @@ def context(exc: dict, tri: TriageOutput) -> ContextOutput:
                      "settled": sum(1 for h in hist if h["status"] == "settled")})
 
     def spec_precedent():
-        with running_as("precedent"):
+        if True:
             priors = similar_prior_resolutions(tri.exception_type)
             if not priors:
                 return None
@@ -236,9 +257,14 @@ def context(exc: dict, tri: TriageOutput) -> ContextOutput:
                      "successes": len(priors),
                      "actions": sorted({p["action_taken"] for p in priors})})
 
-    specialists = [spec_counterparty, spec_invoice, spec_history, spec_precedent]
+    specialists = [
+        _traced("counterparty", spec_counterparty),
+        _traced("invoice", spec_invoice),
+        _traced("history", spec_history),
+        _traced("precedent", spec_precedent),
+    ]
     with ThreadPoolExecutor(max_workers=4) as pool:
-        results = list(pool.map(lambda f: _safe(f), specialists))
+        results = list(pool.map(_safe, specialists))
 
     evidence: list[Evidence] = []
     for r in results:

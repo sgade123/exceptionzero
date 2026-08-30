@@ -12,7 +12,20 @@ An exception is by definition the case automation *couldn't* handle. If a rule c
 
 ExceptionZero automates the judgment, and — more importantly — knows when to hand back.
 
-**Demo:** payment exceptions for a 40-person industrial distributor. **The engine is domain-neutral:** nothing in the six agents knows what a payment is. They know what an exception is.
+**Who it is for:** the receiving-and-office clerk at a 40-person distributor — not an engineer, not in finance, handling failed payments on top of four other jobs. In the supply-chain connector it is the dock supervisor who signs for freight and has no systems team behind him. Neither is a standard corporate role, and neither has ever had this machinery available to them.
+
+**Demo:** payment exceptions for a 40-person industrial distributor. **The engine is domain-neutral, and that is testable** — `EZ_DOMAIN=supply_chain` runs the identical fleet against receiving exceptions with no code change:
+
+```bash
+STUB=1 python orchestrator.py --limit 60 --quiet                      # payments
+STUB=1 EZ_DOMAIN=supply_chain python orchestrator.py --limit 60 --quiet
+```
+
+`fleet_core.py` does not contain the word "payment". The confidence floor, value ceiling, counterparty-history minimum, auto-resolvable set and compensating-action table all come from the connector in `domains.py`. Supply chain deliberately runs *different* thresholds — 0.80 confidence, 12,000 ceiling, 2 prior deliveries — because receiving tolerances are wider and a wrong receipt is cheaper to reverse.
+
+A short shipment against a purchase order is structurally a payment shortfall. An unlabelled delivery is unapplied cash. A re-sent ASN is a duplicate submission. The reasoning does not change, because the reasoning was never about money.
+
+**Adding a domain costs:** one taxonomy, one action list, one policy table.
 
 ---
 
@@ -20,9 +33,19 @@ ExceptionZero automates the judgment, and — more importantly — knows when to
 
 ![Architecture](architecture.svg)
 
+### Why a fixed pipeline rather than dynamic delegation
+
+Triage → Context → Diagnosis → Gate → Execute → Verify runs in that order, always, routed by deterministic code. That is a deliberate choice, not a limitation.
+
+An agent that could both decide and execute is the failure mode this design exists to prevent. In a system taking irreversible action on money, unpredictable routing is a liability rather than a feature: it means the sequence of checks before an irreversible act depends on a model's judgement. Fixed ordering with enforced handoffs makes every case auditable and every guard unavoidable.
+
+Delegation happens where it adds value and costs nothing in safety — the Context Coordinator dispatches four specialists **concurrently**, each under its own service account, each scoped to a single table. Cloud Trace shows them as four parallel spans nested under the case.
+
 ### The permission model is the design
 
 Each agent runs under its own Google Cloud service account with the narrowest role set that lets it work:
+
+Identity is enforced at runtime, not declared. Every tool call executes under credentials impersonated for that agent's service account (`identity.py`), so IAM is what decides whether a call succeeds.
 
 | Agent | Service account | Can do |
 |---|---|---|
@@ -33,7 +56,17 @@ Each agent runs under its own Google Cloud service account with the narrowest ro
 | Execution | `ez-exec@` | write to `exceptions` — and nothing else |
 | Verification | `ez-verify@` | read + trigger rollback |
 
-Verify the central claim yourself:
+Verify the central claim yourself — the deployed service proves it live at `GET /identity`, which has each agent attempt a real BigQuery read under its own identity:
+
+```
+invoice        IMPERSONATED  own=invoices           ALLOWED  other tables: none
+counterparty   IMPERSONATED  own=customers          ALLOWED  other tables: none
+history        IMPERSONATED  own=payment_history    ALLOWED  other tables: none
+precedent      IMPERSONATED  own=prior_resolutions  ALLOWED  other tables: none
+diagnosis      IMPERSONATED  own=invoices           DENIED   other tables: none
+```
+
+Each specialist reads its own table and no other. Diagnosis is refused everywhere. Or from the CLI:
 
 ```bash
 gcloud projects get-iam-policy $PROJECT \
@@ -62,7 +95,7 @@ A proposed action, a rationale, evidence citations, and a confidence score. Ever
 | Double execution | Idempotency key per exception; replay is a no-op |
 | Bad execution | Compensating action written *before* the act; verification rolls back |
 | Systemic failure | Circuit breaker halts the fleet after 3 verification failures in 20 cases |
-| Prompt injection | Model Armor + triage instruction treating untrusted text as data → `quarantine` |
+| Prompt injection | Inline screening at the model boundary (ADK `before_model_callback`) + triage instruction treating untrusted text as data → `quarantine` |
 
 ---
 
@@ -94,7 +127,11 @@ Synthetic, seeded, byte-identical on every run:
 ```bash
 python generate_dataset.py                      # local JSONL
 python generate_dataset.py --bq YOUR_PROJECT_ID # + load to BigQuery
+
+EZ_DOMAIN=supply_chain python generate_dataset.py --bq YOUR_PROJECT_ID
 ```
+
+The fleet reads the estate from BigQuery by default (`EZ_ESTATE=bigquery|local|auto`) under the same scoped credentials the specialist agents use — it operates on the warehouse, not on files shipped inside its own container.
 
 339 exceptions across 8 types, 700 invoices, 60 customers, and the corroborating payment history that makes each exception genuinely resolvable — plus three engineered cases:
 
@@ -186,13 +223,17 @@ The refusal, in the fleet's own words:
 
 **Confidence needs anchors or it saturates.** The first real runs returned 1.00 on every case, including a 45% unexplained shortfall. Numeric anchors plus a required `unexplained` field — where anything listed forces confidence below the floor — produced calibrated scores that the gate can actually use.
 
+**Ingestion-time screening is the wrong hook.** Guardrails placed at message ingress cannot see content a tool retrieves later in the same turn. Moving screening to the ADK `before_model_callback` — between the agent and Gemini, over the fully assembled prompt — closes that gap, because a payload that reaches the model has already had its chance to influence the output.
+
 **Well-behaved models make bad demos.** The planted hallucination bait never fired, because the model correctly reported the invoice as absent instead of fabricating. Deliberate fault injection turned out to be both more honest and more convincing than waiting for a failure that shouldn't happen.
 
 ---
 
 ## Stack
 
-Gemini 3.5 Flash via Vertex AI · Google ADK · Cloud Run · Pub/Sub · Firestore · BigQuery · Model Armor · Cloud Trace · Python 3.12 · FastAPI · Pydantic
+Gemini 3.5 Flash via Vertex AI · Google ADK (`LlmAgent`, `output_schema`, `before_model_callback`) · Cloud Run · Pub/Sub · Firestore · BigQuery · Cloud Trace / OpenTelemetry · Python 3.12 · FastAPI · Pydantic
+
+Gemma is wired as an optional pre-classifier for the triage step (`EZ_GEMMA_MODEL` or `EZ_GEMMA_ENDPOINT`) — routing the cheap, high-volume label to the small model and reserving Gemini for diagnosis. It is not provisioned in the hosted demo: a dedicated GPU endpoint would cost several hundred dollars over the judging window, so the fleet falls back to Gemini automatically.
 
 ## Files
 
@@ -204,6 +245,10 @@ Gemini 3.5 Flash via Vertex AI · Google ADK · Cloud Run · Pub/Sub · Firestor
 | `agents_real.py` | Gemini-backed handlers |
 | `faults.py` | Deliberate fault injection |
 | `generate_dataset.py` | Seeded synthetic data estate |
+| `domains.py` | Domain connectors — taxonomy, actions, thresholds |
+| `sweeper.py` | Deferred-case store and the long-horizon sweeper |
+| `agents_adk.py` | ADK `LlmAgent` wrappers and inline model-boundary screening |
+| `gemma.py` | Optional small-model pre-classifier |
 | `setup_iam.sh` | Per-agent service accounts and least-privilege roles |
 | `service.py` | Cloud Run service and trace viewer |
 | `deploy.sh` | Build, deploy, wire Pub/Sub |
