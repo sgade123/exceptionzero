@@ -45,14 +45,19 @@ def inject(registry, mode: str | None):
     if mode not in MODES:
         raise ValueError(f"unknown fault '{mode}' — one of {MODES}")
 
+    # Swap the handler in memory only. Publishing a fault-tagged version would
+    # write it to the Firestore catalog, where a deliberately broken agent
+    # would then be advertised to every other team as an approved one.
+    def _swap(capability, handler):
+        rec = registry.discover(capability)
+        registry._by_capability[capability] = replace(
+            rec, handler=handler, version=rec.version + f"+fault:{mode}")
+
     if mode in ("hallucination", "phantom_key", "loop", "overconfident"):
         rec = registry.discover("diagnosis")
-        registry.publish(replace(rec, handler=_faulty_diagnosis(rec.handler, mode),
-                                 version=rec.version + f"+fault:{mode}"))
+        _swap("diagnosis", _faulty_diagnosis(rec.handler, mode))
     elif mode == "verify_fail":
-        rec = registry.discover("verification")
-        registry.publish(replace(rec, handler=_faulty_verification,
-                                 version=rec.version + "+fault:verify_fail"))
+        _swap("verification", _faulty_verification)
 
     print(f"\n  [FAULT INJECTED] {mode} — guards should contain this\n")
     return registry

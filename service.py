@@ -145,113 +145,181 @@ async def pubsub(request: Request):
     return JSONResponse({"exception_id": r.exception_id, "outcome": r.outcome})
 
 
-PAGE = """<!doctype html><html><head><meta charset=utf-8>
+PAGE = """<!doctype html><html lang=en><head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<title>ExceptionZero</title><style>
-:root{--paper:#F4F7F1;--ledger:#E6EDE2;--rule:#C2CEBB;--hair:#D6DFD1;--ink:#171F1A;
---faint:#6E7A6E;--soft:#485349;--stop:#9E3521;--clear:#2C6144;--hold:#7A5B12}
+<title>ExceptionZero</title>
+<link rel=preconnect href="https://fonts.googleapis.com">
+<link rel=preconnect href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=Newsreader:opsz,wght@6..72,300;6..72,400&family=JetBrains+Mono:wght@400;600&display=swap" rel=stylesheet>
+<style>
+:root{
+  --paper:#F5F7F2; --ledger:#E9EFE5; --raised:#FCFDFB; --rule:#C6D1BE;
+  --hair:#DEE6D8; --ink:#141C16; --soft:#44503F; --faint:#77836F;
+  --stop:#9B3520; --clear:#2A6142; --hold:#7B5A0E; --accent:#2A6142;
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);padding:1.6rem 1.4rem 4rem;
-font:15px/1.55 ui-monospace,"SF Mono",Menlo,monospace;max-width:76rem;margin:0 auto}
-h1{font:800 1.7rem/1 system-ui,sans-serif;margin:0 0 .3rem;letter-spacing:-.03em}
-.lede{font:400 .95rem/1.5 system-ui,sans-serif;color:var(--soft);margin:0 0 .3rem;max-width:52rem}
-.who{font:400 .85rem/1.5 system-ui,sans-serif;color:var(--faint);margin:0 0 1.2rem;max-width:52rem}
-nav{display:flex;gap:.3rem;border-bottom:1px solid var(--rule);margin-bottom:1.2rem;flex-wrap:wrap}
-nav button{font:600 .7rem/1 ui-monospace,monospace;letter-spacing:.07em;text-transform:uppercase;
-background:none;border:none;border-bottom:2px solid transparent;color:var(--faint);
-padding:.6rem .7rem;cursor:pointer}
-nav button.on{color:var(--ink);border-bottom-color:var(--ink)}
-nav button:hover{color:var(--ink)}
-.ctl{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
-button.go{font:600 .72rem/1 ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;
-background:var(--paper);border:1.5px solid var(--ink);color:var(--ink);padding:.55rem .9rem;
-border-radius:3px;cursor:pointer}
-button.go:hover{background:var(--ink);color:var(--paper)}
-button.go:disabled{opacity:.4;cursor:wait}
-select{font:.72rem ui-monospace,monospace;padding:.5rem;border:1px solid var(--rule);
-border-radius:3px;background:var(--paper)}
-label{font:.65rem ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
-.pill{display:inline-block;padding:.22rem .6rem;border:1.5px solid;border-radius:3px;
-margin-right:.5rem;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase}
-.resolved{color:var(--clear)}.deferred{color:var(--hold)}
-.quarantined,.failed{color:var(--stop)}
-table{width:100%;border-collapse:collapse;font-size:.78rem}
-th{text-align:left;color:var(--faint);font-weight:400;text-transform:uppercase;letter-spacing:.08em;
-font-size:.63rem;padding:.45rem .5rem;border-bottom:1px solid var(--rule)}
-td{padding:.45rem .5rem;border-bottom:1px solid var(--hair);vertical-align:top}
-tr.case{cursor:pointer}
-tr.case:hover td{background:var(--ledger)}
-tr.planted td:first-child::after{content:" ★";color:var(--stop)}
-.detail td{background:var(--ledger);font-size:.76rem;line-height:1.55}
-.detail b{font:600 .63rem/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;
-color:var(--faint);display:block;margin:.5rem 0 .15rem}
-.none{color:var(--stop);font-weight:600}
-.note{font:400 .85rem/1.55 system-ui,sans-serif;color:var(--soft);margin:.2rem 0 1rem;max-width:56rem}
-.key{font-size:.72rem;color:var(--faint);margin-top:.8rem}
-#err{color:var(--stop);font-size:.78rem;margin-top:.8rem;white-space:pre-wrap}
-.hide{display:none}
-</style></head><body>
-<h1>ExceptionZero</h1>
-<p class=lede>A fleet of agents that resolves the workflow exceptions a person currently works by hand
-&mdash; and stops when it shouldn't touch one. <span id=mode style="color:var(--faint)">&mdash;</span></p>
-<p class=who>Built for the receiving-and-office clerk at a 40-person distributor: not an engineer,
-not in finance, doing this on top of four other jobs. Every escalation carries the reason it could not
-be resolved, so the human starts from the fleet's work rather than from scratch.</p>
+html{-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:400 15px/1.6 "Newsreader",Georgia,serif}
+.wrap{max-width:78rem;margin:0 auto;padding:0 1.6rem}
+code,.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace}
 
-<nav>
+/* ---- masthead ---- */
+header{padding:2.6rem 0 1.6rem;border-bottom:1px solid var(--rule)}
+.brandrow{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap}
+h1{font:800 2.1rem/1 "Archivo",system-ui,sans-serif;letter-spacing:-.035em;margin:0}
+.env{font-family:"JetBrains Mono",monospace;font-size:.66rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--faint);border:1px solid var(--rule);
+  border-radius:100px;padding:.3rem .7rem;white-space:nowrap}
+.lede{font-size:1.14rem;line-height:1.5;color:var(--ink);margin:.9rem 0 0;max-width:44rem}
+.who{font-size:.94rem;color:var(--soft);margin:.6rem 0 0;max-width:44rem}
+
+/* ---- nav ---- */
+nav{display:flex;gap:0;border-bottom:1px solid var(--rule);position:sticky;top:0;
+  background:rgba(245,247,242,.96);backdrop-filter:blur(8px);z-index:10;flex-wrap:wrap}
+nav button{font:600 .68rem/1 "JetBrains Mono",monospace;letter-spacing:.11em;
+  text-transform:uppercase;background:none;border:0;border-bottom:2px solid transparent;
+  color:var(--faint);padding:1rem .95rem;cursor:pointer;transition:color .12s}
+nav button.on{color:var(--ink);border-bottom-color:var(--accent)}
+nav button:hover{color:var(--ink)}
+nav button:focus-visible{outline:2px solid var(--accent);outline-offset:-4px}
+
+main{padding:1.8rem 0 5rem}
+.note{font-size:1rem;line-height:1.6;color:var(--soft);margin:0 0 1.5rem;max-width:50rem}
+.note em{font-style:normal;color:var(--ink)}
+
+/* ---- controls ---- */
+.ctl{display:flex;gap:.55rem;align-items:center;flex-wrap:wrap;margin-bottom:1.4rem;
+  padding:.9rem 1rem;background:var(--raised);border:1px solid var(--rule);border-radius:6px}
+label{font:600 .62rem/1 "JetBrains Mono",monospace;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--faint)}
+select{font:.75rem/1 "JetBrains Mono",monospace;padding:.55rem .6rem;border:1px solid var(--rule);
+  border-radius:4px;background:var(--paper);color:var(--ink)}
+button.go{font:600 .7rem/1 "JetBrains Mono",monospace;letter-spacing:.09em;text-transform:uppercase;
+  background:var(--ink);border:1.5px solid var(--ink);color:var(--paper);
+  padding:.62rem 1.1rem;border-radius:4px;cursor:pointer;transition:opacity .12s}
+button.go:hover{opacity:.85}
+button.go:disabled{opacity:.35;cursor:wait}
+
+/* ---- tally ---- */
+#tally{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
+.stat{border:1.5px solid;border-radius:5px;padding:.5rem .85rem;min-width:6.4rem}
+.stat .n{font:800 1.35rem/1 "Archivo",sans-serif;display:block}
+.stat .l{font:600 .58rem/1 "JetBrains Mono",monospace;letter-spacing:.12em;
+  text-transform:uppercase;opacity:.8}
+.resolved{color:var(--clear);border-color:var(--clear)}
+.deferred{color:var(--hold);border-color:var(--hold)}
+.quarantined,.failed{color:var(--stop);border-color:var(--stop)}
+.meta{font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--faint)}
+
+/* ---- tables ---- */
+.card{background:var(--raised);border:1px solid var(--rule);border-radius:6px;overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:.82rem}
+th{text-align:left;font:600 .6rem/1 "JetBrains Mono",monospace;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--faint);padding:.7rem .85rem;
+  border-bottom:1px solid var(--rule);background:var(--ledger)}
+td{padding:.62rem .85rem;border-bottom:1px solid var(--hair);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+tr.case{cursor:pointer;transition:background .1s}
+tr.case:hover>td{background:var(--ledger)}
+tr.case td:first-child{font-family:"JetBrains Mono",monospace;font-size:.76rem;white-space:nowrap}
+.oc{font:600 .68rem/1 "JetBrains Mono",monospace;letter-spacing:.07em;text-transform:uppercase}
+.star{color:var(--stop);font-size:.8em}
+.num{font-family:"JetBrains Mono",monospace;font-size:.76rem;white-space:nowrap}
+.sa{font-family:"JetBrains Mono",monospace;font-size:.68rem;color:var(--faint);word-break:break-all}
+.detail>td{background:var(--ledger);padding:.9rem 1.1rem 1.1rem}
+.detail b{font:600 .58rem/1 "JetBrains Mono",monospace;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--faint);display:block;margin:.75rem 0 .2rem}
+.detail b:first-child{margin-top:0}
+.hops{font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--soft);
+  line-height:1.7;word-break:break-word}
+.adaptive{color:var(--stop);font-weight:600}
+.guard{color:var(--stop);font-family:"JetBrains Mono",monospace;font-size:.72rem;line-height:1.6}
+.none{color:var(--stop);font-weight:600;font-family:"JetBrains Mono",monospace;font-size:.72rem}
+.ok{color:var(--clear);font-weight:600}
+.key{font-size:.86rem;color:var(--faint);margin-top:1rem}
+.claim{margin-top:1.1rem;padding:.85rem 1rem;border-left:3px solid var(--accent);
+  background:var(--raised);font-size:.95rem}
+#err{color:var(--stop);font-family:"JetBrains Mono",monospace;font-size:.78rem;margin-top:1rem}
+.hide{display:none}
+.spin{display:inline-block;color:var(--faint);font-size:.85rem}
+@media(max-width:720px){h1{font-size:1.6rem}.wrap{padding:0 1rem}table{font-size:.74rem}}
+</style></head><body>
+
+<header><div class=wrap>
+  <div class=brandrow>
+    <h1>ExceptionZero</h1>
+    <span class=env id=env>connecting…</span>
+  </div>
+  <p class=lede>A fleet of agents that resolves the workflow exceptions a person currently
+  works by hand &mdash; and stops when it shouldn&rsquo;t touch one.</p>
+  <p class=who>Built for the receiving-and-office clerk at a 40-person distributor: not an
+  engineer, not in finance, doing this on top of four other jobs. Every escalation carries the
+  reason it could not be resolved, so the human starts from the fleet&rsquo;s work rather than
+  from scratch.</p>
+</div></header>
+
+<nav><div class=wrap style="display:flex;gap:0">
   <button class=on data-t=fleet>Run the fleet</button>
   <button data-t=identity>Agent identity</button>
   <button data-t=registry>Registry</button>
   <button data-t=queue>Human queue</button>
-</nav>
+</div></nav>
 
-<div id=fleet>
-  <p class=note>Each case is triaged, investigated by specialists chosen for its type, diagnosed by an
-  agent that holds no tools, then passed to a deterministic risk gate. Click any row for the reasoning.
-  Inject a fault to watch the guardrails contain it.</p>
+<main class=wrap>
+<section id=fleet>
+  <p class=note>Each case is triaged, investigated by specialists <em>chosen for its type</em>,
+  diagnosed by an agent that holds no tools, then passed to a deterministic risk gate.
+  Click any row for the reasoning. Inject a fault to watch the guardrails contain it.</p>
   <div class=ctl>
-    <label>cases</label>
+    <label for=limit>cases</label>
     <select id=limit><option>10</option><option selected>20</option><option>50</option></select>
-    <label>fault</label>
-    <select id=inject><option value="">none</option><option value=hallucination>hallucinated citation</option>
-    <option value=phantom_key>phantom entity</option><option value=loop>infinite loop</option>
-    <option value=verify_fail>verification failure</option><option value=overconfident>forced overconfidence</option></select>
+    <label for=inject>inject fault</label>
+    <select id=inject><option value="">none</option>
+      <option value=hallucination>hallucinated citation</option>
+      <option value=phantom_key>phantom entity</option>
+      <option value=loop>infinite loop</option>
+      <option value=verify_fail>verification failure</option>
+      <option value=overconfident>forced overconfidence</option></select>
     <button class=go id=go>Run fleet</button>
   </div>
   <div id=tally></div><div id=out></div>
-  <p class=key>&#9733; marks a deliberately engineered case: a refusal, a prompt injection, and a
-  reference to a record that does not exist.</p>
-</div>
+  <p class=key><span class=star>&#9733;</span> marks a deliberately engineered case: a refusal,
+  a prompt injection, and a reference to a record that does not exist.</p>
+</section>
 
-<div id=identity class=hide>
+<section id=identity class=hide>
   <p class=note>Every agent runs under its own Google Cloud service account through impersonation.
-  This page has each one attempt a real BigQuery read under its own identity &mdash; specialists reach
-  their own table and no other, and the diagnosis agent is refused. That is IAM, not a prompt.</p>
+  This page has each one attempt a real BigQuery read <em>under its own identity</em> &mdash;
+  specialists reach their own table and no other, and the diagnosis agent is refused.
+  That is IAM, not a prompt.</p>
   <div id=identity_out></div>
-</div>
+</section>
 
-<div id=registry class=hide>
-  <p class=note>The published agent catalog, persisted in Firestore. Capability, version, identity and
-  tool scope &mdash; what another team discovers when looking for an approved agent.</p>
+<section id=registry class=hide>
+  <p class=note>The published agent catalog, persisted in Firestore. Capability, version, identity
+  and tool scope &mdash; what another team discovers when looking for an approved agent.</p>
   <div id=registry_out></div>
-</div>
+</section>
 
-<div id=queue class=hide>
-  <p class=note>Escalated cases, highest value first, each with the reason it could not be resolved and
-  what would have to change to clear it. A scheduled sweeper re-examines these and re-opens the ones
-  whose blocker has cleared &mdash; sometimes weeks later.</p>
+<section id=queue class=hide>
+  <p class=note>Escalated cases, highest value first, each with the reason it could not be resolved
+  and what would have to change to clear it. A scheduled sweeper re-examines these and re-opens the
+  ones whose blocker has cleared &mdash; sometimes weeks later.</p>
   <div id=queue_out></div>
-</div>
+</section>
 <div id=err></div>
+</main>
 
 <script>
 const $=s=>document.querySelector(s);
 const esc=s=>String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const fmt=(v,c)=>v==null?'&mdash;':(c||'')+' '+Number(v).toLocaleString(undefined,{maximumFractionDigits:2});
+const num=(v,c)=>v==null?'&mdash;':(c?c+' ':'')+Number(v).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
+const card=h=>'<div class=card>'+h+'</div>';
 
 fetch('/status').then(r=>r.json()).then(h=>{
-  $('#mode').textContent=`${h.mode} · ${h.model} · ${h.exceptions} exceptions from BigQuery`;
-}).catch(()=>{});
+  $('#env').textContent=`${h.mode} · ${h.model} · ${h.exceptions} exceptions from BigQuery`;
+}).catch(()=>{$('#env').textContent='offline';});
 
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x===b));
@@ -260,68 +328,76 @@ document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{
 });
 
 async function load(t){
-  const el=$('#'+t+'_out'); el.innerHTML='<p style="color:var(--faint)">loading…</p>';
+  const el=$('#'+t+'_out'); el.innerHTML='<p class=spin>loading…</p>';
   try{
     const d=await (await fetch('/'+t)).json();
     if(t==='identity'){
-      el.innerHTML='<table><tr><th>agent</th><th>identity</th><th>own table</th><th>access</th>'+
-        '<th>other tables reachable</th><th>service account</th></tr>'+
-        d.agents.map(a=>`<tr><td>${esc(a.capability)}</td><td>${esc(a.identity)}</td>
-        <td>${esc(a.own_table)}</td><td class="${a.bigquery==='ALLOWED'?'resolved':'quarantined'}">
-        <b>${esc(a.bigquery)}</b></td><td>${esc(Array.isArray(a.other_tables_reachable)?
-        a.other_tables_reachable.join(', '):a.other_tables_reachable)}</td>
-        <td style="color:var(--faint)">${esc(a.service_account)}</td></tr>`).join('')+'</table>'+
-        `<p class=key>Claim: <em>${esc(d.claim)}</em> &mdash; verdict <b>${esc(d.verdict)}</b>.</p>`;
+      el.innerHTML=card('<table><thead><tr><th>agent</th><th>identity</th><th>own table</th>'+
+        '<th>access</th><th>other tables reachable</th><th>service account</th></tr></thead><tbody>'+
+        d.agents.map(a=>{const ok=a.bigquery==='ALLOWED';
+          const other=Array.isArray(a.other_tables_reachable)?a.other_tables_reachable.join(', '):a.other_tables_reachable;
+          return `<tr><td class=mono>${esc(a.capability)}</td><td class=mono style="font-size:.7rem">${esc(a.identity)}</td>
+          <td class=mono style="font-size:.72rem">${esc(a.own_table)}</td>
+          <td class="oc ${ok?'ok':'none'}">${esc(a.bigquery)}</td>
+          <td class=mono style="font-size:.72rem;color:var(--faint)">${esc(other)}</td>
+          <td class=sa>${esc(a.service_account)}</td></tr>`}).join('')+'</tbody></table>')+
+        `<div class=claim>Claim: <em>${esc(d.claim)}</em> &mdash; verdict <strong class="${d.verdict==='DENIED'?'none':'ok'}">${esc(d.verdict)}</strong></div>`;
     } else if(t==='registry'){
-      el.innerHTML='<table><tr><th>agent</th><th>capability</th><th>version</th><th>domain</th>'+
-        '<th>tool scope</th><th>identity</th></tr>'+
-        d.agents.map(a=>`<tr><td>${esc(a.name)}</td><td>${esc(a.capability)}</td>
-        <td>${esc(a.version)}</td><td>${esc(a.domain||'—')}</td>
-        <td>${(a.tool_scope&&a.tool_scope.length)?esc(a.tool_scope.join(', ')):'<span class=none>NONE</span>'}</td>
-        <td style="color:var(--faint)">${esc(a.service_account)}</td></tr>`).join('')+'</table>';
+      el.innerHTML=card('<table><thead><tr><th>agent</th><th>capability</th><th>version</th>'+
+        '<th>domain</th><th>tool scope</th><th>identity</th></tr></thead><tbody>'+
+        d.agents.map(a=>`<tr><td>${esc(a.name)}</td><td class=mono style="font-size:.74rem">${esc(a.capability)}</td>
+        <td class=num>${esc(a.version)}</td><td class=mono style="font-size:.74rem">${esc(a.domain||'—')}</td>
+        <td class=mono style="font-size:.72rem">${(a.tool_scope&&a.tool_scope.length)?esc(a.tool_scope.join(', ')):'<span class=none>NONE</span>'}</td>
+        <td class=sa>${esc(a.service_account)}</td></tr>`).join('')+'</tbody></table>');
     } else {
-      el.innerHTML=`<p><b>${d.awaiting_review}</b> awaiting review</p><table>
-        <tr><th>case</th><th>type</th><th>value</th><th>why it stopped</th><th>what would clear it</th></tr>`+
-        d.cases.map(c=>`<tr><td>${esc(c.exception_id)}</td><td>${esc(c.type)}</td>
-        <td>${fmt(c.value,c.currency)}</td><td>${esc(c.reason)}</td>
-        <td style="color:var(--faint)">${esc(c.what_would_clear_it)}</td></tr>`).join('')+'</table>';
+      el.innerHTML=`<div id=tally><div class="stat deferred"><span class=n>${d.awaiting_review}</span><span class=l>awaiting review</span></div></div>`+
+        card('<table><thead><tr><th>case</th><th>type</th><th>value</th><th>why it stopped</th>'+
+        '<th>what would clear it</th></tr></thead><tbody>'+
+        d.cases.map(c=>`<tr><td class=mono>${esc(c.exception_id)}</td>
+        <td class=mono style="font-size:.72rem">${esc(c.type)}</td>
+        <td class=num>${num(c.value,c.currency)}</td><td>${esc(c.reason)}</td>
+        <td style="color:var(--faint)">${esc(c.what_would_clear_it)}</td></tr>`).join('')+'</tbody></table>');
     }
   }catch(e){ el.innerHTML='<p class=none>could not load</p>'; }
 }
 
 $('#go').onclick=async()=>{
   const b=$('#go'); b.disabled=true; b.textContent='running…';
-  $('#tally').innerHTML=''; $('#out').innerHTML=''; $('#err').textContent='';
+  $('#tally').innerHTML=''; $('#out').innerHTML='<p class=spin>the fleet is working…</p>';
+  $('#err').textContent='';
   const t0=performance.now();
   try{
     const r=await fetch('/run',{method:'POST',headers:{'content-type':'application/json'},
       body:JSON.stringify({limit:+$('#limit').value,workers:8,inject:$('#inject').value||null})});
     const d=await r.json();
     const secs=((performance.now()-t0)/1000).toFixed(1);
-    $('#tally').innerHTML=Object.entries(d.tally).map(([k,v])=>
-      `<span class="pill ${k}">${k} ${v}</span>`).join('')+
-      `<span style="color:var(--faint);font-size:.75rem">${d.cases.length} cases · ${secs}s · ${d.spans.length} spans</span>`;
+    const order=['resolved','deferred','quarantined','failed'];
+    $('#tally').innerHTML=order.filter(k=>d.tally[k]).map(k=>
+      `<div class="stat ${k}"><span class=n>${d.tally[k]}</span><span class=l>${k}</span></div>`).join('')+
+      `<span class=meta>${d.cases.length} cases · ${secs}s · ${d.spans.length} spans</span>`;
     const rows=d.cases.map((c,i)=>{
-      const planted=/EXC-7990/.test(c.exception_id)?' planted':'';
+      const planted=/EXC-7990/.test(c.exception_id);
       const spans=d.spans.filter(s=>s.case===c.exception_id);
       const guards=spans.filter(s=>s.error);
       const chosen=spans.filter(s=>s.name.startsWith('specialist.')).map(s=>s.name.split('.')[1]);
       const adaptive=spans.some(s=>s.name==='context.adaptive');
-      return `<tr class="case${planted}" data-i="${i}"><td>${esc(c.exception_id)}</td>
-        <td class="${c.outcome}"><b>${esc(c.outcome)}</b></td>
-        <td>${c.confidence!=null?c.confidence.toFixed(2):'&mdash;'}</td>
+      return `<tr class=case data-i="${i}">
+        <td>${esc(c.exception_id)}${planted?' <span class=star>&#9733;</span>':''}</td>
+        <td class="oc ${c.outcome}">${esc(c.outcome)}</td>
+        <td class=num>${c.confidence!=null?c.confidence.toFixed(2):'&mdash;'}</td>
         <td>${esc(c.reason||'')}</td></tr>
-        <tr class="detail hide" id="d${i}"><td colspan=4>
-          <b>proposed action</b>${esc(c.action||'—')}
-          <b>specialists dispatched</b>${chosen.length?esc(chosen.join(', ')):'—'}${adaptive?
-            ' <span style="color:var(--stop)">+ adaptive re-dispatch: the agent asked for more evidence</span>':''}
-          <b>agent hops</b>${spans.map(s=>esc(s.name)+' '+s.ms+'ms').join(' → ')||'—'}
-          ${guards.length?'<b>guard fired</b><span class=none>'+guards.map(g=>esc(g.error)).join('<br>')+'</span>':''}
-        </td></tr>`;}).join('');
-    $('#out').innerHTML='<table><tr><th>case</th><th>outcome</th><th>conf</th><th>reason</th></tr>'+rows+'</table>';
+      <tr class="detail hide" id="d${i}"><td colspan=4>
+        <b>proposed action</b><span class=mono style="font-size:.76rem">${esc(c.action||'—')}</span>
+        <b>specialists dispatched</b><span class=mono style="font-size:.76rem">${chosen.length?esc([...new Set(chosen)].join(', ')):'—'}</span>${
+          adaptive?' <span class=adaptive>&mdash; then asked for more evidence and was re-dispatched</span>':''}
+        <b>agent hops</b><div class=hops>${spans.map(s=>esc(s.name)+' <span style="color:var(--faint)">'+s.ms+'ms</span>').join(' &rarr; ')||'—'}</div>
+        ${guards.length?'<b>guard fired</b><div class=guard>'+guards.map(g=>esc(g.error)).join('<br>')+'</div>':''}
+      </td></tr>`;}).join('');
+    $('#out').innerHTML=card('<table><thead><tr><th>case</th><th>outcome</th><th>conf</th>'+
+      '<th>reason</th></tr></thead><tbody>'+rows+'</tbody></table>');
     document.querySelectorAll('tr.case').forEach(tr=>tr.onclick=()=>
       $('#d'+tr.dataset.i).classList.toggle('hide'));
-  }catch(e){ $('#err').textContent='Run failed: '+e; }
+  }catch(e){ $('#out').innerHTML=''; $('#err').textContent='Run failed: '+e; }
   b.disabled=false; b.textContent='Run fleet';
 };
 </script></body></html>"""

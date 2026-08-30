@@ -76,19 +76,34 @@ SWEEPABLE = {"low_confidence", "missing_evidence", "thin_counterparty"}
 
 
 def classify_blocker(reason: str) -> str:
+    """Why the gate would not authorise, in a form the sweeper can act on.
+
+    Order matters. "diagnosis proposed escalation: ... cannot be explained
+    with the available evidence" is an evidence problem, not a policy one —
+    matching the generic policy phrase first would tell the reviewer the wrong
+    thing and stop the sweeper ever reconsidering the case.
+    """
     r = reason.lower()
+
+    # Most specific first.
+    if "citation failure" in r or "does not exist" in r or "absent" in r \
+            or "no matching invoice" in r or "cannot be explained" in r \
+            or "available evidence" in r or "no other open" in r:
+        return "missing_evidence"
     if "exceeds ceiling" in r:
         return "value_ceiling"
     if "confidence" in r and "below floor" in r:
         return "low_confidence"
     if "screening" in r:
         return "screening"
-    if "payment history" in r or "counterparty" in r:
+    if "history" in r or "counterparty too new" in r or "insufficient" in r:
         return "thin_counterparty"
+    if "proposed escalation" in r:
+        # The agent had evidence and still could not conclude — the type is
+        # usually one that is never auto-resolved.
+        return "policy"
     if "never auto-resolved" in r or "no compensating action" in r:
         return "policy"
-    if "does not exist" in r or "no matching invoice" in r or "absent" in r:
-        return "missing_evidence"
     return "policy"
 
 
