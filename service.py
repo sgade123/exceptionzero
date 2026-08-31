@@ -260,14 +260,22 @@ tr.case td:first-child{font-family:"JetBrains Mono",monospace;font-size:.76rem;w
 </div></header>
 
 <nav><div class=wrap style="display:flex;gap:0">
-  <button class=on data-t=fleet>Run the fleet</button>
+  <button class=on data-t=inbox>The inbox</button>
+  <button data-t=fleet>Run the fleet</button>
   <button data-t=identity>Agent identity</button>
   <button data-t=registry>Registry</button>
   <button data-t=queue>Human queue</button>
 </div></nav>
 
 <main class=wrap>
-<section id=fleet>
+<section id=inbox>
+  <p class=note>This is the queue as it arrives &mdash; before any agent has looked at it.
+  A bank return code, an amount, and a memo somebody typed. Working out what each one means,
+  one at a time, is the job.</p>
+  <div id=inbox_out></div>
+</section>
+
+<section id=fleet class=hide>
   <p class=note>Each case is triaged, investigated by specialists <em>chosen for its type</em>,
   diagnosed by an agent that holds no tools, then passed to a deterministic risk gate.
   Click any row for the reasoning. Inject a fault to watch the guardrails contain it.</p>
@@ -323,7 +331,7 @@ fetch('/status').then(r=>r.json()).then(h=>{
 
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x===b));
-  ['fleet','identity','registry','queue'].forEach(t=>$('#'+t).classList.toggle('hide',t!==b.dataset.t));
+  ['inbox','fleet','identity','registry','queue'].forEach(t=>$('#'+t).classList.toggle('hide',t!==b.dataset.t));
   if(b.dataset.t!=='fleet') load(b.dataset.t);
 });
 
@@ -331,7 +339,18 @@ async function load(t){
   const el=$('#'+t+'_out'); el.innerHTML='<p class=spin>loading…</p>';
   try{
     const d=await (await fetch('/'+t)).json();
-    if(t==='identity'){
+    if(t==='inbox'){
+      el.innerHTML=`<div id=tally><div class="stat deferred"><span class=n>${d.open_exceptions}</span><span class=l>open exceptions</span></div></div>`+
+        card('<table><thead><tr><th>case</th><th>type</th><th>code</th><th>payer</th>'+
+        '<th>invoice ref</th><th>amount</th><th>memo</th></tr></thead><tbody>'+
+        d.cases.map(c=>`<tr><td class=mono>${esc(c.exception_id)}</td>
+        <td class=mono style="font-size:.72rem">${esc(c.type)}</td>
+        <td class=mono style="font-size:.72rem">${esc(c.code||'—')}</td>
+        <td>${esc(c.counterparty||'—')}</td>
+        <td class=mono style="font-size:.72rem">${esc(c.invoice_ref||'<span style="color:var(--stop)">none</span>')}</td>
+        <td class=num>${num(c.amount,c.currency)}</td>
+        <td style="color:var(--soft)">${esc(c.memo||'')}</td></tr>`).join('')+'</tbody></table>');
+    } else if(t==='identity'){
       el.innerHTML=card('<table><thead><tr><th>agent</th><th>identity</th><th>own table</th>'+
         '<th>access</th><th>other tables reachable</th><th>service account</th></tr></thead><tbody>'+
         d.agents.map(a=>{const ok=a.bigquery==='ALLOWED';
@@ -360,6 +379,8 @@ async function load(t){
     }
   }catch(e){ el.innerHTML='<p class=none>could not load</p>'; }
 }
+
+load('inbox');
 
 $('#go').onclick=async()=>{
   const b=$('#go'); b.disabled=true; b.textContent='running…';
@@ -401,6 +422,32 @@ $('#go').onclick=async()=>{
   b.disabled=false; b.textContent='Run fleet';
 };
 </script></body></html>"""
+
+
+@app.get("/inbox")
+def inbox(limit: int = 40):
+    """The raw exception queue — what a person opens on Monday morning.
+
+    No agent has looked at these. This is the estate as it arrives: a bank
+    return code, an amount, and a memo somebody typed. Working out what each
+    one means is the job.
+    """
+    rows = [e for e in estate().get("exceptions", []) if e.get("status") == "open"]
+    rows.sort(key=lambda e: e.get("received_at") or "", reverse=True)
+    return {
+        "open_exceptions": len(rows),
+        "cases": [{
+            "exception_id": e.get("exception_id"),
+            "received_at": e.get("received_at"),
+            "type": e.get("exception_type"),
+            "code": e.get("bank_return_code"),
+            "counterparty": e.get("counterparty_name_on_payment"),
+            "invoice_ref": e.get("invoice_ref"),
+            "amount": e.get("amount"),
+            "currency": e.get("currency"),
+            "memo": e.get("memo"),
+        } for e in rows[:limit]],
+    }
 
 
 @app.get("/queue")
