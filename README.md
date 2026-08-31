@@ -85,6 +85,20 @@ A proposed action, a rationale, evidence citations, and a confidence score. Ever
 - **The act/escalate decision** is deterministic code. A probabilistic gate is not a control.
 - **Evidence** comes only from the Context agent. A resolution citing anything else is rejected mechanically.
 
+### Dispatch is a choice, not a fan-out
+
+The coordinator reads the exception type and dispatches only the specialists that
+case needs — a name mismatch is settled by the customer record and precedent; the
+invoice adds nothing. That cuts specialist queries by roughly 45%.
+
+When the diagnosis agent cannot establish something, it names what is missing.
+The coordinator dispatches exactly those specialists, merges the new evidence, and
+the case is reconsidered — routing decided at runtime by the agent's own assessment.
+Cloud Trace shows this as a `context.adaptive` span nested under the case.
+
+The *control* plane stays fixed: the guards run in order and the gate is always last.
+Dynamic evidence gathering is safe; dynamic authorization is not.
+
 ### Guardrails
 
 | Failure | Mitigation |
@@ -191,10 +205,15 @@ gcloud beta run services logs tail exceptionzero --region us-central1
 
 | Endpoint | Purpose |
 |---|---|
-| `GET /` | live trace viewer — run the fleet, inject faults, see agent scopes |
+| `GET /` | the demo console — inbox, fleet run, identity, registry, queue |
+| `GET /inbox` | the raw exception queue, before any agent has seen it |
 | `POST /run` | batch execution; returns outcomes, spans, registry |
+| `GET /identity` | **each agent attempts a real BigQuery read under its own service account** |
+| `GET /registry` | the published agent catalog from Firestore |
+| `GET /queue` | escalated cases with the reason they stopped and what would clear them |
+| `POST /sweep` | Cloud Scheduler target — re-examines deferred cases |
 | `POST /pubsub` | Pub/Sub push handler — one exception per message |
-| `GET /healthz` | liveness, mode, model |
+| `GET /status` | mode, model, estate size |
 
 ---
 
@@ -203,15 +222,15 @@ gcloud beta run services logs tail exceptionzero --region us-central1
 A representative 20-case run against real Gemini 3.5 Flash:
 
 ```
-deferred=11  quarantined=1  resolved=8
-20 cases in 43.5s (2.18s/case, 8 workers)
+resolved=12  deferred=7  quarantined=1
+20 cases in 49.5s · 163 spans
 ```
 
-Roughly 40% resolved autonomously. **Every escalation carries a stated reason**, and most are correct by design — an invalid account number or a sanctions hit should never be auto-resolved, because fixing it requires contacting a human being.
+Roughly 60% resolved autonomously. **Every escalation carries a stated reason**, and most are correct by design — an invalid account number or a sanctions hit should never be auto-resolved, because fixing it requires contacting a human being.
 
 The refusal, in the fleet's own words:
 
-> The payment of EUR 44,704.73 is significantly less than the invoice amount of EUR 81,281.32 for INV-20232, leaving an unexplained shortfall of EUR 36,576.59.
+> The payment amount of EUR 44,704.73 is significantly less than the invoice amount of EUR 81,281.32 for INV-20232, and there is no evidence explaining this large partial payment.
 
 ---
 
