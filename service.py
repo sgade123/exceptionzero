@@ -202,7 +202,7 @@ button.go:hover{opacity:.85}
 button.go:disabled{opacity:.35;cursor:wait}
 
 /* ---- tally ---- */
-#tally{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
+#tally,.tallyrow{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
 .stat{border:1.5px solid;border-radius:5px;padding:.5rem .85rem;min-width:6.4rem}
 .stat .n{font:800 1.35rem/1 "Archivo",sans-serif;display:block}
 .stat .l{font:600 .58rem/1 "JetBrains Mono",monospace;letter-spacing:.12em;
@@ -340,7 +340,7 @@ async function load(t){
   try{
     const d=await (await fetch('/'+t)).json();
     if(t==='inbox'){
-      el.innerHTML=`<div id=tally><div class="stat deferred"><span class=n>${d.open_exceptions}</span><span class=l>open exceptions</span></div></div>`+
+      el.innerHTML=`<div class=tallyrow><div class="stat deferred"><span class=n>${d.open_exceptions}</span><span class=l>open exceptions</span></div></div>`+
         card('<table><thead><tr><th>case</th><th>type</th><th>code</th><th>payer</th>'+
         '<th>invoice ref</th><th>amount</th><th>memo</th></tr></thead><tbody>'+
         d.cases.map(c=>`<tr><td class=mono>${esc(c.exception_id)}</td>
@@ -369,7 +369,7 @@ async function load(t){
         <td class=mono style="font-size:.72rem">${(a.tool_scope&&a.tool_scope.length)?esc(a.tool_scope.join(', ')):'<span class=none>NONE</span>'}</td>
         <td class=sa>${esc(a.service_account)}</td></tr>`).join('')+'</tbody></table>');
     } else {
-      el.innerHTML=`<div id=tally><div class="stat deferred"><span class=n>${d.awaiting_review}</span><span class=l>awaiting review</span></div></div>`+
+      el.innerHTML=`<div class=tallyrow><div class="stat deferred"><span class=n>${d.awaiting_review}</span><span class=l>awaiting review</span></div></div>`+
         card('<table><thead><tr><th>case</th><th>type</th><th>value</th><th>why it stopped</th>'+
         '<th>what would clear it</th></tr></thead><tbody>'+
         d.cases.map(c=>`<tr><td class=mono>${esc(c.exception_id)}</td>
